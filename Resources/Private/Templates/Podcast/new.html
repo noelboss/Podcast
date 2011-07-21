@@ -1,0 +1,25 @@
+<f:layout name="default" />
+
+This template displays a NEW form for the current domain object.
+
+<f:section name="main">
+<h1>New Podcast</h1>
+
+<f:flashMessages />
+
+<f:render partial="formErrors" />
+
+<f:form method="post" action="create" name="newPodcast" object="{newPodcast}">
+	<label for="title"><f:translate key="tx_podcast_domain_model_podcast.title" /></label><br />
+	<f:form.textbox property="title" /><br />
+	<label for="title"><f:translate key="tx_podcast_domain_model_podcast.subtitle" /></label><br />
+	<f:form.textbox property="subtitle" /><br />
+	<label for="title"><f:translate key="tx_podcast_domain_model_podcast.description" /></label><br />
+	<f:form.textbox property="description" /><br />
+	<label for="title"><f:translate key="tx_podcast_domain_model_podcast.copyright" /></label><br />
+	<f:form.textbox property="copyright" /><br />
+	<label for="title"><f:translate key="tx_podcast_domain_model_podcast.image" /></label><br />
+	<f:form.textbox property="image" /><br />
+	<f:form.submit value="Create new" />
+</f:form>
+</f:section>

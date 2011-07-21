@@ -1,0 +1,19 @@
+<f:layout name="default" />
+
+This template displays a EDIT form for the current domain object.
+
+<f:section name="main">
+<h1>Edit Person</h1>
+
+<f:flashMessages />
+
+<f:render partial="formErrors" />
+
+<f:form method="post" action="update" name="person" object="{person}">
+	<label for="title"><f:translate key="tx_podcast_domain_model_person.name" /> <span class="required">(required)</span></label><br />
+	<f:form.textbox property="name" /><br />
+	<label for="title"><f:translate key="tx_podcast_domain_model_person.e_mail" /> <span class="required">(required)</span></label><br />
+	<f:form.textbox property="eMail" /><br />
+	<f:form.submit value="Edit" />
+</f:form>
+</f:section>

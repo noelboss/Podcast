@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>module</type>
+		<description>Language labels for the Podcast extension in the FRONTEND</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="tx_podcast_domain_model_podcast">This is a podcast</label>
+			<label index="tx_podcast_domain_model_podcast.title">Title</label>
+			<label index="tx_podcast_domain_model_podcast.subtitle">Subtitle</label>
+			<label index="tx_podcast_domain_model_podcast.description">Description</label>
+			<label index="tx_podcast_domain_model_podcast.copyright">Copyright</label>
+			<label index="tx_podcast_domain_model_podcast.image">Image</label>
+			<label index="tx_podcast_domain_model_podcast.episodes">Episodes</label>
+			<label index="tx_podcast_domain_model_podcast.categories">Categories</label>
+			<label index="tx_podcast_domain_model_podcast.author">Author</label>
+			<label index="tx_podcast_domain_model_podcast.technical_contact">Technical Contact</label>
+			<label index="tx_podcast_domain_model_podcast.website">Website</label>
+			<label index="tx_podcast_domain_model_podcast.links.back">Overview</label>
+			<label index="tx_podcast_domain_model_episode">Podcast Episode</label>
+			<label index="tx_podcast_domain_model_episode.date_format">d. m. Y</label>
+			<label index="tx_podcast_domain_model_episode.title">Title</label>
+			<label index="tx_podcast_domain_model_episode.description">Description</label>
+			<label index="tx_podcast_domain_model_episode.file">File</label>
+			<label index="tx_podcast_domain_model_episode.publication_date">Publication Date</label>
+			<label index="tx_podcast_domain_model_episode.duration">Duration</label>
+			<label index="tx_podcast_domain_model_episode.website">website</label>
+			<label index="tx_podcast_domain_model_episode.author">author</label>
+			<label index="tx_podcast_domain_model_category">Podcast Categorie</label>
+			<label index="tx_podcast_domain_model_category.title">Title</label>
+			<label index="tx_podcast_domain_model_category.subcategory">subcategory</label>
+			<label index="tx_podcast_domain_model_person">Author or Technical Contact</label>
+			<label index="tx_podcast_domain_model_person.name">Name</label>
+			<label index="tx_podcast_domain_model_person.e_mail">E-Mail</label>
+			<label index="tx_podcast_domain_model_website">Website</label>
+			<label index="tx_podcast_domain_model_website.title">Title</label>
+			<label index="tx_podcast_domain_model_subcategory">Subcategory</label>
+			<label index="tx_podcast_domain_model_subcategory.title">Title</label>
+		</languageKey>
+	</data>
+</T3locallang>
