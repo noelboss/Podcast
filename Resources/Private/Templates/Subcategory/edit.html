@@ -1,0 +1,17 @@
+<f:layout name="default" />
+
+This template displays a EDIT form for the current domain object.
+
+<f:section name="main">
+<h1>Edit Subcategory</h1>
+
+<f:flashMessages />
+
+<f:render partial="formErrors" />
+
+<f:form method="post" action="update" name="subcategory" object="{subcategory}">
+	<label for="title"><f:translate key="tx_podcast_domain_model_subcategory.title" /> <span class="required">(required)</span></label><br />
+	<f:form.textbox property="title" /><br />
+	<f:form.submit value="Edit" />
+</f:form>
+</f:section>

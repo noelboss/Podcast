@@ -1,0 +1,37 @@
+<f:layout name="default" />
+<f:section name="main">
+	<f:flashMessages />
+	<h1>{podcast.title}
+		<span> 
+			<f:link.action action="edit" arguments="{podcast : podcast}">Edit</f:link.action>
+			<f:link.action action="delete" arguments="{podcast : podcast}">Delete</f:link.action>
+		</span>
+	</h1>              
+	<h2>{podcast.subtitle}</h2>      
+	<div class="info">
+		<div class="image">
+			<f:image height="100c" width="100c" src="uploads/tx_podcast/{podcast.image}" alt="{podcast.title}" />
+		</div>
+		<div class="description">
+			<f:format.nl2br>{podcast.description}</f:format.nl2br>  
+			<div class="copyright"> 
+				{podcast.copyright} – <f:link.external uri="{podcast.website.link}" />{podcast.website.title}</a>
+			</div>   
+		</div>
+	</div>          
+	<div class="episodes">                                                                                   
+		<f:if condition="{podcast.episodes}">
+			<f:then>
+				<f:for each="{podcast.episodes}" as="episode" reverse="false">
+					<f:cycle values="{1: 'odd' 2: 'even'}" as="zebraClass">
+						<f:render partial="episode" arguments="{episode: episode, zebraClass: zebraClass}" />
+					</f:cycle>
+				</f:for>
+			</f:then>
+			<f:else>
+				<li>Es sind keine Episoden vorhanden.</li>
+			</f:else>
+		</f:if>	  
+	</div>             
+	<f:link.action action="index" class="back">[<f:translate key="tx_podcast_domain_model_podcast.links.back" />]</f:link.action>  
+</f:section>

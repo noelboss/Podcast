@@ -1,0 +1,27 @@
+
+			<item>
+				<title>{episode.title}</title>    
+				<f:if condition="{itunes}">
+					<f:then>
+				<itunes:author>{episode.author.name}</itunes:author>
+				<itunes:subtitle>{episode.author.description}</itunes:subtitle>
+				<itunes:summary>
+					{episode.description} 
+				</itunes:summary>                                                       
+				<itunes:duration><f:format.date date="{episode.duration}" format="H:i:s" /></itunes:duration>
+				<itunes:keywords>{episode.keywords}</itunes:keywords>   
+					</f:then>    
+					<f:else>   
+				<author>{episode.author.name}</author>
+				<subtitle>{episode.author.description}</subtitle>
+				<summary>
+					{episode.description} 
+				</summary>                                                       
+				<duration><f:format.date date="{episode.duration}" format="H:i:s" /></duration>
+				<keywords>{episode.keywords}</keywords> 
+					</f:else>
+				</f:if>        
+				<enclosure url="{f:uri.resource(path: episode.file, absolute: 'true')}" length="8727310" type="audio/mpeg" />
+				<guid>{f:uri.resource(path: episode.file, absolute: 'true')}</guid>  
+				<pubDate><f:format.date date="{episode.publicationDate}" format="r" /></pubDate>
+			</item>

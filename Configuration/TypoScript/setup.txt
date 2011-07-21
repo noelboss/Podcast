@@ -1,0 +1,52 @@
+plugin.tx_podcast {
+	settings {
+		
+	}
+	view {
+		templateRootPath = {$plugin.tx_podcast.view.templateRootPath}
+		partialRootPath = {$plugin.tx_podcast.view.partialRootPath}
+		layoutRootPath = {$plugin.tx_podcast.view.layoutRootPath}
+	} 
+	persistence {
+		storagePid = {$plugin.tx_podcast.persistance.storagePid} 
+	}
+}
+
+plugin.tx_podcast._CSS_DEFAULT_STYLE (
+	input.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	.tx-podcast-pi1 table {
+		border-collapse:separate;
+		border-spacing:10px;
+	}
+
+	.tx-podcast-pi1 table th {
+		font-weight:bold;
+	}
+
+	.tx-podcast-pi1 table td {
+		vertical-align:top;
+	}
+)
+
+page.includeCSS { 
+	tx_podcast_file_1 = EXT:podcast/Resources/Public/Styles/default.css
+}              
+
+xml = PAGE
+xml {
+    typeNum = 987
+
+	10 < tt_content.list.20.podcast_pi1
+	
+	config {
+		disableAllHeaderCode = 1
+		additionalHeaders = Content-type:application/xml
+		no_cache = 0
+		xhtml_cleaning = 0                              
+		adminPanel=0
+	}	
+}

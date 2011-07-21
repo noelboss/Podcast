@@ -1,0 +1,8 @@
+- XML Ausgabe erstellen
+- Bild im XML skalieren
+- Category Fixen
+- guid in XML
+- Analyse der File, Filesize und Fily-Type
+- Flash Fallback
+- html5 Video Unterstützung
+- Taggs adden

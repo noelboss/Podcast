@@ -1,0 +1,15 @@
+<div class="episode {zebraClass}">     
+	<div class="preview">
+		<audio src="{episode.file}" controls="controls">
+		Your browser does not support the audio element.
+		</audio>   
+		<p>
+			<strong>Duration:</strong>
+			<f:format.date date="{episode.duration}" format="H:i:s" />
+		</p>
+	</div>
+	<div class="description">    
+		<h3>{episode.title}<span><f:format.date date="{episode.publicationDate}" format="d.m.Y" /></span></h3>	           
+		{episode.description}
+	</div>
+</div>
