@@ -91,8 +91,11 @@ class Tx_Podcast_Controller_PodcastController extends Tx_Extbase_MVC_Controller_
 	 * @return void
 	 */
 	public function showAction(Tx_Podcast_Domain_Model_Podcast $podcast) {
+		if($this->settings['feed']){  
+			$this->request->setFormat('xml');
+		}
+		
 		$this->view->assign('podcast', $podcast);
 	}
-
 }
 ?>

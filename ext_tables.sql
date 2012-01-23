@@ -58,6 +58,7 @@ CREATE TABLE tx_podcast_domain_model_episode (
 	title varchar(255) DEFAULT '' NOT NULL,
 	description varchar(255) DEFAULT '' NOT NULL,
 	file varchar(255) DEFAULT '' NOT NULL,
+	filetype varchar(255) DEFAULT '' NOT NULL,
 	publication_date int(11) DEFAULT '0' NOT NULL,
 	duration int(11) DEFAULT '0' NOT NULL,
 	website int(11) unsigned DEFAULT '0',

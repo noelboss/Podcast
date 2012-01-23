@@ -1,14 +1,14 @@
 plugin.tx_podcast {
 	view {
 		 # cat=plugin.tx_podcast/file; type=string; label=Path to template root (FE)
-		templateRootPath = EXT:sjr_offers/Resources/Private/Templates/
+		templateRootPath = EXT:podcast/Resources/Private/Templates/
 		 # cat=plugin.tx_podcast/file; type=string; label=Path to template partials (FE)
-		partialRootPath = EXT:sjr_offers/Resources/Private/Partials/
+		partialRootPath = EXT:podcast/Resources/Private/Partials/
 		 # cat=plugin.tx_podcast/file; type=string; label=Path to template layouts (FE)
-		layoutRootPath = EXT:sjr_offers/Resources/Private/Layouts/
+		layoutRootPath = EXT:podcast/Resources/Private/Layouts/
 	}
 	persistence {
 		 # cat=plugin.tx_podcast//a; type=int+; label=Default storage PID
-		storagePid = 2
+		storagePid = 73
 	}
 }

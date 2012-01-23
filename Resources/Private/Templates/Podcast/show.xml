@@ -34,7 +34,7 @@
 		<f:if condition="{podcast.episodes}">
 			<f:then>
 				<f:for each="{podcast.episodes}" as="episode" reverse="false">
-					<f:render partial="episode" arguments="{episode: episode, itunes: podcast.itunes}" />					
+					<f:render partial="episode" arguments="{episode: episode, itunes: podcast.itunes}" />
 				</f:for>
 			</f:then>
 		</f:if>        

@@ -20,8 +20,9 @@
 				<duration><f:format.date date="{episode.duration}" format="H:i:s" /></duration>
 				<keywords>{episode.keywords}</keywords> 
 					</f:else>
-				</f:if>        
-				<enclosure url="{f:uri.resource(path: episode.file, absolute: 'true')}" length="8727310" type="audio/mpeg" />
+				</f:if>                        
+				
+				<enclosure url="{f:uri.resource(path: episode.file, absolute: 'true')}" length="{f:format.date(date: episode.duration, format:'s')}" type="audio/mpeg" />
 				<guid>{f:uri.resource(path: episode.file, absolute: 'true')}</guid>  
 				<pubDate><f:format.date date="{episode.publicationDate}" format="r" /></pubDate>
 			</item>

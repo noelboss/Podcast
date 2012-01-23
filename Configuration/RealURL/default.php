@@ -1,0 +1,103 @@
+<?php
+
+$TYPO3_CONF_VARS['EXTCONF']['realurl']['_DEFAULT']['postVarSets']['_DEFAULT']['category'] = array(
+    array(
+        'GETvar' => 'tx_podcast_display[category]',
+        'lookUpTable' => array(
+             'table' => 'tx_podcast_display_domain_model_category',
+             'id_field' => 'uid',
+             'alias_field' => 'name',
+             'addWhereClause' => ' AND parent = 0 AND NOT deleted AND NOT hidden',
+             'useUniqueCache' => 1,
+             'useUniqueCache_conf' => array(
+                 'strtolower' => 1,
+                 'spaceCharacter' => '-',
+             ),
+        )
+    ),
+    array(
+        'GETvar' => 'tx_podcast_display[subcategory]',
+        'lookUpTable' => array(
+             'table' => 'tx_podcast_display_domain_model_category',
+             'id_field' => 'uid',
+             'alias_field' => 'name',
+             'addWhereClause' => ' AND parent != 0 AND NOT deleted AND NOT hidden',
+             'useUniqueCache' => 1,
+             'useUniqueCache_conf' => array(
+                 'strtolower' => 1,
+                 'spaceCharacter' => '-',
+             ),
+        )
+    ),
+);
+
+$TYPO3_CONF_VARS['EXTCONF']['realurl']['_DEFAULT']['postVarSets']['_DEFAULT']['display'] = array(
+    array(
+        'GETvar' => 'tx_podcast_display[controller]',
+        'valueMap' => array(
+            'podcast' => 'Podcast',
+        ),
+    ),
+    array(
+        'GETvar' => 'tx_podcast_display[action]'
+    ),
+    array(
+        'GETvar' => 'tx_podcast_display[podcast]',
+        'lookUpTable' => array(
+             'table' => 'tx_podcast_domain_model_podcast',
+             'id_field' => 'uid',
+             'alias_field' => 'title',
+             'addWhereClause' => ' AND NOT deleted AND NOT hidden',
+             'useUniqueCache' => 1,
+             'useUniqueCache_conf' => array(
+                 'strtolower' => 1,
+                 'spaceCharacter' => '-',
+             ),
+        )
+    ),
+	array(
+	    'GETvar' => 'tx_podcast_display[format]'
+	), 
+);       
+
+array_push($TYPO3_CONF_VARS['EXTCONF']['realurl']['_DEFAULT']['preVars'],   
+
+array(
+	'GETvar' => 'type',
+	'valueMap' => array(
+		'xml' => '23456689564'
+	),
+	'noMatch' => 'bypass',
+)
+);
+
+$TYPO3_CONF_VARS['EXTCONF']['realurl']['_DEFAULT']['postVarSets']['_DEFAULT']['feed'] = array(
+    array(
+        'GETvar' => 'tx_podcast_feed[controller]',
+        'valueMap' => array(
+            'podcast' => 'Podcast',
+        ),
+    ),
+    array(
+        'GETvar' => 'tx_podcast_feed[action]'
+    ),
+    array(
+        'GETvar' => 'tx_podcast_feed[podcast]',
+        'lookUpTable' => array(
+             'table' => 'tx_podcast_domain_model_podcast',
+             'id_field' => 'uid',
+             'alias_field' => 'title',
+             'addWhereClause' => ' AND NOT deleted AND NOT hidden',
+             'useUniqueCache' => 1,
+             'useUniqueCache_conf' => array(
+                 'strtolower' => 1,
+                 'spaceCharacter' => '-',
+             ),
+        )
+    ),
+	array(
+	    'GETvar' => 'tx_podcast_feed[format]'
+	), 
+);
+
+?>
