@@ -4,10 +4,10 @@ if (!defined ('TYPO3_MODE'))	die ('Access denied.');
 $TCA['tx_podcast_domain_model_episode'] = array(
 	'ctrl' => $TCA['tx_podcast_domain_model_episode']['ctrl'],
 	'interface' => array(
-		'showRecordFieldList' => 'title,description,file,publication_date,duration,website,author'
+		'showRecordFieldList' => 'title,description,file,publication_date,duration,mime,website,author'
 	),
 	'types' => array(
-		'1' => array('showitem' => 'title,description,file,publication_date,duration,website,author')
+		'1' => array('showitem' => 'title,description,file,publication_date,duration,mime,website,author')
 	),
 	'palettes' => array(
 		'1' => array('showitem' => '')
@@ -131,6 +131,18 @@ $TCA['tx_podcast_domain_model_episode'] = array(
 				'size'	   => '12',
 				'max'	   => '20',
 				'eval'	   => 'timesec,required',
+				'checkbox' => '0',
+				'default'  => '0'
+			)
+		),
+		'mime' => array(
+			'exclude' => 0,
+			'label'	  => 'LLL:EXT:podcast/Resources/Private/Language/locallang_db.xml:tx_podcast_domain_model_episode.mime',
+			'config' => array (
+				'type'	   => 'none',
+				'size'	   => '12',
+				'max'	   => '20',
+				'eval'	   => 'trim',
 				'checkbox' => '0',
 				'default'  => '0'
 			)
