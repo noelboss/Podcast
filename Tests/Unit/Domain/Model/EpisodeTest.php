@@ -125,6 +125,23 @@ class Tx_Podcast_Domain_Model_EpisodeTest extends Tx_Extbase_Tests_Unit_BaseTest
 	/**
 	 * @test
 	 */
+	public function getMimeReturnsInitialValueForString() { }
+
+	/**
+	 * @test
+	 */
+	public function setMimeForStringSetsMime() { 
+		$this->fixture->setMime('Conceived at T3CON10');
+
+		$this->assertSame(
+			'Conceived at T3CON10',
+			$this->fixture->getMime()
+		);
+	}
+	
+	/**
+	 * @test
+	 */
 	public function getWebsiteReturnsInitialValueForTx_Podcast_Domain_Model_Website() { 
 		$this->assertEquals(
 			NULL,

@@ -139,6 +139,28 @@ class Tx_Podcast_Domain_Model_PodcastTest extends Tx_Extbase_Tests_Unit_BaseTest
 	/**
 	 * @test
 	 */
+	public function getItunesReturnsInitialValueForBoolean() { 
+		$this->assertSame(
+			TRUE,
+			$this->fixture->getItunes()
+		);
+	}
+
+	/**
+	 * @test
+	 */
+	public function setItunesForBooleanSetsItunes() { 
+		$this->fixture->setItunes(TRUE);
+
+		$this->assertSame(
+			TRUE,
+			$this->fixture->getItunes()
+		);
+	}
+	
+	/**
+	 * @test
+	 */
 	public function getCategoriesReturnsInitialValueForObjectStorageContainingTx_Podcast_Domain_Model_Category() { 
 		$newObjectStorage = new Tx_Extbase_Persistence_ObjectStorage();
 		$this->assertEquals(

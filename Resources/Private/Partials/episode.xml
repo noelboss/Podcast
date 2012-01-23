@@ -21,8 +21,7 @@
 				<keywords>{episode.keywords}</keywords> 
 					</f:else>
 				</f:if>                        
-				
-				<enclosure url="{f:uri.resource(path: episode.file, absolute: 'true')}" length="{f:format.date(date: episode.duration, format:'s')}" type="audio/mpeg" />
+				<enclosure url="{f:uri.resource(path: episode.file, absolute: 'true')}" length="{f:format.date(date: episode.duration, format:'s')}" type="{episode.mime}" />
 				<guid>{f:uri.resource(path: episode.file, absolute: 'true')}</guid>  
 				<pubDate><f:format.date date="{episode.publicationDate}" format="r" /></pubDate>
 			</item>

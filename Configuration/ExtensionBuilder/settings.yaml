@@ -42,10 +42,10 @@ emConf:
 
 overwriteSettings:
   Classes:
-    Controller: merge
+    Controller: keep
     Domain:
       Model: merge
-      Repository: merge
+      Repository: keep
 
   Configuration:
     #TCA: merge
@@ -55,13 +55,13 @@ overwriteSettings:
     Private:
       Language:
         #locallang.xml: merge
-      #Templates: keep
+      Templates: keep
 
   ext_icon.gif: keep
 
-#  ext_localconf.php: merge
+  ext_localconf.php: merge
 
-#  ext_tables.php: merge
+  ext_tables.php: merge
 
 #  ext_tables.sql: merge
 

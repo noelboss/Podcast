@@ -73,6 +73,13 @@ class Tx_Podcast_Domain_Model_Podcast extends Tx_Extbase_DomainObject_AbstractEn
 	protected $image;
 
 	/**
+	 * iTunes optimized
+	 *
+	 * @var boolean
+	 */
+	protected $itunes;
+
+	/**
 	 * categories
 	 *
 	 * @var Tx_Extbase_Persistence_ObjectStorage<Tx_Podcast_Domain_Model_Category>
@@ -226,6 +233,34 @@ class Tx_Podcast_Domain_Model_Podcast extends Tx_Extbase_DomainObject_AbstractEn
 	 */
 	public function setImage($image) {
 		$this->image = $image;
+	}
+
+	/**
+	 * Returns the itunes
+	 *
+	 * @return boolean $itunes
+	 */
+	public function getItunes() {
+		return $this->itunes;
+	}
+
+	/**
+	 * Sets the itunes
+	 *
+	 * @param boolean $itunes
+	 * @return void
+	 */
+	public function setItunes($itunes) {
+		$this->itunes = $itunes;
+	}
+
+	/**
+	 * Returns the boolean state of itunes
+	 *
+	 * @return boolean
+	 */
+	public function isItunes() {
+		return $this->getItunes();
 	}
 
 	/**

@@ -12,6 +12,7 @@
 			<label index="file.description">File</label>
 			<label index="publication_date.description">Publication Date</label>
 			<label index="duration.description">Duration</label>
+			<label index="mime.description">mime</label>
 			<label index="website.description">website</label>
 			<label index="author.description">author</label>
 		</languageKey>

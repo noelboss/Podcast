@@ -12,6 +12,7 @@
 			<label index="description.description">Description</label>
 			<label index="copyright.description">Copyright</label>
 			<label index="image.description">Image</label>
+			<label index="itunes.description">iTunes optimized</label>
 			<label index="categories.description">categories</label>
 			<label index="episodes.description">episodes</label>
 			<label index="author.description">author</label>

@@ -73,6 +73,13 @@ class Tx_Podcast_Domain_Model_Episode extends Tx_Extbase_DomainObject_AbstractEn
 	protected $duration;
 
 	/**
+	 * mime
+	 *
+	 * @var string
+	 */
+	protected $mime;
+
+	/**
 	 * website
 	 *
 	 * @var Tx_Podcast_Domain_Model_Website
@@ -188,6 +195,25 @@ class Tx_Podcast_Domain_Model_Episode extends Tx_Extbase_DomainObject_AbstractEn
 	 */
 	public function setDuration($duration) {
 		$this->duration = $duration;
+	}
+
+	/**
+	 * Returns the mime
+	 *
+	 * @return string $mime
+	 */
+	public function getMime() {
+		return $this->mime;
+	}
+
+	/**
+	 * Sets the mime
+	 *
+	 * @param string $mime
+	 * @return void
+	 */
+	public function setMime($mime) {
+		$this->mime = $mime;
 	}
 
 	/**
