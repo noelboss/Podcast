@@ -1,89 +1,113 @@
 <?php
 
 /***************************************************************
-*  Copyright notice
-*
-*  (c) 2010 Noël Bossart <n dot company at me dot com>, noelboss.ch
-*  			
-*  All rights reserved
-*
-*  This script is part of the TYPO3 project. The TYPO3 project is
-*  free software; you can redistribute it and/or modify
-*  it under the terms of the GNU General Public License as published by
-*  the Free Software Foundation; either version 2 of the License, or
-*  (at your option) any later version.
-*
-*  The GNU General Public License can be found at
-*  http://www.gnu.org/copyleft/gpl.html.
-*
-*  This script is distributed in the hope that it will be useful,
-*  but WITHOUT ANY WARRANTY; without even the implied warranty of
-*  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-*  GNU General Public License for more details.
-*
-*  This copyright notice MUST APPEAR in all copies of the script!
-***************************************************************/
+ *  Copyright notice
+ *
+ *  (c) 2012 Noël Bossart <n dot company at me dot com>, noelboss.ch
+ *  
+ *  All rights reserved
+ *
+ *  This script is part of the TYPO3 project. The TYPO3 project is
+ *  free software; you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation; either version 3 of the License, or
+ *  (at your option) any later version.
+ *
+ *  The GNU General Public License can be found at
+ *  http://www.gnu.org/copyleft/gpl.html.
+ *
+ *  This script is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  This copyright notice MUST APPEAR in all copies of the script!
+ ***************************************************************/
+
 
 /**
- * Podcast Episode
  *
- * @version $Id$
- * @copyright Copyright belongs to the respective authors
- * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
+ *
+ * @package podcast
+ * @license http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License, version 3 or later
+ *
  */
 class Tx_Podcast_Domain_Model_Episode extends Tx_Extbase_DomainObject_AbstractEntity {
-	
+
 	/**
 	 * Title
+	 *
 	 * @var string
 	 * @validate NotEmpty
 	 */
 	protected $title;
-	
+
 	/**
 	 * Description
+	 *
 	 * @var string
 	 * @validate NotEmpty
 	 */
 	protected $description;
-	
+
 	/**
 	 * File
+	 *
 	 * @var string
 	 * @validate NotEmpty
 	 */
 	protected $file;
-	
+
 	/**
 	 * Publication Date
-	 * @var integer
+	 *
+	 * @var DateTime
 	 */
 	protected $publicationDate;
-	
+
 	/**
 	 * Duration
-	 * @var integer
+	 *
+	 * @var DateTime
 	 */
 	protected $duration;
-	
+
 	/**
 	 * website
+	 *
 	 * @var Tx_Podcast_Domain_Model_Website
 	 */
 	protected $website;
-	
+
 	/**
 	 * author
+	 *
 	 * @var Tx_Podcast_Domain_Model_Person
 	 */
 	protected $author;
-	
-	
-	
+
 	/**
-	 * Setter for title
+	 * __construct
 	 *
-	 * @param string $title Title
+	 * @return void
+	 */
+	public function __construct() {
+
+	}
+
+	/**
+	 * Returns the title
+	 *
+	 * @return string $title
+	 */
+	public function getTitle() {
+		return $this->title;
+	}
+
+	/**
+	 * Sets the title
+	 *
+	 * @param string $title
 	 * @return void
 	 */
 	public function setTitle($title) {
@@ -91,18 +115,18 @@ class Tx_Podcast_Domain_Model_Episode extends Tx_Extbase_DomainObject_AbstractEn
 	}
 
 	/**
-	 * Getter for title
+	 * Returns the description
 	 *
-	 * @return string Title
+	 * @return string $description
 	 */
-	public function getTitle() {
-		return $this->title;
+	public function getDescription() {
+		return $this->description;
 	}
-	
+
 	/**
-	 * Setter for description
+	 * Sets the description
 	 *
-	 * @param string $description Description
+	 * @param string $description
 	 * @return void
 	 */
 	public function setDescription($description) {
@@ -110,18 +134,18 @@ class Tx_Podcast_Domain_Model_Episode extends Tx_Extbase_DomainObject_AbstractEn
 	}
 
 	/**
-	 * Getter for description
+	 * Returns the file
 	 *
-	 * @return string Description
+	 * @return string $file
 	 */
-	public function getDescription() {
-		return $this->description;
+	public function getFile() {
+		return $this->file;
 	}
-	
+
 	/**
-	 * Setter for file
+	 * Sets the file
 	 *
-	 * @param string $file File
+	 * @param string $file
 	 * @return void
 	 */
 	public function setFile($file) {
@@ -129,28 +153,18 @@ class Tx_Podcast_Domain_Model_Episode extends Tx_Extbase_DomainObject_AbstractEn
 	}
 
 	/**
-	 * Getter for file
+	 * Returns the publicationDate
 	 *
-	 * @return string File
+	 * @return DateTime $publicationDate
 	 */
-	public function getFile() {
-		return $this->file;
-	} 
-	
+	public function getPublicationDate() {
+		return $this->publicationDate;
+	}
+
 	/**
-	 * Getter for File Size
+	 * Sets the publicationDate
 	 *
-	 * @return string File Size
-	 */
-	public function getFilesize() {
-		return stat($this->getFile());
-	}    
-	
-	
-	/**
-	 * Setter for publicationDate
-	 *
-	 * @param integer $publicationDate Publication Date
+	 * @param DateTime $publicationDate
 	 * @return void
 	 */
 	public function setPublicationDate($publicationDate) {
@@ -158,18 +172,18 @@ class Tx_Podcast_Domain_Model_Episode extends Tx_Extbase_DomainObject_AbstractEn
 	}
 
 	/**
-	 * Getter for publicationDate
+	 * Returns the duration
 	 *
-	 * @return integer Publication Date
+	 * @return DateTime $duration
 	 */
-	public function getPublicationDate() {
-		return date('r', $this->publicationDate);
+	public function getDuration() {
+		return $this->duration;
 	}
-	
+
 	/**
-	 * Setter for duration
+	 * Sets the duration
 	 *
-	 * @param integer $duration Duration
+	 * @param DateTime $duration
 	 * @return void
 	 */
 	public function setDuration($duration) {
@@ -177,18 +191,18 @@ class Tx_Podcast_Domain_Model_Episode extends Tx_Extbase_DomainObject_AbstractEn
 	}
 
 	/**
-	 * Getter for duration
+	 * Returns the website
 	 *
-	 * @return integer Duration
+	 * @return Tx_Podcast_Domain_Model_Website $website
 	 */
-	public function getDuration() {
-		return date('r', $this->duration);
+	public function getWebsite() {
+		return $this->website;
 	}
-	
+
 	/**
-	 * Setter for website
+	 * Sets the website
 	 *
-	 * @param Tx_Podcast_Domain_Model_Website $website website
+	 * @param Tx_Podcast_Domain_Model_Website $website
 	 * @return void
 	 */
 	public function setWebsite(Tx_Podcast_Domain_Model_Website $website) {
@@ -196,32 +210,23 @@ class Tx_Podcast_Domain_Model_Episode extends Tx_Extbase_DomainObject_AbstractEn
 	}
 
 	/**
-	 * Getter for website
+	 * Returns the author
 	 *
-	 * @return Tx_Podcast_Domain_Model_Website website
+	 * @return Tx_Podcast_Domain_Model_Person $author
 	 */
-	public function getWebsite() {
-		return $this->website;
+	public function getAuthor() {
+		return $this->author;
 	}
-	
+
 	/**
-	 * Setter for author
+	 * Sets the author
 	 *
-	 * @param Tx_Podcast_Domain_Model_Person $author author
+	 * @param Tx_Podcast_Domain_Model_Person $author
 	 * @return void
 	 */
 	public function setAuthor(Tx_Podcast_Domain_Model_Person $author) {
 		$this->author = $author;
 	}
 
-	/**
-	 * Getter for author
-	 *
-	 * @return Tx_Podcast_Domain_Model_Person author
-	 */
-	public function getAuthor() {
-		return $this->author;
-	}
-	
 }
 ?>

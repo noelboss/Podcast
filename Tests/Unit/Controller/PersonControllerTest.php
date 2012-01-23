@@ -4,13 +4,13 @@
  *  Copyright notice
  *
  *  (c) 2012 Noël Bossart <n dot company at me dot com>, noelboss.ch
- *  
+ *  			
  *  All rights reserved
  *
  *  This script is part of the TYPO3 project. The TYPO3 project is
  *  free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation; either version 3 of the License, or
+ *  the Free Software Foundation; either version 2 of the License, or
  *  (at your option) any later version.
  *
  *  The GNU General Public License can be found at
@@ -24,50 +24,37 @@
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
-
 /**
+ * Test case for class Tx_Podcast_Controller_PersonController.
  *
+ * @version $Id$
+ * @copyright Copyright belongs to the respective authors
+ * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  *
- * @package podcast
- * @license http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License, version 3 or later
+ * @package TYPO3
+ * @subpackage Podcast
  *
+ * @author Noël Bossart <n dot company at me dot com>
  */
-class Tx_Podcast_Domain_Model_Website extends Tx_Extbase_DomainObject_AbstractValueObject {
-
+class Tx_Podcast_Controller_PersonControllerTest extends Tx_Extbase_Tests_Unit_BaseTestCase {
 	/**
-	 * Title
-	 *
-	 * @var string
-	 * @validate NotEmpty
+	 * @var Tx_Podcast_Domain_Model_Person
 	 */
-	protected $title;
+	protected $fixture;
 
-	/**
-	 * __construct
-	 *
-	 * @return void
-	 */
-	public function __construct() {
+	public function setUp() {
+		$this->fixture = new Tx_Podcast_Domain_Model_Person();
+	}
 
+	public function tearDown() {
+		unset($this->fixture);
 	}
 
 	/**
-	 * Returns the title
-	 *
-	 * @return string $title
+	 * @test
 	 */
-	public function getTitle() {
-		return $this->title;
-	}
-
-	/**
-	 * Sets the title
-	 *
-	 * @param string $title
-	 * @return void
-	 */
-	public function setTitle($title) {
-		$this->title = $title;
+	public function dummyMethod() {
+		$this->markTestIncomplete();
 	}
 
 }

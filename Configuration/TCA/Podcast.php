@@ -133,23 +133,36 @@ $TCA['tx_podcast_domain_model_podcast'] = array(
 		'categories' => array(
 			'exclude' => 0,
 			'label'   => 'LLL:EXT:podcast/Resources/Private/Language/locallang_db.xml:tx_podcast_domain_model_podcast.categories',
-			'config'  => array(
-				'type' => 'inline',
+			'config' => array(
+				'type' => 'select',  
+				'size' => 2,
+				'autoSizeMax' => 3,
 				'foreign_table' => 'tx_podcast_domain_model_category',
-				'minitems' => 1,
-				'maxitems' => 1,    
-				'eval' => 'trim,required',
-				'appearance' => array(
-					'collapse' => 0,
-					'newRecordLinkPosition' => 'top', 
-					'enabledControls' => array(
-						'dragdrop' => 0,
-						'info' => 0,
-						'hide' => 0,
-					),
-				),                       
-
-			)
+				'foreign_table_where' => 'AND tx_podcast_domain_model_website.pid=###CURRENT_PID###',
+				'wizards' => array(
+		             '_PADDING' => 1,
+		             '_VERTICAL' => 0,
+		             'edit' => array(
+		                 'type' => 'popup',
+		                 'title' => 'Edit',
+		                 'script' => 'wizard_edit.php',
+		                 'icon' => 'edit2.gif',
+		                 'popup_onlyOpenIfSelected' => 1,
+		                 'JSopenParams' => 'height=650,width=650,status=0,menubar=0,scrollbars=1',
+		             ),
+		             'add' => array(
+		                 'type' => 'script',
+		                 'title' => 'Create New Website',
+		                 'icon' => 'add.gif',
+		                 'params' => array(
+		                     'table'=>'tx_podcast_domain_model_website',
+		                     'pid' => '###CURRENT_PID###',
+		                     'setValue' => 'prepend'
+		                 ),
+		                 'script' => 'wizard_add.php',
+		             ),
+		         ),
+			),
 		),
 		'author' => array(
 			'exclude' => 0,
@@ -221,25 +234,40 @@ $TCA['tx_podcast_domain_model_podcast'] = array(
 		         ),
 			),
 		),
-		'website' => array(
-			'exclude' => 0,
-			'label'   => 'LLL:EXT:podcast/Resources/Private/Language/locallang_db.xml:tx_podcast_domain_model_podcast.website',
-			'config'  => array(
-				'type' => 'inline',
-				'foreign_table' => 'tx_podcast_domain_model_website',
-				'maxitems'      => 1,       
-				'appearance' => array(
-					'collapse' => 1, 
-					'enabledControls' => array(
-						'dragdrop' => 0,
-						'info' => 0, 
-						'show' => 0,
-						'hide' => 0,
-					),
-					'newRecordLinkPosition' => 'top',
-				),
-			)
-		), 
+	'website' => array(
+		'exclude' => 0,
+		'label'   => 'LLL:EXT:podcast/Resources/Private/Language/locallang_db.xml:tx_podcast_domain_model_podcast.website',
+		'config' => array(
+			'type' => 'select',  
+			'size' => 2,
+			'autoSizeMax' => 3,
+			'foreign_table' => 'tx_podcast_domain_model_website',
+			'foreign_table_where' => 'AND tx_podcast_domain_model_website.pid=###CURRENT_PID###',
+			'wizards' => array(
+	             '_PADDING' => 1,
+	             '_VERTICAL' => 0,
+	             'edit' => array(
+	                 'type' => 'popup',
+	                 'title' => 'Edit',
+	                 'script' => 'wizard_edit.php',
+	                 'icon' => 'edit2.gif',
+	                 'popup_onlyOpenIfSelected' => 1,
+	                 'JSopenParams' => 'height=650,width=650,status=0,menubar=0,scrollbars=1',
+	             ),
+	             'add' => array(
+	                 'type' => 'script',
+	                 'title' => 'Create New Website',
+	                 'icon' => 'add.gif',
+	                 'params' => array(
+	                     'table'=>'tx_podcast_domain_model_website',
+	                     'pid' => '###CURRENT_PID###',
+	                     'setValue' => 'prepend'
+	                 ),
+	                 'script' => 'wizard_add.php',
+	             ),
+	         ),
+		),
+	),
 		'itunes' => Array (
 			'exclude' => 1,
 			'label'   => 'LLL:EXT:podcast/Resources/Private/Language/locallang_db.xml:tx_podcast_domain_model_podcast.itunes',

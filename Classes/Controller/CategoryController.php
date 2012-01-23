@@ -1,65 +1,81 @@
 <?php
 
 /***************************************************************
-*  Copyright notice
-*
-*  (c) 2010 Noël Bossart <n dot company at me dot com>, noelboss.ch
-*  			
-*  All rights reserved
-*
-*  This script is part of the TYPO3 project. The TYPO3 project is
-*  free software; you can redistribute it and/or modify
-*  it under the terms of the GNU General Public License as published by
-*  the Free Software Foundation; either version 2 of the License, or
-*  (at your option) any later version.
-*
-*  The GNU General Public License can be found at
-*  http://www.gnu.org/copyleft/gpl.html.
-*
-*  This script is distributed in the hope that it will be useful,
-*  but WITHOUT ANY WARRANTY; without even the implied warranty of
-*  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-*  GNU General Public License for more details.
-*
-*  This copyright notice MUST APPEAR in all copies of the script!
-***************************************************************/
+ *  Copyright notice
+ *
+ *  (c) 2012 Noël Bossart <n dot company at me dot com>, noelboss.ch
+ *  
+ *  All rights reserved
+ *
+ *  This script is part of the TYPO3 project. The TYPO3 project is
+ *  free software; you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation; either version 3 of the License, or
+ *  (at your option) any later version.
+ *
+ *  The GNU General Public License can be found at
+ *  http://www.gnu.org/copyleft/gpl.html.
+ *
+ *  This script is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  This copyright notice MUST APPEAR in all copies of the script!
+ ***************************************************************/
+
 
 /**
- * Controller for the Category object
  *
- * @version $Id$
- * @copyright Copyright belongs to the respective authors
- * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
+ *
+ * @package podcast
+ * @license http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License, version 3 or later
+ *
  */
+class Tx_Podcast_Controller_CategoryController extends Tx_Extbase_MVC_Controller_ActionController {
 
-// TODO: As your extension matures, you should use Tx_Extbase_MVC_Controller_ActionController as base class, instead of the ScaffoldingController used below.
-class Tx_Podcast_Controller_CategoryController extends Tx_ExtbaseKickstarter_Scaffolding_AbstractScaffoldingController {
-	
-
-	
 	/**
-	 * list action
+	 * action list
 	 *
-	 * @return string The rendered list action
+	 * @return void
 	 */
 	public function listAction() {
+		$categories = $this->categoryRepository->findAll();
+		$this->view->assign('categories', $categories);
 	}
-	
+
 	/**
-	 * create action
+	 * action new
 	 *
-	 * @return string The rendered create action
+	 * @param $newCategory
+	 * @dontvalidate $newCategory
+	 * @return void
 	 */
-	public function createAction() {
+	public function newAction(Tx_Podcast_Domain_Model_Category $newCategory = NULL) {
+		$this->view->assign('newCategory', $newCategory);
 	}
-	
+
 	/**
-	 * edit action
+	 * action create
 	 *
-	 * @return string The rendered edit action
+	 * @param $newCategory
+	 * @return void
 	 */
-	public function editAction() {
+	public function createAction(Tx_Podcast_Domain_Model_Category $newCategory) {
+		$this->categoryRepository->add($newCategory);
+		$this->flashMessageContainer->add('Your new Category was created.');
+		$this->redirect('list');
 	}
-	
+
+	/**
+	 * action show
+	 *
+	 * @param $category
+	 * @return void
+	 */
+	public function showAction(Tx_Podcast_Domain_Model_Category $category) {
+		$this->view->assign('category', $category);
+	}
+
 }
 ?>

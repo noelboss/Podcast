@@ -1,119 +1,151 @@
 <?php
 
 /***************************************************************
-*  Copyright notice
-*
-*  (c) 2010 Noël Bossart <n dot company at me dot com>, noelboss.ch
-*  			
-*  All rights reserved
-*
-*  This script is part of the TYPO3 project. The TYPO3 project is
-*  free software; you can redistribute it and/or modify
-*  it under the terms of the GNU General Public License as published by
-*  the Free Software Foundation; either version 2 of the License, or
-*  (at your option) any later version.
-*
-*  The GNU General Public License can be found at
-*  http://www.gnu.org/copyleft/gpl.html.
-*
-*  This script is distributed in the hope that it will be useful,
-*  but WITHOUT ANY WARRANTY; without even the implied warranty of
-*  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-*  GNU General Public License for more details.
-*
-*  This copyright notice MUST APPEAR in all copies of the script!
-***************************************************************/
+ *  Copyright notice
+ *
+ *  (c) 2012 Noël Bossart <n dot company at me dot com>, noelboss.ch
+ *  
+ *  All rights reserved
+ *
+ *  This script is part of the TYPO3 project. The TYPO3 project is
+ *  free software; you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation; either version 3 of the License, or
+ *  (at your option) any later version.
+ *
+ *  The GNU General Public License can be found at
+ *  http://www.gnu.org/copyleft/gpl.html.
+ *
+ *  This script is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  This copyright notice MUST APPEAR in all copies of the script!
+ ***************************************************************/
+
 
 /**
- * This is a podcast
  *
- * @version $Id$
- * @copyright Copyright belongs to the respective authors
- * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
+ *
+ * @package podcast
+ * @license http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License, version 3 or later
+ *
  */
 class Tx_Podcast_Domain_Model_Podcast extends Tx_Extbase_DomainObject_AbstractEntity {
-	
+
 	/**
 	 * Title
+	 *
 	 * @var string
 	 * @validate NotEmpty
 	 */
 	protected $title;
-	
+
 	/**
 	 * Subtitle
+	 *
 	 * @var string
 	 * @validate NotEmpty
 	 */
 	protected $subtitle;
-	
+
 	/**
 	 * Description
+	 *
 	 * @var string
 	 * @validate NotEmpty
 	 */
 	protected $description;
-	
+
 	/**
 	 * Copyright
+	 *
 	 * @var string
 	 */
 	protected $copyright;
-	
+
 	/**
 	 * Image
+	 *
 	 * @var string
 	 */
 	protected $image;
-	
+
+	/**
+	 * categories
+	 *
+	 * @var Tx_Extbase_Persistence_ObjectStorage<Tx_Podcast_Domain_Model_Category>
+	 */
+	protected $categories;
+
 	/**
 	 * episodes
+	 *
 	 * @var Tx_Extbase_Persistence_ObjectStorage<Tx_Podcast_Domain_Model_Episode>
 	 */
 	protected $episodes;
-	
-	/**
-	 * category
-	 * @var Tx_Podcast_Domain_Model_Category
-	 */
-	protected $categories;
-	
+
 	/**
 	 * author
+	 *
 	 * @var Tx_Podcast_Domain_Model_Person
 	 */
 	protected $author;
-	
+
 	/**
 	 * technicalContact
+	 *
 	 * @var Tx_Podcast_Domain_Model_Person
 	 */
 	protected $technicalContact;
-	
+
 	/**
 	 * website
+	 *
 	 * @var Tx_Podcast_Domain_Model_Website
 	 */
-	protected $website;   
-	
+	protected $website;
+
 	/**
-	 * iTunes
-	 * @var string
-	 */
-	protected $itunes;
-	
-	/**
-	 * Constructor. Initializes all Tx_Extbase_Persistence_ObjectStorage instances.
-	 */
-	public function __construct($title) {
-		$this->episodes = new Tx_Extbase_Persistence_ObjectStorage();
-		$this->setTitle($title);
-	}
-	
-	/**
-	 * Setter for title
+	 * __construct
 	 *
-	 * @param string $title Title
+	 * @return void
+	 */
+	public function __construct() {
+		//Do not remove the next line: It would break the functionality
+		$this->initStorageObjects();
+	}
+
+	/**
+	 * Initializes all Tx_Extbase_Persistence_ObjectStorage properties.
+	 *
+	 * @return void
+	 */
+	protected function initStorageObjects() {
+		/**
+		 * Do not modify this method!
+		 * It will be rewritten on each save in the extension builder
+		 * You may modify the constructor of this class instead
+		 */
+		$this->categories = new Tx_Extbase_Persistence_ObjectStorage();
+		
+		$this->episodes = new Tx_Extbase_Persistence_ObjectStorage();
+	}
+
+	/**
+	 * Returns the title
+	 *
+	 * @return string $title
+	 */
+	public function getTitle() {
+		return $this->title;
+	}
+
+	/**
+	 * Sets the title
+	 *
+	 * @param string $title
 	 * @return void
 	 */
 	public function setTitle($title) {
@@ -121,18 +153,18 @@ class Tx_Podcast_Domain_Model_Podcast extends Tx_Extbase_DomainObject_AbstractEn
 	}
 
 	/**
-	 * Getter for title
+	 * Returns the subtitle
 	 *
-	 * @return string Title
+	 * @return string $subtitle
 	 */
-	public function getTitle() {
-		return $this->title;
+	public function getSubtitle() {
+		return $this->subtitle;
 	}
-	
+
 	/**
-	 * Setter for subtitle
+	 * Sets the subtitle
 	 *
-	 * @param string $subtitle Subtitle
+	 * @param string $subtitle
 	 * @return void
 	 */
 	public function setSubtitle($subtitle) {
@@ -140,18 +172,18 @@ class Tx_Podcast_Domain_Model_Podcast extends Tx_Extbase_DomainObject_AbstractEn
 	}
 
 	/**
-	 * Getter for subtitle
+	 * Returns the description
 	 *
-	 * @return string Subtitle
+	 * @return string $description
 	 */
-	public function getSubtitle() {
-		return $this->subtitle;
+	public function getDescription() {
+		return $this->description;
 	}
-	
+
 	/**
-	 * Setter for description
+	 * Sets the description
 	 *
-	 * @param string $description Description
+	 * @param string $description
 	 * @return void
 	 */
 	public function setDescription($description) {
@@ -159,18 +191,18 @@ class Tx_Podcast_Domain_Model_Podcast extends Tx_Extbase_DomainObject_AbstractEn
 	}
 
 	/**
-	 * Getter for description
+	 * Returns the copyright
 	 *
-	 * @return string Description
+	 * @return string $copyright
 	 */
-	public function getDescription() {
-		return $this->description;
+	public function getCopyright() {
+		return $this->copyright;
 	}
-	
+
 	/**
-	 * Setter for copyright
+	 * Sets the copyright
 	 *
-	 * @param string $copyright Copyright
+	 * @param string $copyright
 	 * @return void
 	 */
 	public function setCopyright($copyright) {
@@ -178,18 +210,18 @@ class Tx_Podcast_Domain_Model_Podcast extends Tx_Extbase_DomainObject_AbstractEn
 	}
 
 	/**
-	 * Getter for copyright
+	 * Returns the image
 	 *
-	 * @return string Copyright
+	 * @return string $image
 	 */
-	public function getCopyright() {
-		return str_replace('{year}', date('Y'), $this->copyright);
+	public function getImage() {
+		return $this->image;
 	}
-	
+
 	/**
-	 * Setter for image
+	 * Sets the image
 	 *
-	 * @param string $image Image
+	 * @param string $image
 	 * @return void
 	 */
 	public function setImage($image) {
@@ -197,18 +229,77 @@ class Tx_Podcast_Domain_Model_Podcast extends Tx_Extbase_DomainObject_AbstractEn
 	}
 
 	/**
-	 * Getter for image
+	 * Adds a Category
 	 *
-	 * @return string Image
+	 * @param Tx_Podcast_Domain_Model_Category $category
+	 * @return void
 	 */
-	public function getImage() {
-		return $this->image;
+	public function addCategory(Tx_Podcast_Domain_Model_Category $category) {
+		$this->categories->attach($category);
 	}
-	
+
 	/**
-	 * Setter for episodes
+	 * Removes a Category
 	 *
-	 * @param Tx_Extbase_Persistence_ObjectStorage<Tx_Podcast_Domain_Model_Episode> $episodes episodes
+	 * @param Tx_Podcast_Domain_Model_Category $categoryToRemove The Category to be removed
+	 * @return void
+	 */
+	public function removeCategory(Tx_Podcast_Domain_Model_Category $categoryToRemove) {
+		$this->categories->detach($categoryToRemove);
+	}
+
+	/**
+	 * Returns the categories
+	 *
+	 * @return Tx_Extbase_Persistence_ObjectStorage<Tx_Podcast_Domain_Model_Category> $categories
+	 */
+	public function getCategories() {
+		return $this->categories;
+	}
+
+	/**
+	 * Sets the categories
+	 *
+	 * @param Tx_Extbase_Persistence_ObjectStorage<Tx_Podcast_Domain_Model_Category> $categories
+	 * @return void
+	 */
+	public function setCategories(Tx_Extbase_Persistence_ObjectStorage $categories) {
+		$this->categories = $categories;
+	}
+
+	/**
+	 * Adds a Episode
+	 *
+	 * @param Tx_Podcast_Domain_Model_Episode $episode
+	 * @return void
+	 */
+	public function addEpisode(Tx_Podcast_Domain_Model_Episode $episode) {
+		$this->episodes->attach($episode);
+	}
+
+	/**
+	 * Removes a Episode
+	 *
+	 * @param Tx_Podcast_Domain_Model_Episode $episodeToRemove The Episode to be removed
+	 * @return void
+	 */
+	public function removeEpisode(Tx_Podcast_Domain_Model_Episode $episodeToRemove) {
+		$this->episodes->detach($episodeToRemove);
+	}
+
+	/**
+	 * Returns the episodes
+	 *
+	 * @return Tx_Extbase_Persistence_ObjectStorage<Tx_Podcast_Domain_Model_Episode> $episodes
+	 */
+	public function getEpisodes() {
+		return $this->episodes;
+	}
+
+	/**
+	 * Sets the episodes
+	 *
+	 * @param Tx_Extbase_Persistence_ObjectStorage<Tx_Podcast_Domain_Model_Episode> $episodes
 	 * @return void
 	 */
 	public function setEpisodes(Tx_Extbase_Persistence_ObjectStorage $episodes) {
@@ -216,57 +307,18 @@ class Tx_Podcast_Domain_Model_Podcast extends Tx_Extbase_DomainObject_AbstractEn
 	}
 
 	/**
-	 * Getter for episodes
+	 * Returns the author
 	 *
-	 * @return Tx_Extbase_Persistence_ObjectStorage<Tx_Podcast_Domain_Model_Episode> episodes
+	 * @return Tx_Podcast_Domain_Model_Person $author
 	 */
-	public function getEpisodes() {
-		return $this->episodes;
-	}
-	
-	/**
-	 * Adds a Episode
-	 *
-	 * @param Tx_Podcast_Domain_Model_Episode The Episode to be added
-	 * @return void
-	 */
-	public function addEpisode(Tx_Podcast_Domain_Model_Episode $episode) {
-		$this->episodes->attach($episode);
-	}
-	
-	/**
-	 * Removes a Episode
-	 *
-	 * @param Tx_Podcast_Domain_Model_Episode The Episode to be removed
-	 * @return void
-	 */
-	public function removeEpisode(Tx_Podcast_Domain_Model_Episode $episode) {
-		$this->episodes->detach($episode);
-	}
-	
-	/**
-	 * Setter for categories
-	 *
-	 * @param Tx_Podcast_Domain_Model_Category $categories categories
-	 * @return void
-	 */
-	public function setCategories(Tx_Podcast_Domain_Model_Category $categories) {
-		$this->category = $categories;
+	public function getAuthor() {
+		return $this->author;
 	}
 
 	/**
-	 * Getter for categories
+	 * Sets the author
 	 *
-	 * @return Tx_Podcast_Domain_Model_Category categories
-	 */
-	public function getCategories() {
-		return $this->categories;
-	}
-	
-	/**
-	 * Setter for author
-	 *
-	 * @param Tx_Podcast_Domain_Model_Person $author author
+	 * @param Tx_Podcast_Domain_Model_Person $author
 	 * @return void
 	 */
 	public function setAuthor(Tx_Podcast_Domain_Model_Person $author) {
@@ -274,18 +326,18 @@ class Tx_Podcast_Domain_Model_Podcast extends Tx_Extbase_DomainObject_AbstractEn
 	}
 
 	/**
-	 * Getter for author
+	 * Returns the technicalContact
 	 *
-	 * @return Tx_Podcast_Domain_Model_Person author
+	 * @return Tx_Podcast_Domain_Model_Person $technicalContact
 	 */
-	public function getAuthor() {
-		return $this->author;
+	public function getTechnicalContact() {
+		return $this->technicalContact;
 	}
-	
+
 	/**
-	 * Setter for technicalContact
+	 * Sets the technicalContact
 	 *
-	 * @param Tx_Podcast_Domain_Model_Person $technicalContact technicalContact
+	 * @param Tx_Podcast_Domain_Model_Person $technicalContact
 	 * @return void
 	 */
 	public function setTechnicalContact(Tx_Podcast_Domain_Model_Person $technicalContact) {
@@ -293,51 +345,23 @@ class Tx_Podcast_Domain_Model_Podcast extends Tx_Extbase_DomainObject_AbstractEn
 	}
 
 	/**
-	 * Getter for technicalContact
+	 * Returns the website
 	 *
-	 * @return Tx_Podcast_Domain_Model_Person technicalContact
+	 * @return Tx_Podcast_Domain_Model_Website $website
 	 */
-	public function getTechnicalContact() {
-		return $this->technicalContact;
+	public function getWebsite() {
+		return $this->website;
 	}
-	
+
 	/**
-	 * Setter for website
+	 * Sets the website
 	 *
-	 * @param Tx_Podcast_Domain_Model_Website $website website
+	 * @param Tx_Podcast_Domain_Model_Website $website
 	 * @return void
 	 */
 	public function setWebsite(Tx_Podcast_Domain_Model_Website $website) {
 		$this->website = $website;
 	}
 
-	/**
-	 * Getter for website
-	 *
-	 * @return Tx_Podcast_Domain_Model_Website website
-	 */
-	public function getWebsite() {
-		return $this->website;
-	}    
-	
-	/**
-	 * Setter for iTunes
-	 *
-	 * @param boolean $itunes iTunes
-	 * @return void
-	 */
-	public function setItunes($itunes) {
-		$this->itunes = $itunes ? true : false;  
-	}
-
-	/**
-	 * Getter for iTunes
-	 *
-	 * @return boolean iTunes
-	 */
-	public function getItunes() {
-		return $this->itunes ? true : false;
-	}
-	
 }
 ?>
