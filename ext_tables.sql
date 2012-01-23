@@ -10,7 +10,7 @@ CREATE TABLE tx_podcast_domain_model_podcast (
 	subtitle varchar(255) DEFAULT '' NOT NULL,
 	description varchar(255) DEFAULT '' NOT NULL,
 	copyright varchar(255) DEFAULT '' NOT NULL,
-	image varchar(255) DEFAULT '' NOT NULL,  
+	image varchar(255) DEFAULT '' NOT NULL,
 	categories int(11) unsigned DEFAULT '0' NOT NULL,
 	episodes int(11) unsigned DEFAULT '0' NOT NULL,
 	author int(11) unsigned DEFAULT '0',
