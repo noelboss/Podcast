@@ -27,7 +27,7 @@
 			<label index="tx_podcast_domain_model_episode.author">author</label>
 			<label index="tx_podcast_domain_model_category">Podcast Categorie</label>
 			<label index="tx_podcast_domain_model_category.title">Title</label>
-			<label index="tx_podcast_domain_model_category.parent">parent</label>
+			<label index="tx_podcast_domain_model_category.subcategory">Sucategory</label>
 			<label index="tx_podcast_domain_model_person">Author or Technical Contact</label>
 			<label index="tx_podcast_domain_model_person.name">Name</label>
 			<label index="tx_podcast_domain_model_person.e_mail">E-Mail</label>

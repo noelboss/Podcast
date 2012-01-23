@@ -43,11 +43,11 @@ class Tx_Podcast_Domain_Model_Category extends Tx_Extbase_DomainObject_AbstractE
 	protected $title;
 
 	/**
-	 * parent
+	 * Sucategory
 	 *
 	 * @var Tx_Podcast_Domain_Model_Category
 	 */
-	protected $parent;
+	protected $subcategory;
 
 	/**
 	 * __construct
@@ -78,22 +78,22 @@ class Tx_Podcast_Domain_Model_Category extends Tx_Extbase_DomainObject_AbstractE
 	}
 
 	/**
-	 * Returns the parent
+	 * Returns the subcategory
 	 *
-	 * @return Tx_Podcast_Domain_Model_Category $parent
+	 * @return Tx_Podcast_Domain_Model_Category $subcategory
 	 */
-	public function getParent() {
-		return $this->parent;
+	public function getSubcategory() {
+		return $this->subcategory;
 	}
 
 	/**
-	 * Sets the parent
+	 * Sets the subcategory
 	 *
-	 * @param Tx_Podcast_Domain_Model_Category $parent
+	 * @param Tx_Podcast_Domain_Model_Category $subcategory
 	 * @return void
 	 */
-	public function setParent(Tx_Podcast_Domain_Model_Category $parent) {
-		$this->parent = $parent;
+	public function setSubcategory(Tx_Podcast_Domain_Model_Category $subcategory) {
+		$this->subcategory = $subcategory;
 	}
 
 }

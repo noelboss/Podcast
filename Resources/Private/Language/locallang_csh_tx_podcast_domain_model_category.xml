@@ -8,7 +8,7 @@
 	<data type="array">
 	<languageKey index="default" type="array">
 			<label index="title.description">Title</label>
-			<label index="parent.description">parent</label>
+			<label index="subcategory.description">Sucategory</label>
 		</languageKey>
 	</data>
 </T3locallang>

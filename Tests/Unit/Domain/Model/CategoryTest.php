@@ -71,23 +71,23 @@ class Tx_Podcast_Domain_Model_CategoryTest extends Tx_Extbase_Tests_Unit_BaseTes
 	/**
 	 * @test
 	 */
-	public function getParentReturnsInitialValueForTx_Podcast_Domain_Model_Category() { 
+	public function getSubcategoryReturnsInitialValueForTx_Podcast_Domain_Model_Category() { 
 		$this->assertEquals(
 			NULL,
-			$this->fixture->getParent()
+			$this->fixture->getSubcategory()
 		);
 	}
 
 	/**
 	 * @test
 	 */
-	public function setParentForTx_Podcast_Domain_Model_CategorySetsParent() { 
+	public function setSubcategoryForTx_Podcast_Domain_Model_CategorySetsSubcategory() { 
 		$dummyObject = new Tx_Podcast_Domain_Model_Category();
-		$this->fixture->setParent($dummyObject);
+		$this->fixture->setSubcategory($dummyObject);
 
 		$this->assertSame(
 			$dummyObject,
-			$this->fixture->getParent()
+			$this->fixture->getSubcategory()
 		);
 	}
 	
