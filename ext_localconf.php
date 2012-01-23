@@ -5,7 +5,7 @@ Tx_Extbase_Utility_Extension::configurePlugin(
 	$_EXTKEY,
 	'Pi1',
 	array(
-		'Podcast' => 'index, show, new, create, edit, update, delete',
+		'Podcast' => 'list, show',
 		'Episode' => 'index, show, new, create, edit, update, delete',
 		'Category' => 'index, show, new, create, edit, update, delete',
 		'Person' => 'index, show, new, create, edit, update, delete',

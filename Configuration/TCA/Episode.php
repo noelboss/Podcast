@@ -1,5 +1,5 @@
 <?php
-if (!defined ('TYPO3_MODE')) 	die ('Access denied.');
+if (!defined ('TYPO3_MODE'))	die ('Access denied.');
 
 $TCA['tx_podcast_domain_model_episode'] = array(
 	'ctrl' => $TCA['tx_podcast_domain_model_episode']['ctrl'],
@@ -53,14 +53,14 @@ $TCA['tx_podcast_domain_model_episode'] = array(
 		),
 		'hidden' => array(
 			'exclude' => 1,
-			'label'   => 'LLL:EXT:lang/locallang_general.xml:LGL.hidden',
+			'label'	  => 'LLL:EXT:lang/locallang_general.xml:LGL.hidden',
 			'config'  => array(
 				'type' => 'check'
 			)
 		),
 		'title' => array(
 			'exclude' => 0,
-			'label'   => 'LLL:EXT:podcast/Resources/Private/Language/locallang_db.xml:tx_podcast_domain_model_episode.title',
+			'label'	  => 'LLL:EXT:podcast/Resources/Private/Language/locallang_db.xml:tx_podcast_domain_model_episode.title',
 			'config'  => array(
 				'type' => 'input',
 				'size' => 30,
@@ -69,7 +69,7 @@ $TCA['tx_podcast_domain_model_episode'] = array(
 		),
 		'description' => array(
 			'exclude' => 0,
-			'label'   => 'LLL:EXT:podcast/Resources/Private/Language/locallang_db.xml:tx_podcast_domain_model_episode.description',
+			'label'	  => 'LLL:EXT:podcast/Resources/Private/Language/locallang_db.xml:tx_podcast_domain_model_episode.description',
 			'config'  => array(
 				'type' => 'input',
 				'size' => 30,
@@ -78,18 +78,18 @@ $TCA['tx_podcast_domain_model_episode'] = array(
 		),
 		'file' => array(
 			'exclude' => 0,
-			'label'   => 'LLL:EXT:podcast/Resources/Private/Language/locallang_db.xml:tx_podcast_domain_model_episode.file',
+			'label'	  => 'LLL:EXT:podcast/Resources/Private/Language/locallang_db.xml:tx_podcast_domain_model_episode.file',
 			/*'config' => array (
 				'type' => 'group',
 				'internal_type' => 'file',
 				'allowed' => 'pdf,mp3,jpeg,jpg',	
 				'max_size' => 100000,	
 				'uploadfolder' => 'uploads/tx_podcast',
-				'show_thumbs' => 1,	
+				'show_thumbs' => 1, 
 				'size' => 1,	
 				'minitems' => 0,
 				'maxitems' => 1,
-			)*/    
+			)*/	   
 			'config' => array (
 				'type' => 'input',
 				'size' => '43',
@@ -112,7 +112,7 @@ $TCA['tx_podcast_domain_model_episode'] = array(
 		),
 		'publication_date' => array(
 			'exclude' => 0,
-			'label'   => 'LLL:EXT:podcast/Resources/Private/Language/locallang_db.xml:tx_podcast_domain_model_episode.publication_date',
+			'label'	  => 'LLL:EXT:podcast/Resources/Private/Language/locallang_db.xml:tx_podcast_domain_model_episode.publication_date',
 			'config'  => array(
 				'type' => 'input',
 				'size' => 12,
@@ -124,55 +124,55 @@ $TCA['tx_podcast_domain_model_episode'] = array(
 		),
 		'duration' => array(
 			'exclude' => 0,
-			'label'   => 'LLL:EXT:podcast/Resources/Private/Language/locallang_db.xml:tx_podcast_domain_model_episode.duration',
+			'label'	  => 'LLL:EXT:podcast/Resources/Private/Language/locallang_db.xml:tx_podcast_domain_model_episode.duration',
 			'config' => array (
-                'type'     => 'input',
-                'size'     => '12',
-                'max'      => '20',
-                'eval'     => 'timesec,required',
-                'checkbox' => '0',
-                'default'  => '0'
-            )
+				'type'	   => 'input',
+				'size'	   => '12',
+				'max'	   => '20',
+				'eval'	   => 'timesec,required',
+				'checkbox' => '0',
+				'default'  => '0'
+			)
 		),
 		'website' => array(
 			'exclude' => 0,
-			'label'   => 'LLL:EXT:podcast/Resources/Private/Language/locallang_db.xml:tx_podcast_domain_model_episode.website',
+			'label'	  => 'LLL:EXT:podcast/Resources/Private/Language/locallang_db.xml:tx_podcast_domain_model_episode.website',
 			'config' => array(
-				'type' => 'select',  
+				'type' => 'select',	 
 				'size' => 2,
 				'autoSizeMax' => 3,
 				'foreign_table' => 'tx_podcast_domain_model_website',
 				'foreign_table_where' => 'AND tx_podcast_domain_model_website.pid=###CURRENT_PID###',
 				'wizards' => array(
-		             '_PADDING' => 1,
-		             '_VERTICAL' => 0,
-		             'edit' => array(
-		                 'type' => 'popup',
-		                 'title' => 'Edit',
-		                 'script' => 'wizard_edit.php',
-		                 'icon' => 'edit2.gif',
-		                 'popup_onlyOpenIfSelected' => 1,
-		                 'JSopenParams' => 'height=650,width=650,status=0,menubar=0,scrollbars=1',
-		             ),
-		             'add' => array(
-		                 'type' => 'script',
-		                 'title' => 'Create New Website',
-		                 'icon' => 'add.gif',
-		                 'params' => array(
-		                     'table'=>'tx_podcast_domain_model_website',
-		                     'pid' => '###CURRENT_PID###',
-		                     'setValue' => 'prepend'
-		                 ),
-		                 'script' => 'wizard_add.php',
-		             ),
-		         ),
+					 '_PADDING' => 1,
+					 '_VERTICAL' => 0,
+					 'edit' => array(
+						 'type' => 'popup',
+						 'title' => 'Edit',
+						 'script' => 'wizard_edit.php',
+						 'icon' => 'edit2.gif',
+						 'popup_onlyOpenIfSelected' => 1,
+						 'JSopenParams' => 'height=650,width=650,status=0,menubar=0,scrollbars=1',
+					 ),
+					 'add' => array(
+						 'type' => 'script',
+						 'title' => 'Create New Website',
+						 'icon' => 'add.gif',
+						 'params' => array(
+							 'table'=>'tx_podcast_domain_model_website',
+							 'pid' => '###CURRENT_PID###',
+							 'setValue' => 'prepend'
+						 ),
+						 'script' => 'wizard_add.php',
+					 ),
+				 ),
 			),
 		),
 		'author' => array(
 			'exclude' => 0,
-			'label'   => 'LLL:EXT:podcast/Resources/Private/Language/locallang_db.xml:tx_podcast_domain_model_episode.author',
+			'label'	  => 'LLL:EXT:podcast/Resources/Private/Language/locallang_db.xml:tx_podcast_domain_model_episode.author',
 			'config' => array(
-				'type' => 'select',  
+				'type' => 'select',	 
 				'size' => 2,
 				'autoSizeMax' => 3,
 				'foreign_table' => 'tx_podcast_domain_model_person',
@@ -181,28 +181,28 @@ $TCA['tx_podcast_domain_model_episode'] = array(
 						array('--none--', 0),
 					),*/
 				'wizards' => array(
-		             '_PADDING' => 1,
-		             '_VERTICAL' => 0,
-		             'edit' => array(
-		                 'type' => 'popup',
-		                 'title' => 'Edit',
-		                 'script' => 'wizard_edit.php',
-		                 'icon' => 'edit2.gif',
-		                 'popup_onlyOpenIfSelected' => 1,
-		                 'JSopenParams' => 'height=650,width=650,status=0,menubar=0,scrollbars=1',
-		             ),
-		             'add' => array(
-		                 'type' => 'script',
-		                 'title' => 'Create New Author',
-		                 'icon' => 'add.gif',
-		                 'params' => array(
-		                     'table'=>'tx_podcast_domain_model_person',
-		                     'pid' => '###CURRENT_PID###',
-		                     'setValue' => 'prepend'
-		                 ),
-		                 'script' => 'wizard_add.php',
-		             ),
-		         ),
+					 '_PADDING' => 1,
+					 '_VERTICAL' => 0,
+					 'edit' => array(
+						 'type' => 'popup',
+						 'title' => 'Edit',
+						 'script' => 'wizard_edit.php',
+						 'icon' => 'edit2.gif',
+						 'popup_onlyOpenIfSelected' => 1,
+						 'JSopenParams' => 'height=650,width=650,status=0,menubar=0,scrollbars=1',
+					 ),
+					 'add' => array(
+						 'type' => 'script',
+						 'title' => 'Create New Author',
+						 'icon' => 'add.gif',
+						 'params' => array(
+							 'table'=>'tx_podcast_domain_model_person',
+							 'pid' => '###CURRENT_PID###',
+							 'setValue' => 'prepend'
+						 ),
+						 'script' => 'wizard_add.php',
+					 ),
+				 ),
 			),
 		),
 		'podcast' => array(
