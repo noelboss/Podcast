@@ -1,8 +1,20 @@
 <div class="episode {zebraClass}">     
-	<div class="preview">
-		<audio src="{episode.file}" controls="controls">
-		Your browser does not support the audio element.
-		</audio>   
+	<div class="preview">                      
+		<!-- geht mit geht mit fluid nicht -->
+		<f:if condition="{episode.mime}=='video/mp4'">
+			<f:then>  
+				<video src="{episode.file}" controls="controls" height="360" width="480">
+					Your browser does not support the video element.
+				</video>  
+			</f:then>
+			<f:else>
+				<audio src="{episode.file}" controls="controls">
+					Your browser does not support the audio element.
+				</audio>
+			</f:else>
+		</f:if>
+		
+
 		<p>
 			<strong>Duration:</strong>
 			<f:format.date date="{episode.duration}" format="H:i:s" />
