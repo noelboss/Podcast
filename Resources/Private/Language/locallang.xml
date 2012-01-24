@@ -6,6 +6,7 @@
 	</meta>
 	<data type="array">
 		<languageKey index="default" type="array">
+			<label index="language">en-us</label>
 			<label index="tx_podcast_domain_model_podcast">This is a podcast</label>
 			<label index="tx_podcast_domain_model_podcast.title">Title</label>
 			<label index="tx_podcast_domain_model_podcast.subtitle">Subtitle</label>
@@ -38,6 +39,9 @@
 			<label index="tx_podcast_domain_model_person.e_mail">E-Mail</label>
 			<label index="tx_podcast_domain_model_website">Website</label>
 			<label index="tx_podcast_domain_model_website.title">Title</label>
+		</languageKey> 
+		<languageKey index="dee" type="array">
+			<label index="language">de-ch</label>
 		</languageKey>
 	</data>
 </T3locallang>

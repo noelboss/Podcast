@@ -43,6 +43,14 @@ class Tx_Podcast_Domain_Model_Website extends Tx_Extbase_DomainObject_AbstractVa
 	protected $title;
 
 	/**
+	 * Link
+	 *
+	 * @var string
+	 * @validate NotEmpty
+	 */
+	protected $link;
+
+	/**
 	 * __construct
 	 *
 	 * @return void
@@ -68,6 +76,25 @@ class Tx_Podcast_Domain_Model_Website extends Tx_Extbase_DomainObject_AbstractVa
 	 */
 	public function setTitle($title) {
 		$this->title = $title;
+	}
+
+	/**
+	 * Returns the link
+	 *
+	 * @return string $link
+	 */
+	public function getLink() {
+		return $this->link;
+	}
+
+	/**
+	 * Sets the link
+	 *
+	 * @param string $link
+	 * @return void
+	 */
+	public function setLink($link) {
+		$this->link = $link;
 	}
 
 }

@@ -4,7 +4,7 @@
 				<f:if condition="{itunes}">
 					<f:then>
 				<itunes:author>{episode.author.name}</itunes:author>
-				<itunes:subtitle>{episode.author.description}</itunes:subtitle>
+				<itunes:subtitle>{episode.subtitle}</itunes:subtitle>
 				<itunes:summary>
 					{episode.description} 
 				</itunes:summary>                                                       

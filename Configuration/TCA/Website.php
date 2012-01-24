@@ -6,10 +6,10 @@ if (!defined ('TYPO3_MODE')) {
 $TCA['tx_podcast_domain_model_website'] = array(
 	'ctrl' => $TCA['tx_podcast_domain_model_website']['ctrl'],
 	'interface' => array(
-		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title',
+		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, link',
 	),
 	'types' => array(
-		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, title,--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.access,starttime, endtime'),
+		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, title, link,--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.access,starttime, endtime'),
 	),
 	'palettes' => array(
 		'1' => array('showitem' => ''),
@@ -101,6 +101,30 @@ $TCA['tx_podcast_domain_model_website'] = array(
 				'size' => 30,
 				'eval' => 'trim,required'
 			),
+		),
+		'link' => array(
+			'exclude' => 0,
+			'label' => 'LLL:EXT:podcast/Resources/Private/Language/locallang_db.xml:tx_podcast_domain_model_website.link',
+			'config' => array (
+				'type' => 'input',
+				'size' => '43',
+				'max' => '256',   
+				'eval' => 'trim,required',
+				'wizards' => array(
+					'_PADDING' => 10, 
+					'link' => array(
+						'type' => 'popup',
+						'title' => 'LLL:EXT:podcast/Resources/Private/Language/locallang_db.xml:tx_podcast_domain_model_website.link',
+						'icon' => 'link_popup.gif',
+						'script' => 'browse_links.php?mode=wizard',
+						'params' => array(
+							'blindLinkOptions' => 'mail, page, spec, folder',
+							'allowedExtensions' => 'mp3,m4a,mp4,pdf,mov,wmv',
+						),
+						'JSopenParams' => 'height=500,width=600,status=0,menubar=0,scrollbars=1'
+					)
+				)
+			)   
 		),
 	),
 );

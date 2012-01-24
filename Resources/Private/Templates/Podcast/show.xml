@@ -5,15 +5,15 @@
 			{podcast.title}
 		</title>           
 		<link>{podcast.website.link}</link>      
-		<language></language>
+		<language><f:translate key="language" /></language>
 		<copyright>{podcast.copyright}</copyright>
 		<f:if condition="{podcast.itunes}">
 			<f:then>
 		<itunes:subtitle>{podcast.subtitle}</itunes:subtitle> 
-		<itunes:author>{podcast.autor}</itunes:author>
+		<itunes:author>{podcast.author.name}</itunes:author>
         <itunes:owner>
-			<itunes:name>{podcast.autor.name}</itunes:name>
-			<itunes:email>{podcast.autor.email}</itunes:email>
+			<itunes:name>{podcast.author.name}</itunes:name>
+			<itunes:email>{podcast.author.email}</itunes:email>
 		</itunes:owner> 
 		<f:if condition="{podcast.image}">
 			<f:then>         
