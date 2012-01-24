@@ -1,20 +1,31 @@
 <f:layout name="default" />
 <f:section name="main">
 	<f:flashMessages /> 
-	<h1>Podcast Overview</h1>
 	<ul class="podcasts">
 		<f:for each="{podcasts}" as="podcast">
 			<li>
-				<div class="image">
-					<f:image height="50c" width="50c" src="uploads/tx_podcast/{podcast.image}" alt="{podcast.title}" />
+				<div class="image">   
+					<f:if condition="{podcast.image}">
+						<f:then>         
+							<f:image height="100c" width="100c" src="uploads/tx_podcast/{podcast.image}" alt="{podcast.title}" />
+						</f:then>
+						<f:else>
+							<f:image height="100c" width="100c" src="typo3conf/ext/podcast/Resources/Public/Icons/podcast.jpg" alt="{podcast.title}" />
+						</f:else>
+					</f:if>
 				</div>
 				<div class="description"> 
-					<h2><f:link.action action="show" arguments="{podcast : podcast}">{podcast.title}</f:link.action></h2>    
+					<h2><f:link.action action="show" arguments="{podcast : podcast}">{podcast.title}</f:link.action>
+						<span>
+							<f:link.action action="show" arguments="{podcast : podcast}" pageType="23456689564">
+								<f:image src="typo3conf/ext/podcast/Resources/Public/Icons/tx_podcast_domain_model_podcast.gif" alt="<f:translate key='tx_podcast_domain_model_podcast.feed' />" />
+								<f:translate key="tx_podcast_domain_model_podcast.links.feed" />
+							</f:link.action>
+						</span>
+					</h2>    
 					<p><f:format.nl2br>{podcast.description}</f:format.nl2br> </p>
-					<p><f:link.action action="show" arguments="{podcast : podcast}" pageType="23456689564">Show XML</f:link.action></p>    
 				</div>
 			</li>
 		</f:for>
 	</ul>  
-	<f:link.action action="new">New Podcast</f:link.action>
 </f:section>
