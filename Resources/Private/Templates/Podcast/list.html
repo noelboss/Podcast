@@ -16,14 +16,18 @@
 				</div>
 				<div class="description"> 
 					<h2><f:link.action action="show" arguments="{podcast : podcast}">{podcast.title}</f:link.action>
-						<span>
-							<f:link.action action="show" arguments="{podcast : podcast}" pageType="23456689564">
-								<f:image src="typo3conf/ext/podcast/Resources/Public/Icons/tx_podcast_domain_model_podcast.gif" alt="<f:translate key='tx_podcast_domain_model_podcast.feed' />" />
-								<f:translate key="tx_podcast_domain_model_podcast.links.feed" />
-							</f:link.action>
-						</span>
+						<f:if condition="{podcast.episodes}">
+							<f:then> 
+							<span>
+								<f:link.action action="show" arguments="{podcast : podcast}" pageType="23456689564">
+									<f:image src="typo3conf/ext/podcast/Resources/Public/Icons/tx_podcast_domain_model_podcast.gif" alt="<f:translate key='tx_podcast_domain_model_podcast.feed' />" />
+									<f:translate key="tx_podcast_domain_model_podcast.links.feed" />
+								</f:link.action>
+							</span>
+							</f:then>
+						</f:if>
 					</h2>    
-					<p><f:format.nl2br>{podcast.description}</f:format.nl2br> </p>
+					<h3>{podcast.subtitle}</h3>
 				</div>
 			</li>
 		</f:for>

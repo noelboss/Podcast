@@ -6,7 +6,6 @@
 			<f:link.action action="index"><f:translate key="tx_podcast_domain_model_podcast.links.back" /></f:link.action>  
 		</span>
 	</h1>              
-	<h2>{podcast.subtitle}</h2>      
 	<div class="info">
 		<div class="image">            
 			<f:if condition="{podcast.image}">
@@ -19,6 +18,7 @@
 			</f:if>
 		</div>
 		<div class="description">
+			<strong>{podcast.subtitle}</strong> – 
 			<f:format.nl2br>{podcast.description}</f:format.nl2br>  
 			<f:if condition="{podcast.episodes}">
 				<f:then> 

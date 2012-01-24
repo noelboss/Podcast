@@ -4,7 +4,9 @@
 .modPodcast .info { overflow: hidden; zoom: 1; margin-bottom: 1em; margin-bottom: 2em;}
 .modPodcast .podcasts li { overflow: hidden; zoom: 1; margin: 1em 0; }          
 .modPodcast .podcasts h2 span { float: right; font-weight: normal; font-size: 0.8em; }
-.modPodcast .podcasts h2 a img { vertical-align: bottom; }
+.modPodcast .podcasts h2 a img { vertical-align: bottom; } 
+.modPodcast .podcasts h3 { font-weight: normal; font-size: 1em; }
+
 
 .modPodcast .image { float: left; border: 1px solid #ddd; }
 .modPodcast .image img { margin: 1px; vertical-align: bottom; }         

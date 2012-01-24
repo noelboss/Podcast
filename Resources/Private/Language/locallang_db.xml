@@ -20,11 +20,12 @@
 			<label index="tx_podcast_domain_model_podcast.website">Website</label>
 			<label index="tx_podcast_domain_model_episode">Episode</label>
 			<label index="tx_podcast_domain_model_episode.title">Title</label>
+			<label index="tx_podcast_domain_model_episode.subtitle">Subtitle</label>
 			<label index="tx_podcast_domain_model_episode.description">Description</label>
 			<label index="tx_podcast_domain_model_episode.file">File</label>
 			<label index="tx_podcast_domain_model_episode.publication_date">Publication Date</label>
 			<label index="tx_podcast_domain_model_episode.duration">Duration</label>
-			<label index="tx_podcast_domain_model_episode.mime">Mime Type</label>
+			<label index="tx_podcast_domain_model_episode.mime">Mime</label>
 			<label index="tx_podcast_domain_model_episode.website">Website</label>
 			<label index="tx_podcast_domain_model_episode.author">Author</label>
 			<label index="tx_podcast_domain_model_category">Category</label>
@@ -35,6 +36,7 @@
 			<label index="tx_podcast_domain_model_person.e_mail">E Mail</label>
 			<label index="tx_podcast_domain_model_website">Website</label>
 			<label index="tx_podcast_domain_model_website.title">Title</label>
+			<label index="tx_podcast_domain_model_website.link">Link</label>
 		</languageKey>
 	</data>
 </T3locallang>

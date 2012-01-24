@@ -68,5 +68,22 @@ class Tx_Podcast_Domain_Model_WebsiteTest extends Tx_Extbase_Tests_Unit_BaseTest
 		);
 	}
 	
+	/**
+	 * @test
+	 */
+	public function getLinkReturnsInitialValueForString() { }
+
+	/**
+	 * @test
+	 */
+	public function setLinkForStringSetsLink() { 
+		$this->fixture->setLink('Conceived at T3CON10');
+
+		$this->assertSame(
+			'Conceived at T3CON10',
+			$this->fixture->getLink()
+		);
+	}
+	
 }
 ?>

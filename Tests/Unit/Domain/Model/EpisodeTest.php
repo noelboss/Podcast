@@ -71,6 +71,23 @@ class Tx_Podcast_Domain_Model_EpisodeTest extends Tx_Extbase_Tests_Unit_BaseTest
 	/**
 	 * @test
 	 */
+	public function getSubtitleReturnsInitialValueForString() { }
+
+	/**
+	 * @test
+	 */
+	public function setSubtitleForStringSetsSubtitle() { 
+		$this->fixture->setSubtitle('Conceived at T3CON10');
+
+		$this->assertSame(
+			'Conceived at T3CON10',
+			$this->fixture->getSubtitle()
+		);
+	}
+	
+	/**
+	 * @test
+	 */
 	public function getDescriptionReturnsInitialValueForString() { }
 
 	/**

@@ -43,7 +43,14 @@ class Tx_Podcast_Domain_Model_Episode extends Tx_Extbase_DomainObject_AbstractEn
 	protected $title;
 
 	/**
-	 * Description
+	 * Subtitle
+	 *
+	 * @var string
+	 */
+	protected $subtitle;
+
+	/**
+	 * Summary
 	 *
 	 * @var string
 	 * @validate NotEmpty
@@ -119,6 +126,25 @@ class Tx_Podcast_Domain_Model_Episode extends Tx_Extbase_DomainObject_AbstractEn
 	 */
 	public function setTitle($title) {
 		$this->title = $title;
+	}
+
+	/**
+	 * Returns the subtitle
+	 *
+	 * @return string $subtitle
+	 */
+	public function getSubtitle() {
+		return $this->subtitle;
+	}
+
+	/**
+	 * Sets the subtitle
+	 *
+	 * @param string $subtitle
+	 * @return void
+	 */
+	public function setSubtitle($subtitle) {
+		$this->subtitle = $subtitle;
 	}
 
 	/**
