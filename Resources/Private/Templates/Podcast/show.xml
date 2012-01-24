@@ -1,3 +1,4 @@
+{namespace pc=Tx_Podcast_ViewHelpers}
 <f:layout name="default" />
 <f:section name="main">
 		<title>
@@ -13,8 +14,9 @@
         <itunes:owner>
 			<itunes:name>{podcast.autor.name}</itunes:name>
 			<itunes:email>{podcast.autor.email}</itunes:email>
-		</itunes:owner>                       
-		<itunes:image href="{podcast.image}" />
+		</itunes:owner>      
+		                 
+		<itunes:image href="{f:uri.image(src:'uploads/tx_podcast/{podcast.image}', width:'600' height:'600')}" />
 		<f:if condition="{podcast.category}">
 			<f:then>
 				<itunes:category text="{podcast.category.title}">

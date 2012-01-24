@@ -1,4 +1,3 @@
-
 			<item>
 				<title>{episode.title}</title>    
 				<f:if condition="{itunes}">
@@ -8,7 +7,7 @@
 				<itunes:summary>
 					{episode.description} 
 				</itunes:summary>                                                       
-				<itunes:duration><f:format.date date="{episode.duration}" format="H:i:s" /></itunes:duration>
+				<itunes:duration><f:format.date date="{episode.duration}" format="i:s" /></itunes:duration>
 				<itunes:keywords>{episode.keywords}</itunes:keywords>   
 					</f:then>    
 					<f:else>   
@@ -17,11 +16,11 @@
 				<summary>
 					{episode.description} 
 				</summary>                                                       
-				<duration><f:format.date date="{episode.duration}" format="H:i:s" /></duration>
+				<duration><f:format.date date="{episode.duration}" format="i:s" /></duration>
 				<keywords>{episode.keywords}</keywords> 
 					</f:else>
 				</f:if>                        
-				<enclosure url="{f:uri.resource(path: episode.file, absolute: 'true')}" length="{f:format.date(date: episode.duration, format:'s')}" type="{episode.mime}" />
+				<enclosure url="{f:uri.resource(path: episode.file, absolute: 'true')}" length="{f:format.date(date: episode.duration, format:'i:s')}" type="{episode.mime}" />
 				<guid>{f:uri.resource(path: episode.file, absolute: 'true')}</guid>  
 				<pubDate><f:format.date date="{episode.publicationDate}" format="r" /></pubDate>
 			</item>
