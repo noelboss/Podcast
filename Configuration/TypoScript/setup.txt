@@ -44,8 +44,8 @@ page.includeCSS {
 	tx_podcast_file_1 = EXT:podcast/Resources/Public/Styles/default.css
 }              
 
-xmlPodcast = PAGE
-xmlPodcast {
+xmlPage = PAGE
+xmlPage {
     typeNum = 23456689564
 	
 	config {
@@ -57,11 +57,15 @@ xmlPodcast {
 	}	
 }   
 
-[globalVar = GP:type=23456689564] 
+[globalVar = GP:type=23456689564] && [globalVar = GP:tx_podcast_display|podcast > 0] 
 	plugin.tx_podcast.settings.feed = 1
-	xmlPodcast.20 =< tt_content.list.20.podcast_display
-	xmlPodcast.20 {
+	xmlPage.20 =< tt_content.list.20.podcast_display
+	xmlPage.20 {   
+		#persistence {
+		#	storagePid.stdWrap.data = GP:tx_podcast_display|storagePid
+		#}
 		action = show
+		#view.format = xml
 	}
 [global]
 

@@ -68,7 +68,7 @@ class Tx_Podcast_Domain_Model_Episode extends Tx_Extbase_DomainObject_AbstractEn
 	/**
 	 * Duration
 	 *
-	 * @var DateTime
+	 * @var integer
 	 */
 	protected $duration;
 
@@ -181,7 +181,7 @@ class Tx_Podcast_Domain_Model_Episode extends Tx_Extbase_DomainObject_AbstractEn
 	/**
 	 * Returns the duration
 	 *
-	 * @return DateTime $duration
+	 * @return integer $duration
 	 */
 	public function getDuration() {
 		return $this->duration;
@@ -190,7 +190,7 @@ class Tx_Podcast_Domain_Model_Episode extends Tx_Extbase_DomainObject_AbstractEn
 	/**
 	 * Sets the duration
 	 *
-	 * @param DateTime $duration
+	 * @param integer $duration
 	 * @return void
 	 */
 	public function setDuration($duration) {

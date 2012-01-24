@@ -22,10 +22,7 @@ $TYPO3_CONF_VARS['EXTCONF']['realurl']['_DEFAULT']['postVarSets']['_DEFAULT']['d
 				 'spaceCharacter' => '-',
 			 ),
 		)
-	),
-	array(
-		'GETvar' => 'tx_podcast_display[format]'
-	), 
+	)
 );		 
 
 array_push($TYPO3_CONF_VARS['EXTCONF']['realurl']['_DEFAULT']['preVars'],	

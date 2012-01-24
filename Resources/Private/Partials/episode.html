@@ -1,7 +1,8 @@
+{namespace pc=Tx_Podcast_ViewHelpers}
 <div class="episode {zebraClass}">     
 	<div class="preview">                      
 		<!-- geht mit geht mit fluid nicht -->
-		<f:if condition="{episode.mime}=='video/mp4'">
+		<pc:if condition="'{episode.mime}'=='video/mp4'">
 			<f:then>  
 				<video src="{episode.file}" controls="controls" height="360" width="480">
 					Your browser does not support the video element.
@@ -12,12 +13,11 @@
 					Your browser does not support the audio element.
 				</audio>
 			</f:else>
-		</f:if>
+		</pc:if>
 		
-
 		<p>
 			<strong>Duration:</strong>
-			<f:format.date date="{episode.duration}" format="H:i:s" />
+			<pc:duration timestamp="{episode.duration}" />
 		</p>
 	</div>
 	<div class="description">    
