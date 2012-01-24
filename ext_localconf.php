@@ -5,23 +5,12 @@ Tx_Extbase_Utility_Extension::configurePlugin(
 	$_EXTKEY,
 	'Display',
 	array(
-		'Podcast' => 'list, show',
-		/*'Episode' => 'index, show, new, create, edit, update, delete',
-		'Category' => 'index, show, new, create, edit, update, delete',
-		'Person' => 'index, show, new, create, edit, update, delete',
-		'Website' => 'index, show, new, create, edit, update, delete',*/
+		'Podcast' => 'list, show, new, create, edit, update, delete',
 	),
 	array(
 		'Podcast' => 'create, update, delete',
 	)
 );              
-
-Tx_Extbase_Utility_Extension::configurePlugin(
-	$_EXTKEY,
-	'Feed',
-	array('Podcast' => 'show'),
-	array('Podcast' => 'show')
-);
 
 require t3lib_extMgm::extPath($_EXTKEY) . 'Configuration/RealURL/default.php';
 require t3lib_extMgm::extPath($_EXTKEY) . 'Classes/Utilities/EpisodePostProcessor.php';

@@ -12,7 +12,7 @@
 
 $EM_CONF[$_EXTKEY] = array(
 	'title' => 'Podcast',
-	'description' => 'Handel multiple Podcasts.',
+	'description' => 'Handles multiple Podcasts.',
 	'category' => 'plugin',
 	'author' => 'Noël Bossart',
 	'author_email' => 'n dot company at me dot com',
@@ -27,7 +27,7 @@ $EM_CONF[$_EXTKEY] = array(
 	'modify_tables' => '',
 	'clearCacheOnLoad' => 0,
 	'lockType' => '',
-	'version' => '',
+	'version' => '0.1.0',
 	'constraints' => array(
 		'depends' => array(
 			'cms' => '',

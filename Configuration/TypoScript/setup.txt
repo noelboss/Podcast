@@ -59,7 +59,10 @@ xmlPodcast {
 
 [globalVar = GP:type=23456689564] 
 	plugin.tx_podcast.settings.feed = 1
-	xmlPodcast.20 =< tt_content.list.20.podcast_feed
+	xmlPodcast.20 =< tt_content.list.20.podcast_display
+	xmlPodcast.20 {
+		action = show
+	}
 [global]
 
 
