@@ -1,16 +1,16 @@
 This is a Podcast Extension for Typo3 Based on Extbase and Fluid. 
-Work needed to be done:
 
+Roadmap:
 - XML Output DONE
-- Scale image in XML Output
-- Categories fix – DONE
-- GUID in XML
-- Analyse the file, filesize und filytType – OPEN but Ready
+- Scale image in XML Output – DONE
+- Categories fix in Feed – OPEN
+- GUID in XML – DONE
+- Analyse the file, filesize und filytType – DONE
 - Flash fallback – OPEN
-- html5 Video support – OPEN but ready
-- add tags – OPEN      
+- HTML5 Audio support – DONE
+- HTML5 Video support – DONE
+- Add tags – OPEN      
 - Cleanp – OPEN
 - Documentation – OPEN
 
 Any Questions suggestions or help: n dot company at me com
-
