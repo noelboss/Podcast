@@ -43,9 +43,9 @@ class Tx_Podcast_Domain_Model_Category extends Tx_Extbase_DomainObject_AbstractE
 	protected $title;
 
 	/**
-	 * Sucategory
+	 * subcategories
 	 *
-	 * @var Tx_Podcast_Domain_Model_Category
+	 * @var Tx_Extbase_Persistence_ObjectStorage<Tx_Podcast_Domain_Model_Category>
 	 */
 	protected $subcategory;
 
@@ -55,7 +55,22 @@ class Tx_Podcast_Domain_Model_Category extends Tx_Extbase_DomainObject_AbstractE
 	 * @return void
 	 */
 	public function __construct() {
+		//Do not remove the next line: It would break the functionality
+		$this->initStorageObjects();
+	}
 
+	/**
+	 * Initializes all Tx_Extbase_Persistence_ObjectStorage properties.
+	 *
+	 * @return void
+	 */
+	protected function initStorageObjects() {
+		/**
+		 * Do not modify this method!
+		 * It will be rewritten on each save in the extension builder
+		 * You may modify the constructor of this class instead
+		 */
+		$this->subcategory = new Tx_Extbase_Persistence_ObjectStorage();
 	}
 
 	/**
@@ -80,7 +95,7 @@ class Tx_Podcast_Domain_Model_Category extends Tx_Extbase_DomainObject_AbstractE
 	/**
 	 * Returns the subcategory
 	 *
-	 * @return Tx_Podcast_Domain_Model_Category $subcategory
+	 * @return Tx_Extbase_Persistence_ObjectStorage<Tx_Podcast_Domain_Model_Category> $subcategory
 	 */
 	public function getSubcategory() {
 		return $this->subcategory;
@@ -89,7 +104,7 @@ class Tx_Podcast_Domain_Model_Category extends Tx_Extbase_DomainObject_AbstractE
 	/**
 	 * Sets the subcategory
 	 *
-	 * @param Tx_Podcast_Domain_Model_Category $subcategory
+	 * @param Tx_Extbase_Persistence_ObjectStorage<Tx_Podcast_Domain_Model_Category> $subcategory
 	 * @return void
 	 */
 	public function setSubcategory(Tx_Podcast_Domain_Model_Category $subcategory) {

@@ -43,27 +43,24 @@ emConf:
 overwriteSettings:
   Classes:
     Controller: keep
-    Domain:
-      Model: merge
-      Repository: keep
+    Domain: keep
+    Utilities: keep
+    ViewHelpers: keep
 
   Configuration:
-    #TCA: merge
-    #TypoScript: keep
+    TCA: keep
+    TypoScript: keep
 
   Resources:
     Private:
       Language:
-        #locallang.xml: merge
+        locallang.xml: keep
       Templates: keep
 
   ext_icon.gif: keep
-
-  ext_localconf.php: merge
-
-  ext_tables.php: merge
-
-#  ext_tables.sql: merge
+  ext_localconf.php: keep
+  ext_tables.php: keep
+  ext_tables.sql: merge
 
 ## ext_autoload.php is only needed in special cases ##
 createAutoloadRegistry: false

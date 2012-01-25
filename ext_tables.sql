@@ -104,7 +104,6 @@ CREATE TABLE tx_podcast_domain_model_category (
 
 
 	title varchar(255) DEFAULT '' NOT NULL,
-	subcategory int(11) unsigned DEFAULT '0',
 
 	tstamp int(11) unsigned DEFAULT '0' NOT NULL,
 	crdate int(11) unsigned DEFAULT '0' NOT NULL,

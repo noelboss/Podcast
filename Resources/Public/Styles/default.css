@@ -6,6 +6,10 @@
 .modPodcast .podcasts h2 span { float: right; font-weight: normal; font-size: 0.8em; }
 .modPodcast .podcasts h2 a img { vertical-align: bottom; } 
 .modPodcast .podcasts h3 { font-weight: normal; font-size: 1em; }
+        
+.modPodcast .info .categories ul { overflow: hidden; margin: 0; padding: 0; }
+.modPodcast .info .categories li { list-style: none; margin: 0; padding: 0; font-weight: bold;}
+.modPodcast .info .categories ul ul li { float: left; list-style: none; margin: 0 1em 0 0; padding: 0; font-weight: normal; }
 
 
 .modPodcast .image { float: left; border: 1px solid #ddd; }
@@ -20,7 +24,7 @@
 
 .modPodcast .episode h3 { font-size: 1.2em; font-weight: bold; margin: 0; }
                                          
-.modPodcast .copyright { padding: 0.5em 0 3em; color: #ddd; font-size:0.8em; }
+.modPodcast .copyright { padding: 0.5em 0 0; color: #ddd; font-size:0.8em; }
 
 .modPodcast .feed { margin: 1em 0; }
 .modPodcast .back { font-weight: bold; margin-top: 2em; }
