@@ -8,7 +8,7 @@ CREATE TABLE tx_podcast_domain_model_podcast (
 
 	title varchar(255) DEFAULT '' NOT NULL,
 	subtitle varchar(255) DEFAULT '' NOT NULL,
-	description varchar(255) DEFAULT '' NOT NULL,
+	description text DEFAULT '' NOT NULL,
 	copyright varchar(255) DEFAULT '' NOT NULL,
 	image varchar(255) DEFAULT '' NOT NULL,
 	itunes tinyint(1) unsigned DEFAULT '0' NOT NULL,
@@ -58,7 +58,7 @@ CREATE TABLE tx_podcast_domain_model_episode (
 
 	title varchar(255) DEFAULT '' NOT NULL,
 	subtitle varchar(255) DEFAULT '' NOT NULL,
-	description varchar(255) DEFAULT '' NOT NULL,
+	description text DEFAULT '' NOT NULL,
 	file varchar(255) DEFAULT '' NOT NULL,
 	publication_date int(11) DEFAULT '0' NOT NULL,
 	duration int(11) DEFAULT '0' NOT NULL,
