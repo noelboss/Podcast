@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Podcast for TYPO3</title>
+		<meta name="description" content="Podcast is a new Podcast extension for TYPO3. It's based on the new Extbase and Fluid extesions – making it very extensible and easy to maintain.">
+		<meta name="author" content="Noël Bossart">
+		<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+		<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<!-- Le styles -->
+		<link href="assets/css/bootstrap.min.css" rel="stylesheet">
+		<link href="assets/css/docs.css" rel="stylesheet">
+		<link href="assets/js/google-code-prettify/prettify.css" rel="stylesheet">
+		<!-- Le fav and touch icons -->
+		<link rel="shortcut icon" type="image/x-icon" href="assets/ico/favicon.ico">
+		<link rel="apple-touch-icon" href="assets/ico/bootstrap-apple-57x57.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="assets/ico/bootstrap-apple-72x72.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="assets/ico/bootstrap-apple-114x114.png">
+	</head>
+	<body>
+		<div class="topbar">
+			<div class="fill">
+				<div class="container">
+					<a class="brand" href="#">Podcast for TYPO3</a>
+					<ul class="nav">
+						<li class="active">
+							<a href="#overview">Home</a>
+						</li>
+						<li>
+							<a href="#features">Features</a>
+						</li>
+						<li>
+							<a href="#install">Install</a>
+						</li>
+						<li>
+							<a href="#use">Use</a>
+						</li>
+						<!--li>
+							<a href="#contact">Code</a>
+						</li>
+						<li>
+							<a href="#contact">Download</a>
+						</li-->
+					</ul>
+				</div>
+			</div>
+		</div>
+		<header class="jumbotron masthead" id="overview">
+			<div class="inner">
+				<div class="container">
+					<h1>Podcast for TYPO3</h1>
+					<p class="lead">
+						A new extension for the popular OpenSource CMS Typo3.
+						<br/>
+						It makes creating and managing Podcasts a breeze.
+					</p>
+					<p>
+						<strong>Nerd alert:</strong> Podcast is <a href="#less" title="Read about using Bootstrap with Less">built with Extbase and Fluid</a> and was designed to work out of the gate with modern browsers in mind.
+					</p>
+				</div>
+			</div>
+		</header>
+		<div class="quickstart">
+			<div class="container">
+				<div class="row">
+					<div class="span5">
+												<h6>simple to use</h6>
+
+						<p>
+							Podcast works out of the box. No configuration needed. After just 4 simple steps your TYPO3 is ready
+							tp create Podcast Feeds and display them to your users.
+						</p>
+					</div>
+					<div class="span5">
+												<h6>learn extbase and fluid</h6>
+
+						<p>
+							It's also a good example to learn Extbase and Fluid. It contaims a few quirks you
+							might didn't know if you are new to extension-development. This extension might show you
+							the way.
+						</p>
+					</div>
+					<div class="span5">
+																		<h6>OpenSource</h6>
+						<p>
+							Podcast is OpenSource and on GIT. You are very welcome to contribute your work to the extension
+							to make it even better.
+						</p>
+						<h6><a class="btn" href="http://github.com/noelboss/Podcast">share &amp; contribute</a></h6>
+					</div>
+				</div><!-- /row -->
+			</div>
+		</div>
+		<div class="container">
+			<section id="features">
+				<div class="page-header">
+					<h1>About Podcast <small>... and why you'll love it!</small></h1>
+				</div>
+				<div class="row">
+					<div class="span-one-third">
+						<h2>HTML5 video and audio</h2>
+						<p>
+							Podcast for TYPO3 not only creates your feeds,
+							it also displays your Podcasts for users of your Website – using
+							the fancy new HTML5 video and audio tags so your users can listen
+							to your podcast and view your videos directly on your site.
+						</p>
+					</div>
+					<div class="span-one-third">
+						<h2>It just works</h2>
+						<p>
+							Podcast generates your XML on the fly – no need to manually generate the XML after every change you make.
+							It supports iTunes specific tags and works with RealURL out of the box, creating nice URLs for your feeds and pages.
+						</p>
+					</div>
+					<div class="span-one-third">
+						<h2>Featurerich</h2>
+						<p>
+							Create more than one Podcast, use episodes, authors and other settings for multiple Podcasts. Podcast analyses your media and automatically detects video and audio formats and duration of your content.
+						</p>
+					</div>
+				</div>
+			</section>
+			<section id="install">
+				<div class="row">
+					<div class="span4">
+						<h2>Installation</h2>
+						<p>
+							Installation and setup is easy. Just follow this four steps and your
+							are good to go.
+							Use the extension manager in TYPO3 and search for "podcast" to install the Extension from the typo3.org repository. Make sure you use TPYO3 4.5 or above.
+						</p>
+					</div>
+					<div class="span12">
+						<h2>Add TypoScript</h2>
+						<p>
+							In your TypoScript template, add the static podcast TypoScript coming with the extension.
+						</p>
+						<ul class="media-grid">
+							<li>
+								<a href="#install" title="1 Choose Templates"> <img class="thumbnail" src="assets/img/install0.png" alt="1 Choose Templates"> </a>
+							</li>
+							<li>
+								<a href="#install" title="2 Select the page cotainting your templates"> <img class="thumbnail" src="assets/img/install1.png" alt="2 Select the page cotainting your templates"> </a>
+							</li>
+							<li>
+								<a href="#install" title="3 Choose Info/Modify from the selectbox"> <img class="thumbnail" src="assets/img/install2.png" alt="3 Choose Info/Modify from the selectbox"> </a>
+							</li>
+							<li>
+								<a href="#install" title="4 Click Edit whole template record"> <img class="thumbnail" src="assets/img/install3.png" alt="4 Click Edit whole template record"> </a>
+							</li>
+							<li>
+								<a href="#install" title="5 Open Tab Includes"> <img class="thumbnail" src="assets/img/install4.png" alt="5 Open Tab Includes"> </a>
+							</li>
+							<li>
+								<a href="#install" title="6 Select the static Podcast template and save"> <img class="thumbnail" src="assets/img/install5.png" alt="6 Select the static Podcast template and save"> </a>
+							</li>
+						</ul>
+						<h2>Add the podcast Plugin</h2>
+						<p>
+							In your TypoScript template, add the static podcast TypoScript coming with the extension.
+						</p>
+						<ul class="media-grid">
+							<li>
+								<a href="#install" title="1 Choose Page"> <img class="thumbnail" src="assets/img/add1.png" alt="1 Choose Page"> </a>
+							</li>
+							<li>
+								<a href="#install" title="2 Select a page"> <img class="thumbnail" src="assets/img/add2.png" alt="2 Select a page"> </a>
+							</li>
+							<li>
+								<a href="#install" title="3 Add content"> <img class="thumbnail" src="assets/img/add3.png" alt="3 Add content"> </a>
+							</li>
+							<li>
+								<a href="#install" title="4 Select tab Plugins and add a General Plugin"> <img class="thumbnail" src="assets/img/add4.png" alt="4 Select tab Plugins and add a General Plugin"> </a>
+							</li>
+							<li>
+								<a href="#install" title="5 Open Tab Plugin and choose Display Podcast from the dropdown"> <img class="thumbnail" src="assets/img/add5.png" alt="5 Open Tab Plugin and choose Display Podcast from the dropdown"> </a>
+							</li>
+							<li>
+								<a href="#install" title="6 save the page"> <img class="thumbnail" src="assets/img/add6.png" alt="6 save the page"> </a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+			<section id="use">
+				<div class="row">
+					<div class="span4">
+						<h2>Usage</h2>
+						<p>
+							Usage of Podcast is very simple. Just create a new Podcast record, fill in all the required fields and you are good to go.
+						</p>
+					</div>
+					<div class="span12">
+						<ul class="media-grid">
+							<li>
+								<a href="#install" title="1 Choose Templates"> <img class="thumbnail" src="assets/img/create1.png" alt="1 Choose Templates"> </a>
+							</li>
+							<li>
+								<a href="#install" title="2 Select the page cotainting your templates"> <img class="thumbnail" src="assets/img/create2.png" alt="2 Select the page cotainting your templates"> </a>
+							</li>
+							<li>
+								<a href="#install" title="3 Choose Info/Modify from the selectbox"> <img class="thumbnail" src="assets/img/create3.png" alt="3 Choose Info/Modify from the selectbox"> </a>
+							</li>
+							<li>
+								<a href="#install" title="4 Click Edit whole template record"> <img class="thumbnail" src="assets/img/create4.png" alt="4 Click Edit whole template record"> </a>
+							</li>
+							<li>
+								<a href="#install" title="5 Open Tab Includes"> <img class="thumbnail" src="assets/img/create5.png" alt="5 Open Tab Includes"> </a>
+							</li>
+							<li>
+								<a href="#install" title="6 Select the static Podcast template and save"> <img class="thumbnail" src="assets/img/create6.png" alt="6 Select the static Podcast template and save"> </a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+			<footer>
+				<p>
+					&copy; Noël Bossart 2012
+				</p>
+			</footer>
+		</div>
+	</body>
+</html>
