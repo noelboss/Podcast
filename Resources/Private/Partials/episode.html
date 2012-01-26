@@ -1,27 +1,36 @@
 {namespace pc=Tx_Podcast_ViewHelpers}
 <div class="episode {zebraClass}">     
-	<div class="preview">                      
-		<!-- geht mit geht mit fluid nicht -->
-		<pc:if condition="'{episode.mime}'=='video/mp4'">
-			<f:then>  
-				<video src="{episode.file}" controls="controls" height="360" width="480">
-					Your browser does not support the video element.
-				</video>  
-			</f:then>
-			<f:else>
+	<!-- geht mit geht mit fluid nicht -->
+	<pc:if condition="'{episode.mime}'=='video/mp4'">
+		<f:then>        
+			<div class="description">    
+				<h3>{episode.title}<span><f:format.date date="{episode.publicationDate}" format="d.m.Y" /></span></h3>	           
+				{episode.description}
+			</div>
+			<div class="video">                      
+				<video src="{episode.file}" controls="controls">
+				Your browser does not support the video element.
+				</video>   
+				<p>
+					<strong>Duration:</strong>
+					<pc:duration timestamp="{episode.duration}" />
+				</p>
+			</div>
+		</f:then>
+		<f:else>      
+			<div class="audio">                      
 				<audio src="{episode.file}" controls="controls">
-					Your browser does not support the audio element.
-				</audio>
-			</f:else>
-		</pc:if>
-		
-		<p>
-			<strong>Duration:</strong>
-			<pc:duration timestamp="{episode.duration}" />
-		</p>
-	</div>
-	<div class="description">    
-		<h3>{episode.title}<span><f:format.date date="{episode.publicationDate}" format="d.m.Y" /></span></h3>	           
-		{episode.description}
-	</div>
+				Your browser does not support the audio element.
+				</audio> 
+				<p>
+					<strong>Duration:</strong>
+					<pc:duration timestamp="{episode.duration}" />
+				</p>
+			</div>  
+			<div class="description">    
+				<h3>{episode.title}<span><f:format.date date="{episode.publicationDate}" format="d.m.Y" /></span></h3>	           
+				{episode.description}
+			</div>
+		</f:else>
+	</pc:if>
 </div>

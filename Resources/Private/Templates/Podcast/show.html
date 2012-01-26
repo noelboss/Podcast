@@ -29,12 +29,7 @@
 					</f:link.action>
 					</p>
 				</f:then>
-			</f:if>         
-			<f:if condition="{podcast.copyright}">
-			<div class="copyright"> 
-				{podcast.copyright} – <f:link.external uri="{podcast.website.link}" />{podcast.website.title}</a>
-			</div>
-			</f:if>   
+			</f:if>
 		</div>   
 		<f:if condition="{podcast.categories}">  
 		 	<div class="categories">
@@ -69,8 +64,10 @@
 				<li><f:translate key="tx_podcast_domain_model_episode.none" /></li>
 			</f:else>
 		</f:if>	  
-	</div>                                                                                                                       
-	<p class="back">
-		<f:link.action action="index"><f:translate key="tx_podcast_domain_model_podcast.links.back" /></f:link.action>          
+	</div>
+	<f:if condition="{podcast.copyright}">
+	<p class="copyright"> 
+		{podcast.copyright} – <f:link.external uri="{podcast.website.link}" />{podcast.website.title}</a>
 	</p>
+	</f:if>
 </f:section>
