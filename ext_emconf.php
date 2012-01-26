@@ -3,7 +3,7 @@
 ########################################################################
 # Extension Manager/Repository config file for ext "podcast".
 #
-# Auto generated 26-01-2012 08:19
+# Auto generated 26-01-2012 08:32
 #
 # Manual updates:
 # Only the data in the array - everything else is removed by next
