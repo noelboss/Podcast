@@ -2,7 +2,6 @@ $(document).ready(function(){
 
   // table sort example
   // ==================  
-	$('.topbar').scrollSpy()
 
   $("#sortTableExample").tablesorter( { sortList: [[ 1, 0 ]] } )
 

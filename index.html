@@ -10,7 +10,8 @@
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
 		<!-- Le styles -->
-		<link href="assets/css/bootstrap.min.css" rel="stylesheet">
+		<link href="assets/css/bootstrap.css" rel="stylesheet">
+		<link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
 		<link href="assets/css/docs.css" rel="stylesheet">
 		<link href="assets/js/google-code-prettify/prettify.css" rel="stylesheet">
 		<!-- Le fav and touch icons -->
@@ -19,11 +20,11 @@
 		<link rel="apple-touch-icon" sizes="72x72" href="assets/ico/podcast-apple-72x72.png">
 		<link rel="apple-touch-icon" sizes="114x114" href="assets/ico/podcast-apple-114x114.png">
 	</head>
-	<body>
-		<div class="topbar">
-			<div class="fill">
+	<body data-spy="scroll" data-target=".navbar" data-offset="0">
+		<div class="navbar navbar-fixed">
+			<div class="navbar-inner">
 				<div class="container">
-					<a class="brand" href="#">Podcast for TYPO3</a>
+					<a class="brand" href="http://noelboss.github.com/Podcast/">Podcast for TYPO3</a>
 					<ul class="nav">
 						<li class="active">
 							<a href="#overview">Home</a>
@@ -36,6 +37,9 @@
 						</li>
 						<li>
 							<a href="#use">Use</a>
+						</li>
+						<li>
+							<a href="#social">Social</a>
 						</li>
 						<!--li>
 						<a href="#contact">Code</a>
@@ -97,7 +101,7 @@
 					<h1>About Podcast <small>... and why you'll love it!</small></h1>
 				</div>
 				<div class="row">
-					<div class="span-one-third">
+					<div class="span4">
 						<h2>HTML5 video and audio</h2>
 						<p>
 							Podcast for TYPO3 not only creates your feeds,
@@ -106,14 +110,14 @@
 							to your podcast and view your videos directly on your site.
 						</p>
 					</div>
-					<div class="span-one-third">
+					<div class="span4">
 						<h2>It just works</h2>
 						<p>
 							Podcast generates your XML on the fly – no need to manually generate the XML after every change you make.
 							It supports iTunes specific tags and works with RealURL out of the box, creating nice URLs for your feeds and pages.
 						</p>
 					</div>
-					<div class="span-one-third">
+					<div class="span4">
 						<h2>Featurerich</h2>
 						<p>
 							Create more than one Podcast, use episodes, authors and other settings for multiple Podcasts. Podcast analyses your media and automatically detects video and audio formats and duration of your content.
@@ -123,7 +127,7 @@
 			</section>
 			<section id="install">
 				<div class="row">
-					<div class="span4">
+					<div class="span3">
 						<h2>Installation</h2>
 						<p>
 							Installation and setup is easy. Just follow this simple steps and your
@@ -131,53 +135,53 @@
 						</p>  
 						<h6><a class="btn primary" href="https://github.com/noelboss/Podcast/zipball/0.3.2">Download 0.3.2</a></h6>
 					</div>
-					<div class="span12">
+					<div class="span9">
 						<h2>Add TypoScript</h2>
 						<p>
 							In your TypoScript template, add the static <span class="label">Podcast</span> TypoScript coming with the extension.
 						</p>
-						<ul class="media-grid">
-							<li>
-								<a href="#install" title="1 Choose Templates"> <img class="thumbnail" src="assets/img/install0.png" alt="1 Choose Templates"> </a>
+						<ul class="thumbnails">
+							<li class="span3">
+								<img class="thumbnail" src="assets/img/install0.png" alt="1 Choose Templates">
 							</li>
-							<li>
-								<a href="#install" title="2 Select the page cotainting your templates"> <img class="thumbnail" src="assets/img/install1.png" alt="2 Select the page cotainting your templates"> </a>
+							<li class="span3">
+								<img class="thumbnail" src="assets/img/install1.png" alt="2 Select the page cotainting your templates">
 							</li>
-							<li>
-								<a href="#install" title="3 Choose Info/Modify from the selectbox"> <img class="thumbnail" src="assets/img/install2.png" alt="3 Choose Info/Modify from the selectbox"> </a>
+							<li class="span3">
+								<img class="thumbnail" src="assets/img/install2.png" alt="3 Choose Info/Modify from the selectbox">
 							</li>
-							<li>
-								<a href="#install" title="4 Click Edit whole template record"> <img class="thumbnail" src="assets/img/install3.png" alt="4 Click Edit whole template record"> </a>
+							<li class="span3">
+								<img class="thumbnail" src="assets/img/install3.png" alt="4 Click Edit whole template record">
 							</li>
-							<li>
-								<a href="#install" title="5 Open Tab Includes"> <img class="thumbnail" src="assets/img/install4.png" alt="5 Open Tab Includes"> </a>
+							<li class="span3">
+								<img class="thumbnail" src="assets/img/install4.png" alt="5 Open Tab Includes">
 							</li>
-							<li>
-								<a href="#install" title="6 Select the static Podcast template and save"> <img class="thumbnail" src="assets/img/install5.png" alt="6 Select the static Podcast template and save"> </a>
+							<li class="span3">
+								<img class="thumbnail" src="assets/img/install5.png" alt="6 Select the static Podcast template and save">
 							</li>
 						</ul>
 						<h2>Add the podcast Plugin</h2>
 						<p>
 							On any Page, add a new Plugin and change the type to <span class="label">Display Podcast</span>
 						</p>
-						<ul class="media-grid">
-							<li>
-								<a href="#install" title="1 Choose Page"> <img class="thumbnail" src="assets/img/add1.png" alt="1 Choose Page"> </a>
+						<ul class="thumbnails">
+							<li class="span3">
+								<img class="thumbnail" src="assets/img/add1.png" alt="1 Choose Page">
 							</li>
-							<li>
-								<a href="#install" title="2 Select a page"> <img class="thumbnail" src="assets/img/add2.png" alt="2 Select a page"> </a>
+							<li class="span3">
+								<img class="thumbnail" src="assets/img/add2.png" alt="2 Select a page">
 							</li>
-							<li>
-								<a href="#install" title="3 Add content"> <img class="thumbnail" src="assets/img/add3.png" alt="3 Add content"> </a>
+							<li class="span3">
+								<img class="thumbnail" src="assets/img/add3.png" alt="3 Add content"> 
 							</li>
-							<li>
-								<a href="#install" title="4 Select tab Plugins and add a General Plugin"> <img class="thumbnail" src="assets/img/add4.png" alt="4 Select tab Plugins and add a General Plugin"> </a>
+							<li class="span3">
+								<img class="thumbnail" src="assets/img/add4.png" alt="4 Select tab Plugins and add a General Plugin"> 
 							</li>
-							<li>
-								<a href="#install" title="5 Open Tab Plugin and choose Display Podcast from the dropdown"> <img class="thumbnail" src="assets/img/add5.png" alt="5 Open Tab Plugin and choose Display Podcast from the dropdown"> </a>
+							<li class="span3">
+								<img class="thumbnail" src="assets/img/add5.png" alt="5 Open Tab Plugin and choose Display Podcast from the dropdown"> 
 							</li>
-							<li>
-								<a href="#install" title="6 Save the page"> <img class="thumbnail" src="assets/img/add6.png" alt="6 Save the page"> </a>
+							<li class="span3">
+								<img class="thumbnail" src="assets/img/add6.png" alt="6 Save the page"> 
 							</li>
 						</ul>
 					</div>
@@ -185,65 +189,113 @@
 			</section>
 			<section id="use">
 				<div class="row">
-					<div class="span4">
+					<div class="span3">
 						<h2>Usage</h2>
 						<p>
 							Usage of Podcast is very simple. Just create a new Podcast record in a SysFolder, fill in all the required fields and you are good to go.
 						</p>
 					</div>
-					<div class="span12">
-						<ul class="media-grid">
-							<li>
-								<a href="#install" title="1 Choose Templates"> <img class="thumbnail" src="assets/img/create1.png" alt="1 Choose Templates"> </a>
+					<div class="span9">
+						<ul class="thumbnails">
+							<li class="span3">
+								<img class="thumbnail" src="assets/img/create1.png" alt="1 Choose Templates"> 
 							</li>
-							<li>
-								<a href="#install" title="2 Select the page cotainting your templates"> <img class="thumbnail" src="assets/img/create2.png" alt="2 Select the page cotainting your templates"> </a>
+							<li class="span3">
+								<img class="thumbnail" src="assets/img/create2.png" alt="2 Select the page cotainting your templates"> 
 							</li>
-							<li>
-								<a href="#install" title="3 Choose Info/Modify from the selectbox"> <img class="thumbnail" src="assets/img/create3.png" alt="3 Choose Info/Modify from the selectbox"> </a>
+							<li class="span3">
+								<img class="thumbnail" src="assets/img/create3.png" alt="3 Choose Info/Modify from the selectbox"> 
 							</li>
-							<li>
-								<a href="#install" title="4 Click Edit whole template record"> <img class="thumbnail" src="assets/img/create4.png" alt="4 Click Edit whole template record"> </a>
+							<li class="span3">
+								<img class="thumbnail" src="assets/img/create4.png" alt="4 Click Edit whole template record"> 
 							</li>
-							<li>
-								<a href="#install" title="5 Open Tab Includes"> <img class="thumbnail" src="assets/img/create5.png" alt="5 Open Tab Includes"> </a>
+							<li class="span3">
+								<img class="thumbnail" src="assets/img/create5.png" alt="5 Open Tab Includes"> 
 							</li>
-							<li>
-								<a href="#install" title="6 Select the static Podcast template and save"> <img class="thumbnail" src="assets/img/create6.png" alt="6 Select the static Podcast template and save"> </a>
+							<li class="span3">
+								<img class="thumbnail" src="assets/img/create6.png" alt="6 Select the static Podcast template and save"> 
 							</li>
 						</ul>
 					</div>
 				</div>
 			</section> 
-			<section id="more">
+			<section id="social">
 				<div class="row">
-					<div class="span4">  
+					<div class="span3">  
 						<h2>Issues</h2>
 						Please report issues on <a href="https://github.com/noelboss/Podcast/issues">github</a>
 					</div>
-					<div class="span12">  
+					<div class="span9">  
 						<h2>Contribute</h2>
-						Podcast is OpenSource and on GIT. You are very welcome to contribute your work to the extension
+						<p>Podcast is OpenSource and on GIT. You are very welcome to contribute your work to the extension
 						to make it even better. Features that are missing: <a href="http://jplayer.org/">HTML5 player</a>, Flash fallback, predefined iTunes categories, translations...
+						</p>  
+					</div>
+				</div>        
+			</section>
+			<section id="more">
+				<div class="row more">
+					<div class="span3 offset3">  
+						<p><a href="http://www.typo3.org"><img src="assets/img/typo3.jpg" width="20" height="19" alt="Typo3"> TYPO3</a>
+							• <a href="http://forge.typo3.org/projects/typo3v4-mvc">Extbase</a> 
+							• <a href="http://forge.typo3.org/projects/package-typo3-fluid"> Fluid</a></p>
+					</div>
+					<div class="span2">  
+						<p><a href="http://www.w3.org/html/logo/"><img src="assets/img/icon-html5.png" width="18" height="20" alt="HTML5"> HTML5</a></p>
+					</div> 
+					<div class="span2">  
+						<p><a href="https://github.com/noelboss/Podcast/"><img src="assets/img/icon-github.png" width="18" height="20" alt="Github"> github</a></p>
+					</div>
+					<div class="span2">  
+						<p><a href="http://www.twitter.com/noelboss"><img src="assets/img/icon-twitter.png" width="18" height="20" alt="Twitter"> Twitter</a></p>
 					</div>
 				</div>
 			</section>
 		</div>        
 		<footer> 
-			<div class="container"> 
-			  	<p>
-					&copy; <a href="http://www.twitter.com/noelboss">Noël Bossart</a> 2012
-				</p>
+			<div class="container">  
+				<div class="row">
+					<div class="span3">  
+				  		<p>
+						&copy; <a href="http://www.twitter.com/noelboss">Noël Bossart</a> 2012
+						</p>
+					</div>
+					<div class="span9">
+						<div id="disqus_thread"></div>
+						<script type="text/javascript">
+						    var disqus_shortname = 'podcastfortypo3';
+						    (function() {
+						        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+						        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+						        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+						    })();
+						</script>
+						<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>						
+					</div>
+				</div>
 			</div>
 		</footer>         
 		<!-- Le javascript -->
-	    <script src="http://code.jquery.com/jquery-1.5.2.min.js"></script>
+	    <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 	    <script src="http://autobahn.tablesorter.com/jquery.tablesorter.min.js"></script>
 	    <script src="assets/js/google-code-prettify/prettify.js"></script>
-	    <script>$(function () { prettyPrint() })</script>
 	    <script src="assets/js/bootstrap-dropdown.js"></script>
 	    <script src="assets/js/bootstrap-twipsy.js"></script>
 	    <script src="assets/js/bootstrap-scrollspy.js"></script>
-	    <script src="assets/js/application.js"></script>
+	    <script src="assets/js/application.js"></script> 
+		<script type="text/javascript">
+
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-28648498-1']);
+		  _gaq.push(['_setDomainName', 'github.com']);
+		  _gaq.push(['_trackPageview']);
+
+		  (function() {
+		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+
+		</script>
 	</body>
 </html>
