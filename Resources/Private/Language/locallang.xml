@@ -31,6 +31,8 @@
 			<label index="tx_podcast_domain_model_episode.website">website</label>
 			<label index="tx_podcast_domain_model_episode.author">author</label>   
 			<label index="tx_podcast_domain_model_episode.none">There are currently no episodes int this Podcast.</label>   
+			<label index="tx_podcast_domain_model_episode.novideo">Your browser does not support the audio element.</label>   
+			<label index="tx_podcast_domain_model_episode.noadio">Your browser does not support the video element.</label>
 			<label index="tx_podcast_domain_model_category">Podcast Categorie</label>
 			<label index="tx_podcast_domain_model_category.title">Title</label>
 			<label index="tx_podcast_domain_model_category.subcategory">Sucategory</label>

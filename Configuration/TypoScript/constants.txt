@@ -9,6 +9,6 @@ plugin.tx_podcast {
 	}
 	persistence {
 		 # cat=plugin.tx_podcast//a; type=int+; label=Default storage PID
-		storagePid = 73
+		storagePid = 
 	}
 }

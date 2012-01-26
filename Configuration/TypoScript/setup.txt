@@ -61,12 +61,6 @@ xmlPage {
 	plugin.tx_podcast.settings.feed = 1
 	xmlPage.20 =< tt_content.list.20.podcast_display
 	xmlPage.20 {   
-		#persistence {
-		#	storagePid.stdWrap.data = GP:tx_podcast_display|storagePid
-		#}
 		action = show
-		#view.format = xml
 	}
 [global]
-
-
