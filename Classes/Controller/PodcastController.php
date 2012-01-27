@@ -16,11 +16,6 @@
  *  The GNU General Public License can be found at
  *  http://www.gnu.org/copyleft/gpl.html.
  *
- *  This script is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details.
- *
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
@@ -62,29 +57,6 @@ class Tx_Podcast_Controller_PodcastController extends Tx_Extbase_MVC_Controller_
 	}
 
 	/**
-	 * action new
-	 *
-	 * @param $newPodcast
-	 * @dontvalidate $newPodcast
-	 * @return void
-	 */
-	public function newAction(Tx_Podcast_Domain_Model_Podcast $newPodcast = NULL) {
-		$this->view->assign('newPodcast', $newPodcast);
-	}
-
-	/**
-	 * action create
-	 *
-	 * @param $newPodcast
-	 * @return void
-	 */
-	public function createAction(Tx_Podcast_Domain_Model_Podcast $newPodcast) {
-		$this->podcastRepository->add($newPodcast);
-		$this->flashMessageContainer->add('Your new Podcast was created.');
-		$this->redirect('list');
-	}
-
-	/**
 	 * action show
 	 *
 	 * @param $podcast
@@ -94,7 +66,8 @@ class Tx_Podcast_Controller_PodcastController extends Tx_Extbase_MVC_Controller_
 		if($this->settings['feed']){  
 			$this->request->setFormat('xml');
 		}
-		
+
+		$this->view->assign('version', $EM_CONF['podcast']['version']);
 		$this->view->assign('podcast', $podcast);
 	}
 }

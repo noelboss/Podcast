@@ -8,10 +8,12 @@ CREATE TABLE tx_podcast_domain_model_podcast (
 
 	title varchar(255) DEFAULT '' NOT NULL,
 	subtitle varchar(255) DEFAULT '' NOT NULL,
-	description text DEFAULT '' NOT NULL,
+	description text,
 	copyright varchar(255) DEFAULT '' NOT NULL,
 	image varchar(255) DEFAULT '' NOT NULL,
 	itunes tinyint(1) unsigned DEFAULT '0' NOT NULL,
+	itunesblock tinyint(1) unsigned DEFAULT '0' NOT NULL,
+	explicit varchar(16) DEFAULT '' NOT NULL,
 	categories int(11) unsigned DEFAULT '0' NOT NULL,
 	episodes int(11) unsigned DEFAULT '0' NOT NULL,
 	author int(11) unsigned DEFAULT '0',
@@ -56,9 +58,10 @@ CREATE TABLE tx_podcast_domain_model_episode (
 
 	podcast int(11) unsigned DEFAULT '0' NOT NULL,
 
-	title varchar(255) DEFAULT '' NOT NULL,
+	title varchar(255) DEFAULT '' NOT NULL, 
+	itunesblock tinyint(1) unsigned DEFAULT '0' NOT NULL,
 	subtitle varchar(255) DEFAULT '' NOT NULL,
-	description text DEFAULT '' NOT NULL,
+	description text,
 	file varchar(255) DEFAULT '' NOT NULL,
 	publication_date int(11) DEFAULT '0' NOT NULL,
 	duration int(11) DEFAULT '0' NOT NULL,
@@ -102,8 +105,9 @@ CREATE TABLE tx_podcast_domain_model_category (
 	uid int(11) NOT NULL auto_increment,
 	pid int(11) DEFAULT '0' NOT NULL,
 
-
 	title varchar(255) DEFAULT '' NOT NULL,
+	subcategory int(11) unsigned DEFAULT '0' NOT NULL,
+	parentcategory int(11) unsigned DEFAULT '0' NOT NULL,
 
 	tstamp int(11) unsigned DEFAULT '0' NOT NULL,
 	crdate int(11) unsigned DEFAULT '0' NOT NULL,
@@ -143,7 +147,7 @@ CREATE TABLE tx_podcast_domain_model_person (
 
 
 	name varchar(255) DEFAULT '' NOT NULL,
-	e_mail varchar(255) DEFAULT '' NOT NULL,
+	email varchar(255) DEFAULT '' NOT NULL,
 
 	tstamp int(11) unsigned DEFAULT '0' NOT NULL,
 	crdate int(11) unsigned DEFAULT '0' NOT NULL,
@@ -212,12 +216,38 @@ CREATE TABLE tx_podcast_domain_model_website (
 	KEY parent (pid),
 	KEY t3ver_oid (t3ver_oid,t3ver_wsid),
 	KEY language (l10n_parent,sys_language_uid)
+); 
+
+#
+# Table structure for table 'tx_podcast_podcast_category_mm'
+#
+CREATE TABLE tx_podcast_podcast_episode_mm (
+	uid_local int(11) unsigned DEFAULT '0' NOT NULL,
+	uid_foreign int(11) unsigned DEFAULT '0' NOT NULL,
+	sorting int(11) unsigned DEFAULT '0' NOT NULL,
+	sorting_foreign int(11) unsigned DEFAULT '0' NOT NULL,
+
+	KEY uid_local (uid_local),
+	KEY uid_foreign (uid_foreign)
 );
 
 #
 # Table structure for table 'tx_podcast_podcast_category_mm'
 #
 CREATE TABLE tx_podcast_podcast_category_mm (
+	uid_local int(11) unsigned DEFAULT '0' NOT NULL,
+	uid_foreign int(11) unsigned DEFAULT '0' NOT NULL,
+	sorting int(11) unsigned DEFAULT '0' NOT NULL,
+	sorting_foreign int(11) unsigned DEFAULT '0' NOT NULL,
+
+	KEY uid_local (uid_local),
+	KEY uid_foreign (uid_foreign)
+);  
+
+#
+# Table structure for table 'tx_podcast_podcast_category_mm'
+#
+CREATE TABLE tx_podcast_category_category_mm (
 	uid_local int(11) unsigned DEFAULT '0' NOT NULL,
 	uid_foreign int(11) unsigned DEFAULT '0' NOT NULL,
 	sorting int(11) unsigned DEFAULT '0' NOT NULL,

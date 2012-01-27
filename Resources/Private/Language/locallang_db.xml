@@ -5,38 +5,56 @@
 		<description>Language labels for database tables/fields belonging to extension 'podcast'</description>
 	</meta>
 	<data type="array">
-		<languageKey index="default" type="array">
-			<label index="tx_podcast_domain_model_podcast">Podcast</label>
+		<languageKey index="default" type="array">                                               
+			<label index="tx_podcast_domain_model_podcast">Podcast</label>   
+			<label index="tx_podcast_domain_model_podcast.tab.episodes">Episodes</label>
+			<label index="tx_podcast_domain_model_podcast.tab.itunes">iTunes Settings</label>
+			<label index="tx_podcast_domain_model_podcast.tab.contact">Publisher</label>
 			<label index="tx_podcast_domain_model_podcast.title">Title</label>
 			<label index="tx_podcast_domain_model_podcast.subtitle">Subtitle</label>
 			<label index="tx_podcast_domain_model_podcast.description">Description</label>
 			<label index="tx_podcast_domain_model_podcast.copyright">Copyright</label>
 			<label index="tx_podcast_domain_model_podcast.image">Image</label>
-			<label index="tx_podcast_domain_model_podcast.itunes">Itunes</label>
+			<label index="tx_podcast_domain_model_podcast.itunes">iTunes optimized</label>
+			<label index="tx_podcast_domain_model_podcast.itunesblock">Temporarily block this Podcast on iTunes</label>
+			<label index="tx_podcast_domain_model_podcast.explicit">Channel contains explicit content</label> 
+			<label index="tx_podcast_domain_model_podcast.explicit.no">No</label>
+	        <label index="tx_podcast_domain_model_podcast.explicit.clean">Clean (for Children)</label>
+	        <label index="tx_podcast_domain_model_podcast.explicit.yes">Yes</label>
 			<label index="tx_podcast_domain_model_podcast.categories">Categories</label>
 			<label index="tx_podcast_domain_model_podcast.episodes">Episodes</label>
 			<label index="tx_podcast_domain_model_podcast.author">Author</label>
 			<label index="tx_podcast_domain_model_podcast.technical_contact">Technical Contact</label>
 			<label index="tx_podcast_domain_model_podcast.website">Website</label>
+			
 			<label index="tx_podcast_domain_model_episode">Episode</label>
-			<label index="tx_podcast_domain_model_episode.title">Title</label>
+			<label index="tx_podcast_domain_model_episode.tab.meta">Meta Data</label>
+			<label index="tx_podcast_domain_model_episode.title">Title</label>   
+			<label index="tx_podcast_domain_model_episode.itunesblock">Temporarily block this episode on iTunes</label>
 			<label index="tx_podcast_domain_model_episode.subtitle">Subtitle</label>
 			<label index="tx_podcast_domain_model_episode.description">Description</label>
-			<label index="tx_podcast_domain_model_episode.file">File</label>
+			<label index="tx_podcast_domain_model_episode.file">File – upload in File module</label>
 			<label index="tx_podcast_domain_model_episode.publication_date">Publication Date</label>
 			<label index="tx_podcast_domain_model_episode.duration">Duration</label>
-			<label index="tx_podcast_domain_model_episode.mime">Mime</label>
+			<label index="tx_podcast_domain_model_episode.mime">MIME Type</label>
 			<label index="tx_podcast_domain_model_episode.website">Website</label>
 			<label index="tx_podcast_domain_model_episode.author">Author</label>
 			<label index="tx_podcast_domain_model_category">Category</label>
 			<label index="tx_podcast_domain_model_category.title">Title</label>
 			<label index="tx_podcast_domain_model_category.subcategory">Subcategory</label>
+			<label index="tx_podcast_domain_model_category.parentcategory">Parentcategory</label>
 			<label index="tx_podcast_domain_model_person">Person</label>
 			<label index="tx_podcast_domain_model_person.name">Name</label>
-			<label index="tx_podcast_domain_model_person.e_mail">E Mail</label>
+			<label index="tx_podcast_domain_model_person.email">E Mail</label>
 			<label index="tx_podcast_domain_model_website">Website</label>
 			<label index="tx_podcast_domain_model_website.title">Title</label>
 			<label index="tx_podcast_domain_model_website.link">Link</label>
+		</languageKey> 
+		<languageKey index="de" type="array">                                               
+ 		   	<label index="tx_podcast_domain_model_podcast.explicit">Podcast ist Jugendfrei</label>
+			<label index="tx_podcast_domain_model_podcast.explicit.no">Ja</label>
+	        <label index="tx_podcast_domain_model_podcast.explicit.clean">Clean (Für Kinder geeignet)</label>
+	        <label index="tx_podcast_domain_model_podcast.explicit.yes">Nein</label>
 		</languageKey>
 	</data>
 </T3locallang>

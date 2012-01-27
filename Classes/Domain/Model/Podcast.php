@@ -16,11 +16,6 @@
  *  The GNU General Public License can be found at
  *  http://www.gnu.org/copyleft/gpl.html.
  *
- *  This script is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details.
- *
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
@@ -78,6 +73,20 @@ class Tx_Podcast_Domain_Model_Podcast extends Tx_Extbase_DomainObject_AbstractEn
 	 * @var boolean
 	 */
 	protected $itunes;
+	
+	/**
+	 * Contains explicit Content
+	 *
+	 * @var boolean
+	 */
+	protected $explicit;  
+	
+	/**
+	 * Blocked on iTunes
+	 *
+	 * @var boolean
+	 */
+	protected $itunesblock;
 
 	/**
 	 * categories
@@ -236,22 +245,50 @@ class Tx_Podcast_Domain_Model_Podcast extends Tx_Extbase_DomainObject_AbstractEn
 	}
 
 	/**
+	 * Returns the explicit
+	 *
+	 * @return boolean $explicit
+	 */
+	public function getExplicit() {
+		return $this->explicit;
+	}
+
+	/**
+	 * Sets the explicit
+	 *
+	 * @param boolean $explicit
+	 * @return void
+	 */
+	public function setExplicit($explicit) {
+		$this->explicit = $explicit;
+	} 
+	
+	/**
+	 * Returns the itunesblock
+	 *
+	 * @return boolean $itunesblock
+	 */
+	public function getItunesblock() {
+		return $this->itunesblock;
+	}
+
+	/**
+	 * Sets the itunesblock
+	 *
+	 * @param boolean $itunesblock
+	 * @return void
+	 */
+	public function setItunesblock($itunesblock) {
+		$this->itunesblock = $itunesblock;
+	}   
+	
+	/**
 	 * Returns the itunes
 	 *
 	 * @return boolean $itunes
 	 */
 	public function getItunes() {
 		return $this->itunes;
-	}
-
-	/**
-	 * Sets the itunes
-	 *
-	 * @param boolean $itunes
-	 * @return void
-	 */
-	public function setItunes($itunes) {
-		$this->itunes = $itunes;
 	}
 
 	/**

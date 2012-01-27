@@ -16,11 +16,6 @@
  *  The GNU General Public License can be found at
  *  http://www.gnu.org/copyleft/gpl.html.
  *
- *  This script is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details.
- *
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
@@ -41,6 +36,14 @@ class Tx_Podcast_Domain_Model_Episode extends Tx_Extbase_DomainObject_AbstractEn
 	 * @validate NotEmpty
 	 */
 	protected $title;
+	
+	
+	/**
+	 * Blocked on iTunes
+	 *
+	 * @var boolean
+	 */
+	protected $itunesblock;
 
 	/**
 	 * Subtitle
@@ -126,6 +129,25 @@ class Tx_Podcast_Domain_Model_Episode extends Tx_Extbase_DomainObject_AbstractEn
 	 */
 	public function setTitle($title) {
 		$this->title = $title;
+	}
+	
+	/**
+	 * Returns the itunesblock
+	 *
+	 * @return boolean $itunesblock
+	 */
+	public function getItunesblock() {
+		return $this->itunesblock;
+	}
+
+	/**
+	 * Sets the itunesblock
+	 *
+	 * @param boolean $itunesblock
+	 * @return void
+	 */
+	public function setItunesblock($itunesblock) {
+		$this->itunesblock = $itunesblock;
 	}
 
 	/**

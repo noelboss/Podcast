@@ -9,15 +9,17 @@
 	<languageKey index="default" type="array">
 			<label index="title.description">Title</label>
 			<label index="subtitle.description">Subtitle</label>
-			<label index="description.description">Description</label>
-			<label index="copyright.description">Copyright</label>
-			<label index="image.description">Image</label>
-			<label index="itunes.description">iTunes optimized</label>
-			<label index="categories.description">categories</label>
-			<label index="episodes.description">episodes</label>
-			<label index="author.description">author</label>
-			<label index="technical_contact.description">technicalContact</label>
-			<label index="website.description">website</label>
+			<label index="description.description">A short description of your Podcast</label>
+			<label index="copyright.description">Copyright. If you enter YEAR, it will be dynamically 
+				replaced with the current year. For Example: "© YEAR by YourCompany"</label>
+			<label index="image.description">This image will be shown in the Podcast listing in iTunes and in
+				the frontend of your page. Use a square image, with at least 600 x 600 pixels for iTunes</label>
+			<label index="itunes.description">Use iTunes optimized Tags and Features in the Feed</label>
+			<label index="categories.description">For possible iTunes categories take a look at: http://www.apple.com/itunes/store/podcaststechspecs.html#categories</label>            
+			<label index="episodes.description">The Episodes are listed by publication date.</label>
+			<label index="author.description">Author of the Podcast</label>
+			<label index="technical_contact.description">Technical Contact in case there is a problem with your feed.</label>
+			<label index="website.description">Website that is linked in the Podcast listing and in the frontend.</label>
 		</languageKey>
 	</data>
 </T3locallang>

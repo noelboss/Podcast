@@ -4,9 +4,6 @@
 #
 # See http://www.yaml.org/spec/1.2/spec.html
 #
-
----
-
 ###########    Overwrite settings  ###########
 #
 # These settings only apply, if the roundtrip feature of the extension builder
@@ -48,14 +45,13 @@ overwriteSettings:
     ViewHelpers: keep
 
   Configuration:
+    RealURL: keep
     TCA: keep
     TypoScript: keep
 
   Resources:
-    Private:
-      Language:
-        locallang.xml: keep
-      Templates: keep
+    Private: keep
+    Public: keep
 
   ext_icon.gif: keep
   ext_localconf.php: keep

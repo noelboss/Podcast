@@ -8,7 +8,7 @@
 	<data type="array">
 	<languageKey index="default" type="array">
 			<label index="name.description">Name</label>
-			<label index="e_mail.description">E-Mail</label>
+			<label index="email.description">E-Mail</label>
 		</languageKey>
 	</data>
 </T3locallang>

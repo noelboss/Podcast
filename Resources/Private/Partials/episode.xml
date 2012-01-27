@@ -1,13 +1,21 @@
-{namespace pc=Tx_Podcast_ViewHelpers}
+{namespace pc=Tx_Podcast_ViewHelpers}  
+<f:if condition="{episode.file}">
 			<item>
-				<title>{episode.title}</title>    
+				<title>{episode.title}</title>
 				<f:if condition="{itunes}">
-					<f:then>
+					<f:then>       
+				<f:if condition="{podcast.itunesblock}"> 
+					<f:then><itunes:block>yes</itunes:block></f:then>
+					<f:else>               
+						<f:if condition="{episode.itunesblock}"><itunes:block>yes</itunes:block></f:if>
+					</f:else>
+				</f:if>  
 				<itunes:author>{episode.author.name}</itunes:author>
 				<itunes:subtitle>{episode.subtitle}</itunes:subtitle>
 				<itunes:summary>
 					{episode.description} 
-				</itunes:summary>                                                       
+				</itunes:summary>       
+				<itunes:keywords> </itunes:keywords>                                                
 				<itunes:duration><pc:duration timestamp="{episode.duration}" /></itunes:duration>
 				<itunes:keywords>{episode.keywords}</itunes:keywords>   
 					</f:then>    
@@ -24,4 +32,11 @@
 				<enclosure url="{f:uri.resource(path: episode.file, absolute: 'true')}" length="{pc:duration(timestamp: episode.duration)}" type="{episode.mime}" />
 				<guid>{f:uri.resource(path: episode.file, absolute: 'true')}</guid>  
 				<pubDate><f:format.date date="{episode.publicationDate}" format="r" /></pubDate>
+				<f:if condition="{episode.website.link}"> 
+					<f:then><link>{episode.website.link}</link></f:then>
+					<f:else>               
+						<f:if condition="{podcast.website.link}"><link>{podcast.website.link}</link></f:if>
+					</f:else>
+				</f:if>
 			</item>
+</f:if>

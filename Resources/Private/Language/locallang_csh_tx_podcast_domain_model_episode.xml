@@ -12,10 +12,10 @@
 			<label index="description.description">Summary</label>
 			<label index="file.description">File</label>
 			<label index="publication_date.description">Publication Date</label>
-			<label index="duration.description">Duration</label>
-			<label index="mime.description">mime</label>
-			<label index="website.description">website</label>
-			<label index="author.description">author</label>
+			<label index="duration.description">Duration will be automatically determined upon saving the episode</label>
+			<label index="mime.description">MIME Type will be automatically determined upon saving the episode</label>
+			<label index="website.description">Website</label>
+			<label index="author.description">Author</label>
 		</languageKey>
 	</data>
 </T3locallang>

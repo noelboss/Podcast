@@ -7,8 +7,13 @@
 		<f:if condition="{podcast.website.link}"><link>{podcast.website.link}</link></f:if>
 		<language><f:translate key="language" /></language>
 		<f:if condition="{podcast.copyright}"><copyright>{podcast.copyright}</copyright></f:if>
+		<lastBuildDate>Thu, 26 Jan 2012 21:46:04 +0100</lastBuildDate>
+		<pubDate>Thu, 26 Jan 2012 21:46:04 +0100</pubDate>
+		<generator>Podcast for TYPO3 (podcast) Version {version}</generator>
+		<f:if condition="{podcast.itunesblock}"><itunes:block>yes</itunes:block></f:if>	
 		<f:if condition="{podcast.itunes}">
-			<f:then>
+			<f:then>     
+	    <itunes:keywords> </itunes:keywords>
 		<f:if condition="{podcast.subtitle}"><itunes:subtitle>{podcast.subtitle}</itunes:subtitle></f:if> 
 		<f:if condition="{podcast.author.name}"><itunes:author>{podcast.author.name}</itunes:author></f:if>
         	<f:if condition="{podcast.author}"><itunes:owner></f:if>
@@ -46,7 +51,7 @@
 		<f:if condition="{podcast.episodes}">
 			<f:then>
 				<f:for each="{podcast.episodes}" as="episode" reverse="false">
-				<f:render partial="episode" arguments="{episode: episode, itunes: podcast.itunes}" />
+				<f:render partial="episode" arguments="{podcast: podcast, episode: episode, itunes: podcast.itunes}" />
 				</f:for>
 			</f:then>
 		</f:if>        

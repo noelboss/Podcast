@@ -9,11 +9,14 @@ Tx_Extbase_Utility_Extension::registerPlugin(
 	'Display Podcasts'
 );
 
-t3lib_extMgm::addStaticFile($_EXTKEY, 'Configuration/TypoScript', 'Podcast');
+t3lib_extMgm::addStaticFile($_EXTKEY, 'Configuration/TypoScript', 'Podcast');     
+
+
 
 
 t3lib_extMgm::addLLrefForTCAdescr('tx_podcast_domain_model_podcast', 'EXT:podcast/Resources/Private/Language/locallang_csh_tx_podcast_domain_model_podcast.xml');
-t3lib_extMgm::allowTableOnStandardPages('tx_podcast_domain_model_podcast');
+t3lib_extMgm::allowTableOnStandardPages('tx_podcast_domain_model_podcast');  
+t3lib_extMgm::addToInsertRecords('tx_podcast_domain_model_podcast');
 $TCA['tx_podcast_domain_model_podcast'] = array(
 	'ctrl' => array(
 		'title'	=> 'LLL:EXT:podcast/Resources/Private/Language/locallang_db.xml:tx_podcast_domain_model_podcast',
@@ -40,11 +43,15 @@ $TCA['tx_podcast_domain_model_podcast'] = array(
 );
 
 t3lib_extMgm::addLLrefForTCAdescr('tx_podcast_domain_model_episode', 'EXT:podcast/Resources/Private/Language/locallang_csh_tx_podcast_domain_model_episode.xml');
-t3lib_extMgm::allowTableOnStandardPages('tx_podcast_domain_model_episode');
+t3lib_extMgm::allowTableOnStandardPages('tx_podcast_domain_model_episode'); 
+t3lib_extMgm::addToInsertRecords('tx_podcast_domain_model_episode');
 $TCA['tx_podcast_domain_model_episode'] = array(
 	'ctrl' => array(
 		'title'	=> 'LLL:EXT:podcast/Resources/Private/Language/locallang_db.xml:tx_podcast_domain_model_episode',
 		'label' => 'title',
+		'label_alt' => 'mime',
+		'label_alt_force' => true,
+		'default_sortby' => 'ORDER BY publication_date DESC',
 		'tstamp' => 'tstamp',
 		'crdate' => 'crdate',
 		'cruser_id' => 'cruser_id',
@@ -99,6 +106,8 @@ $TCA['tx_podcast_domain_model_person'] = array(
 	'ctrl' => array(
 		'title'	=> 'LLL:EXT:podcast/Resources/Private/Language/locallang_db.xml:tx_podcast_domain_model_person',
 		'label' => 'name',
+		'label_alt' => 'email',
+		'label_alt_force' => true,
 		'tstamp' => 'tstamp',
 		'crdate' => 'crdate',
 		'cruser_id' => 'cruser_id',
@@ -145,6 +154,19 @@ $TCA['tx_podcast_domain_model_website'] = array(
 		'dynamicConfigFile' => t3lib_extMgm::extPath($_EXTKEY) . 'Configuration/TCA/Website.php',
 		'iconfile' => t3lib_extMgm::extRelPath($_EXTKEY) . 'Resources/Public/Icons/tx_podcast_domain_model_website.gif'
 	),
-);
+); 
+
+
+
+if (TYPO3_MODE == 'BE') {  
+	// Add Wizard Icon
+	$TBE_MODULES_EXT['xMOD_db_new_content_el']['addElClasses']['Tx_Podcast_Utilities_PluginWizard'] = t3lib_extMgm::extPath($_EXTKEY).'Classes/Utilities/Backend/PluginWizard.php';
+	 
+	// Add tables on Pages:
+	$GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['cms']['db_layout']['addTables']['tx_podcast_domain_model_podcast'][0]['fList'] = 'uid,title,subtitle';
+	$GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['cms']['db_layout']['addTables']['tx_podcast_domain_model_podcast'][0]['icon'] = TRUE;
+	$GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['cms']['db_layout']['addTables']['tx_podcast_domain_model_episode'][0]['fList'] = 'uid,publication_date,title,subtitle,mime';
+	$GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['cms']['db_layout']['addTables']['tx_podcast_domain_model_episode'][0]['icon'] = TRUE;
+}
 
 ?>

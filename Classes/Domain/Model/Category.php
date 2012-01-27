@@ -16,11 +16,6 @@
  *  The GNU General Public License can be found at
  *  http://www.gnu.org/copyleft/gpl.html.
  *
- *  This script is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details.
- *
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
@@ -43,11 +38,18 @@ class Tx_Podcast_Domain_Model_Category extends Tx_Extbase_DomainObject_AbstractE
 	protected $title;
 
 	/**
-	 * subcategories
+	 * Sub Categories
 	 *
-	 * @var Tx_Extbase_Persistence_ObjectStorage<Tx_Podcast_Domain_Model_Category>
+	 * @var Tx_Extbase_Persistence_ObjectStorage<Tx_Podcast_Domain_Model_Category> $subcategory
 	 */
 	protected $subcategory;
+
+	/**
+	 * Parent Categories
+	 *
+	 * @var Tx_Extbase_Persistence_ObjectStorage<Tx_Podcast_Domain_Model_Category> $parentcategory
+	 */
+	protected $parentcategory;
 
 	/**
 	 * __construct
@@ -71,6 +73,7 @@ class Tx_Podcast_Domain_Model_Category extends Tx_Extbase_DomainObject_AbstractE
 		 * You may modify the constructor of this class instead
 		 */
 		$this->subcategory = new Tx_Extbase_Persistence_ObjectStorage();
+		$this->parentcategory = new Tx_Extbase_Persistence_ObjectStorage();
 	}
 
 	/**
@@ -92,6 +95,27 @@ class Tx_Podcast_Domain_Model_Category extends Tx_Extbase_DomainObject_AbstractE
 		$this->title = $title;
 	}
 
+
+	/**
+	 * Adds a Category
+	 *
+	 * @param Tx_Podcast_Domain_Model_Category $subcategory
+	 * @return void
+	 */
+	public function addSubcategory(Tx_Podcast_Domain_Model_Category $subcategory) {
+		$this->subcategory->attach($subcategory);
+	}
+
+	/**
+	 * Removes a Category
+	 *
+	 * @param Tx_Podcast_Domain_Model_Category $subcategoryToRemove The Category to be removed
+	 * @return void
+	 */
+	public function removeSubcategory(Tx_Podcast_Domain_Model_Category $subcategoryToRemove) {
+		$this->subcategory->detach($subcategoryToRemove);
+	}
+
 	/**
 	 * Returns the subcategory
 	 *
@@ -107,9 +131,48 @@ class Tx_Podcast_Domain_Model_Category extends Tx_Extbase_DomainObject_AbstractE
 	 * @param Tx_Extbase_Persistence_ObjectStorage<Tx_Podcast_Domain_Model_Category> $subcategory
 	 * @return void
 	 */
-	public function setSubcategory(Tx_Podcast_Domain_Model_Category $subcategory) {
+	public function setSubcategory($subcategory) {
 		$this->subcategory = $subcategory;
 	}
 
+	/**
+	 * Adds a Category
+	 *
+	 * @param Tx_Podcast_Domain_Model_Category $parentcategory
+	 * @return void
+	 */
+	public function addParentcategory(Tx_Podcast_Domain_Model_Category $parentcategory) {
+		$this->parentcategory->attach($parentcategory);
+	}
+
+	/**
+	 * Removes a Category
+	 *
+	 * @param Tx_Podcast_Domain_Model_Category $parentcategoryToRemove The Category to be removed
+	 * @return void
+	 */
+	public function removeParentcategory(Tx_Podcast_Domain_Model_Category $parentcategoryToRemove) {
+		$this->parentcategory->detach($parentcategoryToRemove);
+	}
+
+	/**
+	 * Returns the parentcategory
+	 *
+	 * @return Tx_Extbase_Persistence_ObjectStorage<Tx_Podcast_Domain_Model_Category> $parentcategory
+	 */
+	public function getParentcategory() {
+		return $this->parentcategory;
+	}
+
+	/**
+	 * Sets the parentcategory
+	 *
+	 * @param Tx_Extbase_Persistence_ObjectStorage<Tx_Podcast_Domain_Model_Category> $parentcategory
+	 * @return void
+	 */
+	public function setParentcategory($parentcategory) {
+		$this->parentcategory = $parentcategory;
+	}
+	
 }
 ?>

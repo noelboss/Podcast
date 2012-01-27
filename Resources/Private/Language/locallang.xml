@@ -10,9 +10,20 @@
 			<label index="tx_podcast_domain_model_podcast.categories">Categories</label>
 			<label index="tx_podcast_domain_model_podcast.links.feed">Podcast Feed</label>
 			<label index="tx_podcast_domain_model_podcast.links.back">« back</label>
+			<label index="backend.wizard">Podcast</label>
+			<label index="backend.wizard.description"><![CDATA[
+				   Displays Podcasts on the website and generates an links to XML feed.
+			]]></label>
 		</languageKey> 
-		<languageKey index="dee" type="array">
-			<label index="language">de-ch</label>
+		<languageKey index="de" type="array">
+			<label index="language">de-ch</label> 
+			<label index="tx_podcast_domain_model_podcast.categories">Kategorien</label>
+			<label index="tx_podcast_domain_model_podcast.links.feed">Podcast Feed</label>
+			<label index="tx_podcast_domain_model_podcast.links.back">« zurück</label>
+			<label index="backend.wizard">Podcast</label>
+			<label index="backend.wizard.description"><![CDATA[
+				Zeigt Podcasts auf der Webseite and und erstellt Links zum XML Feed.
+			]]></label>
 		</languageKey>
 	</data>
 </T3locallang>
