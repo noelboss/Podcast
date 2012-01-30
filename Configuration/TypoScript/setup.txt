@@ -1,12 +1,12 @@
 plugin.tx_podcast {
 	settings {
-		
+
 	}
 	view {
 		templateRootPath = {$plugin.tx_podcast.view.templateRootPath}
 		partialRootPath = {$plugin.tx_podcast.view.partialRootPath}
 		layoutRootPath = {$plugin.tx_podcast.view.layoutRootPath}
-	}    
+	}
 	persistence {
         storagePid = {$plugin.tx_podcast.persistence.storagePid}
         classes {
@@ -20,27 +20,27 @@ plugin.tx_podcast {
     }
 }
 
-page.includeCSS { 
+page.includeCSS {
 	tx_podcast_file_1 = EXT:podcast/Resources/Public/Styles/default.css
-}              
+}
 
 xmlPage = PAGE
 xmlPage {
     typeNum = 23456689564
-	
+
 	config {
 		disableAllHeaderCode = 1
 		additionalHeaders = Content-type:application/xml
 		//no_cache = 0
-		xhtml_cleaning = 0                              
+		xhtml_cleaning = 0
 		adminPanel=0
-	}	
-}   
+	}
+}
 
-[globalVar = GP:type=23456689564] && [globalVar = GP:tx_podcast_display|podcast > 0] 
+[globalVar = GP:type=23456689564] && [globalVar = GP:tx_podcast_display|podcast > 0]
 	plugin.tx_podcast.settings.feed = 1
 	xmlPage.20 =< tt_content.list.20.podcast_display
-	xmlPage.20 {   
+	xmlPage.20 {
 		#persistence {
 		#	storagePid.stdWrap.data = GP:tx_podcast_display|storagePid
 		#}
