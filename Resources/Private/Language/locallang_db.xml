@@ -7,6 +7,7 @@
 	<data type="array">
 		<languageKey index="default" type="array">                                               
 			<label index="tx_podcast_domain_model_podcast">Podcast</label>   
+			<label index="tx_podcast_domain_model_podcast.tab.description">Description</label>
 			<label index="tx_podcast_domain_model_podcast.tab.episodes">Episodes</label>
 			<label index="tx_podcast_domain_model_podcast.tab.itunes">iTunes Settings</label>
 			<label index="tx_podcast_domain_model_podcast.tab.contact">Publisher</label>
@@ -22,6 +23,7 @@
 	        <label index="tx_podcast_domain_model_podcast.explicit.clean">Clean (for Children)</label>
 	        <label index="tx_podcast_domain_model_podcast.explicit.yes">Yes</label>
 			<label index="tx_podcast_domain_model_podcast.categories">Categories</label>
+			<label index="tx_podcast_domain_model_podcast.keywords">Keywords</label>
 			<label index="tx_podcast_domain_model_podcast.episodes">Episodes</label>
 			<label index="tx_podcast_domain_model_podcast.author">Author</label>
 			<label index="tx_podcast_domain_model_podcast.technical_contact">Technical Contact</label>
@@ -39,7 +41,9 @@
 			<label index="tx_podcast_domain_model_episode.mime">MIME Type</label>
 			<label index="tx_podcast_domain_model_episode.website">Website</label>
 			<label index="tx_podcast_domain_model_episode.author">Author</label>
-			<label index="tx_podcast_domain_model_category">Category</label>
+			<label index="tx_podcast_domain_model_episode.keywords">Keywords</label>
+
+			<label index="tx_podcast_domain_model_category">Category</label>			
 			<label index="tx_podcast_domain_model_category.title">Title</label>
 			<label index="tx_podcast_domain_model_category.subcategory">Subcategory</label>
 			<label index="tx_podcast_domain_model_category.parentcategory">Parentcategory</label>
@@ -48,7 +52,11 @@
 			<label index="tx_podcast_domain_model_person.email">E Mail</label>
 			<label index="tx_podcast_domain_model_website">Website</label>
 			<label index="tx_podcast_domain_model_website.title">Title</label>
-			<label index="tx_podcast_domain_model_website.link">Link</label>
+			<label index="tx_podcast_domain_model_website.link">Link</label> 
+			
+			<label index="tx_podcast_domain_model_keyword">Keyword</label>
+			<label index="tx_podcast_domain_model_keyword.title">Title</label>
+			
 		</languageKey> 
 		<languageKey index="de" type="array">                                               
  		   	<label index="tx_podcast_domain_model_podcast.explicit">Podcast ist Jugendfrei</label>

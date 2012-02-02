@@ -32,23 +32,15 @@
  * @license http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License, version 3 or later
  *
  */
-class Tx_Podcast_Domain_Model_Person extends Tx_Extbase_DomainObject_AbstractEntity {
+class Tx_Podcast_Domain_Model_Keyword extends Tx_Extbase_DomainObject_AbstractValueObject {
 
 	/**
-	 * Name
+	 * Keyword
 	 *
 	 * @var string
 	 * @validate NotEmpty
 	 */
-	protected $name;
-
-	/**
-	 * E-Mail
-	 *
-	 * @var string
-	 * @validate NotEmpty
-	 */
-	protected $email;
+	protected $title;
 
 	/**
 	 * __construct
@@ -60,41 +52,22 @@ class Tx_Podcast_Domain_Model_Person extends Tx_Extbase_DomainObject_AbstractEnt
 	}
 
 	/**
-	 * Returns the name
+	 * Returns the title
 	 *
-	 * @return string $name
+	 * @return string $title
 	 */
-	public function getName() {
-		return $this->name;
+	public function getTitle() {
+		return $this->title;
 	}
 
 	/**
-	 * Sets the name
+	 * Sets the title
 	 *
-	 * @param string $name
+	 * @param string $title
 	 * @return void
 	 */
-	public function setName($name) {
-		$this->name = $name;
-	}
-
-	/**
-	 * Returns the email
-	 *
-	 * @return string $email
-	 */
-	public function getEmail() {
-		return $this->email;
-	}
-
-	/**
-	 * Sets the email
-	 *
-	 * @param string $email
-	 * @return void
-	 */
-	public function setEmail($email) {
-		$this->email = $email;
+	public function setTitle($title) {
+		$this->title = $title;
 	}
 
 }

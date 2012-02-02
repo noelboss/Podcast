@@ -100,7 +100,14 @@ class Tx_Podcast_Domain_Model_Podcast extends Tx_Extbase_DomainObject_AbstractEn
 	 *
 	 * @var Tx_Extbase_Persistence_ObjectStorage<Tx_Podcast_Domain_Model_Episode>
 	 */
-	protected $episodes;
+	protected $episodes;  
+	
+	/**
+	 * keywords
+	 *
+	 * @var Tx_Extbase_Persistence_ObjectStorage<Tx_Podcast_Domain_Model_Keyword>
+	 */
+	protected $keywords;
 
 	/**
 	 * author
@@ -147,6 +154,8 @@ class Tx_Podcast_Domain_Model_Podcast extends Tx_Extbase_DomainObject_AbstractEn
 		$this->categories = new Tx_Extbase_Persistence_ObjectStorage();
 		
 		$this->episodes = new Tx_Extbase_Persistence_ObjectStorage();
+		
+		$this->keywords = new Tx_Extbase_Persistence_ObjectStorage();
 	}
 
 	/**
@@ -433,6 +442,44 @@ class Tx_Podcast_Domain_Model_Podcast extends Tx_Extbase_DomainObject_AbstractEn
 	 */
 	public function setWebsite(Tx_Podcast_Domain_Model_Website $website) {
 		$this->website = $website;
+	}
+	/**
+	 * Adds a Keyword
+	 *
+	 * @param Tx_Podcast_Domain_Model_Keyword $keyword
+	 * @return void
+	 */
+	public function addKeyword(Tx_Podcast_Domain_Model_Keyword $keyword) {
+		$this->keywords->attach($keyword);
+	}
+
+	/**
+	 * Removes a Keyword
+	 *
+	 * @param Tx_Podcast_Domain_Model_Keyword $keywordToRemove The Keyword to be removed
+	 * @return void
+	 */
+	public function removeKeyword(Tx_Podcast_Domain_Model_Keyword $keywordToRemove) {
+		$this->keywords->detach($keywordToRemove);
+	}
+
+	/**
+	 * Returns the keywords
+	 *
+	 * @return Tx_Extbase_Persistence_ObjectStorage<Tx_Podcast_Domain_Model_Keyword> $keywords
+	 */
+	public function getKeywords() {
+		return $this->keywords;
+	}
+
+	/**
+	 * Sets the keywords
+	 *
+	 * @param Tx_Extbase_Persistence_ObjectStorage<Tx_Podcast_Domain_Model_Keyword> $keywords
+	 * @return void
+	 */
+	public function setKeywords(Tx_Extbase_Persistence_ObjectStorage $keywords) {
+		$this->keywords = $keywords;
 	}
 
 }

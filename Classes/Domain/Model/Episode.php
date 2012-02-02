@@ -102,6 +102,13 @@ class Tx_Podcast_Domain_Model_Episode extends Tx_Extbase_DomainObject_AbstractEn
 	 * @var Tx_Podcast_Domain_Model_Person
 	 */
 	protected $author;
+	
+	/**
+	 * keywords
+	 *
+	 * @var Tx_Extbase_Persistence_ObjectStorage<Tx_Podcast_Domain_Model_Keyword>
+	 */
+	protected $keywords;
 
 	/**
 	 * __construct
@@ -109,7 +116,22 @@ class Tx_Podcast_Domain_Model_Episode extends Tx_Extbase_DomainObject_AbstractEn
 	 * @return void
 	 */
 	public function __construct() {
+		//Do not remove the next line: It would break the functionality
+		$this->initStorageObjects();
+	}
 
+	/**
+	 * Initializes all Tx_Extbase_Persistence_ObjectStorage properties.
+	 *
+	 * @return void
+	 */
+	protected function initStorageObjects() {
+		/**
+		 * Do not modify this method!
+		 * It will be rewritten on each save in the extension builder
+		 * You may modify the constructor of this class instead
+		 */
+		$this->keywords = new Tx_Extbase_Persistence_ObjectStorage();
 	}
 
 	/**
@@ -301,6 +323,45 @@ class Tx_Podcast_Domain_Model_Episode extends Tx_Extbase_DomainObject_AbstractEn
 	public function setAuthor(Tx_Podcast_Domain_Model_Person $author) {
 		$this->author = $author;
 	}
+              
 
+	/**
+	 * Adds a Keyword
+	 *
+	 * @param Tx_Podcast_Domain_Model_Keyword $keyword
+	 * @return void
+	 */
+	public function addKeyword(Tx_Podcast_Domain_Model_Keyword $keyword) {
+		$this->keywords->attach($keyword);
+	}
+
+	/**
+	 * Removes a Keyword
+	 *
+	 * @param Tx_Podcast_Domain_Model_Keyword $keywordToRemove The Keyword to be removed
+	 * @return void
+	 */
+	public function removeKeyword(Tx_Podcast_Domain_Model_Keyword $keywordToRemove) {
+		$this->keywords->detach($keywordToRemove);
+	}
+
+	/**
+	 * Returns the keywords
+	 *
+	 * @return Tx_Extbase_Persistence_ObjectStorage<Tx_Podcast_Domain_Model_Keyword> $keywords
+	 */
+	public function getKeywords() {
+		return $this->keywords;
+	}
+
+	/**
+	 * Sets the keywords
+	 *
+	 * @param Tx_Extbase_Persistence_ObjectStorage<Tx_Podcast_Domain_Model_Keyword> $keywords
+	 * @return void
+	 */
+	public function setKeywords(Tx_Extbase_Persistence_ObjectStorage $keywords) {
+		$this->keywords = $keywords;
+	}
 }
 ?>
