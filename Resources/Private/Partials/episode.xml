@@ -17,7 +17,7 @@
 				</itunes:summary>       
 				<itunes:keywords> </itunes:keywords>                                                
 				<itunes:duration><pc:duration timestamp="{episode.duration}" /></itunes:duration>
-				<itunes:keywords>{episode.keywords}</itunes:keywords>   
+				<f:if condition="{episode.keywords}"><itunes:keywords><f:for each="{episode.keywords}" as="keyword" reverse="false">{keyword.title},</f:for></itunes:keywords></f:if>
 					</f:then>    
 					<f:else>   
 				<author>{episode.author.name}</author>

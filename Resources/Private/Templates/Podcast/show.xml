@@ -13,7 +13,7 @@
 		<f:if condition="{podcast.itunesblock}"><itunes:block>yes</itunes:block></f:if>	
 		<f:if condition="{podcast.itunes}">
 			<f:then>     
-	    <itunes:keywords> </itunes:keywords>
+		<f:if condition="{podcast.keywords}"><itunes:keywords><f:for each="{podcast.keywords}" as="keyword" reverse="false">{keyword.title},</f:for></itunes:keywords></f:if>
 		<f:if condition="{podcast.subtitle}"><itunes:subtitle>{podcast.subtitle}</itunes:subtitle></f:if> 
 		<f:if condition="{podcast.author.name}"><itunes:author>{podcast.author.name}</itunes:author></f:if>
         	<f:if condition="{podcast.author}"><itunes:owner></f:if>
