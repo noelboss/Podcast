@@ -29,7 +29,7 @@ array_push($TYPO3_CONF_VARS['EXTCONF']['realurl']['_DEFAULT']['preVars'],
 	array(
 		'GETvar' => 'type',
 		'valueMap' => array(
-			'xml' => '23456689564'
+			'xml' => '1289377328'
 		),
 		'noMatch' => 'bypass',
 	) 

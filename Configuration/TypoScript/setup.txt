@@ -26,8 +26,7 @@ page.includeCSS {
 
 xmlPage = PAGE
 xmlPage {
-    typeNum = 23456689564
-
+    typeNum = 1289377328
 	config {
 		disableAllHeaderCode = 1
 		additionalHeaders = Content-type:application/xml
@@ -37,7 +36,7 @@ xmlPage {
 	}
 }
 
-[globalVar = GP:type=23456689564] && [globalVar = GP:tx_podcast_display|podcast > 0]
+[globalVar = GP:type=1289377328] && [globalVar = GP:tx_podcast_display|podcast > 0]
 	plugin.tx_podcast.settings.feed = 1
 	xmlPage.20 =< tt_content.list.20.podcast_display
 	xmlPage.20 {
