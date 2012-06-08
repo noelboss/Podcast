@@ -123,21 +123,15 @@ $TCA['tx_podcast_domain_model_podcast'] = array(
 				'type' => 'select',
 				'foreign_table' => 'tx_podcast_domain_model_episode',
 				'foreign_table_where' => ' AND tx_podcast_domain_model_episode.sys_language_uid IN (-1,0) ORDER BY tx_podcast_domain_model_episode.publication_date DESC',
-				'MM' => 'tx_podcast_podcast_episode_mm',																												
-				//'renderMode' => 'checkbox',
+				'MM' => 'tx_podcast_podcast_episode_mm',
+				'renderMode' => 'singlebox',
 				'size' => 10,
 				'autoSizeMax' => 30,
 				'maxitems' => 9999,
 				'multiple' => 1,
 				'wizards' => array(
-					'_POSITION' => 'top',
+					'_POSITION' => 'right',
 					'_PADDING' => 10,
-					'suggest' => array(
-						'type' => 'suggest',
-						'default' => array(
-							'searchWholePhrase' => 1,
-						),	  
-					),
 					'add' => Array(
 						'type' => 'script',
 						'title' => 'Create new',
@@ -328,6 +322,7 @@ $TCA['tx_podcast_domain_model_podcast'] = array(
 			'config' => array(
 				'type' => 'select',
 				'foreign_table' => 'tx_podcast_domain_model_keyword',
+				"foreign_table_where" => " AND sys_language_uid=###REC_FIELD_sys_language_uid### ORDER BY tx_podcast_domain_model_keyword.title",
 				'MM' => 'tx_podcast_podcast_keyword_mm',
 				'renderMode' => 'checkbox',
 				'size' => 10,
