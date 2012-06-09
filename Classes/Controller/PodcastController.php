@@ -62,11 +62,14 @@ class Tx_Podcast_Controller_PodcastController extends Tx_Extbase_MVC_Controller_
 	 * @param $podcast
 	 * @return void
 	 */
-	public function showAction(Tx_Podcast_Domain_Model_Podcast $podcast) {
+	public function showAction(Tx_Podcast_Domain_Model_Podcast $podcast = NULL) {
 		if($this->settings['feed']){  
 			$this->request->setFormat('xml');
 		}
-
+		if(!$podcast && $this->settings['podcast']){
+			$podcast = $this->podcastRepository->findOneByUid($this->settings['podcast']);
+		}
+		
 		$this->view->assign('version', $EM_CONF['podcast']['version']);
 		$this->view->assign('podcast', $podcast);
 	}

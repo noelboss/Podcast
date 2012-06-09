@@ -1,0 +1,50 @@
+<T3DataStructure>
+	<meta>
+		<langDisable>1</langDisable>
+	</meta>
+ 	<sheets>
+		<sDEF>
+		  <ROOT>
+			<TCEforms>
+			  <sheetTitle>LLL:EXT:podcast/Resources/Private/Language/locallang_db.xml:ff.behaviour</sheetTitle>
+			</TCEforms>
+			<type>array</type>
+			<el>
+			  <switchableControllerActions>
+				<TCEforms>
+				  <label>LLL:EXT:podcast/Resources/Private/Language/locallang_db.xml:ff.config</label>
+				  <config>
+					<type>select</type>
+					<items>
+					   <numIndex index="0">
+						 <numIndex index="0">LLL:EXT:podcast/Resources/Private/Language/locallang_db.xml:ff.actionList</numIndex>
+						 <numIndex index="1"><![CDATA[Podcast->list;Podcast->show]]></numIndex>
+					   </numIndex>
+					   <numIndex index="1">
+						 <numIndex index="0">LLL:EXT:podcast/Resources/Private/Language/locallang_db.xml:ff.actionShow</numIndex>
+						 <numIndex index="1"><![CDATA[Podcast->show]]></numIndex>
+					   </numIndex>
+					 </items>
+				  </config>
+				</TCEforms>
+			  </switchableControllerActions>
+				<settings.podcast>
+					<TCEforms>
+						<label>Podcast to display</label>
+						<displayCond><![CDATA[FIELD:switchableControllerActions:=:Podcast->show]]></displayCond>
+						<config type="array">
+							<type>select</type>
+							<size>1</size>
+							<minitems>1</minitems>
+							<maxitems>1</maxitems>
+							<autoSizeMax>1</autoSizeMax>
+							<foreign_table>tx_podcast_domain_model_podcast</foreign_table>
+							<foreign_table_where> AND tx_podcast_domain_model_podcast.deleted=0 AND tx_podcast_domain_model_podcast.sys_language_uid IN (-1,0)</foreign_table_where>
+						</config>
+					</TCEforms>
+				</settings.podcast>
+			</el>
+		  </ROOT>
+		</sDEF>
+ 	</sheets>
+</T3DataStructure>

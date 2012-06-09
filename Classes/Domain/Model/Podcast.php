@@ -221,7 +221,7 @@ class Tx_Podcast_Domain_Model_Podcast extends Tx_Extbase_DomainObject_AbstractEn
 	 * @return string $copyright
 	 */
 	public function getCopyright() {
-		return str_replace('{year}', date('Y'), $this->copyright);
+		return str_replace('YEAR', date('Y'), $this->copyright);
 	}
 
 	/**

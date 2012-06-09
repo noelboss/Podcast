@@ -39,6 +39,7 @@
 			<label index="tx_podcast_domain_model_episode.publication_date">Publication Date</label>
 			<label index="tx_podcast_domain_model_episode.duration">Duration</label>
 			<label index="tx_podcast_domain_model_episode.mime">MIME Type</label>
+			<label index="tx_podcast_domain_model_episode.altfiles">Alternative Files</label>
 			<label index="tx_podcast_domain_model_episode.website">Website</label>
 			<label index="tx_podcast_domain_model_episode.author">Author</label>
 			<label index="tx_podcast_domain_model_episode.keywords">Keywords</label>
@@ -57,12 +58,20 @@
 			<label index="tx_podcast_domain_model_keyword">Keyword</label>
 			<label index="tx_podcast_domain_model_keyword.title">Title</label>
 			
+			<label index="ff.actionList">Listview</label>
+	        <label index="ff.actionShow">Singleview</label>
+	        <label index="ff.behaviour">Behaviour</label>
+	        <label index="ff.config">Default action of the plugin</label>
 		</languageKey> 
 		<languageKey index="de" type="array">                                               
  		   	<label index="tx_podcast_domain_model_podcast.explicit">Podcast ist Jugendfrei</label>
 			<label index="tx_podcast_domain_model_podcast.explicit.no">Ja</label>
 	        <label index="tx_podcast_domain_model_podcast.explicit.clean">Clean (Für Kinder geeignet)</label>
 	        <label index="tx_podcast_domain_model_podcast.explicit.yes">Nein</label>
+	        <label index="ff.actionList">Listenansicht</label>
+	        <label index="ff.actionShow">Einzelansicht</label>
+	        <label index="ff.behaviour">Verhalten</label>
+	        <label index="ff.config">Standardaktion des Plugins</label>
 		</languageKey>
 	</data>
 </T3locallang>
