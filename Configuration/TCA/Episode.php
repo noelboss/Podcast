@@ -4,7 +4,7 @@ if (!defined ('TYPO3_MODE'))	die ('Access denied.');
 $TCA['tx_podcast_domain_model_episode'] = array(
 	'ctrl' => $TCA['tx_podcast_domain_model_episode']['ctrl'],
 	'interface' => array(
-		'showRecordFieldList' => 'title,subtitle,description,file,publication_date,website,author,itunesblock,duration,mime'
+		'showRecordFieldList' => 'title,subtitle,description,file,publication_date,website,author,itunesblock,duration,mime,altfiles'
 	),
 	'types' => array(
 		'1' => array('showitem' => '--div--;LLL:EXT:podcast/Resources/Private/Language/locallang_db.xml:tx_podcast_domain_model_episode,title;;1;;1-1-1,subtitle,description,file;;2;;2,
@@ -12,7 +12,7 @@ $TCA['tx_podcast_domain_model_episode'] = array(
 	),
 	'palettes' => array(
 		'1' => array('showitem' => 'itunesblock'),
-		'2' => array('showitem' => 'duration,mime'),
+		'2' => array('showitem' => 'altfiles,duration,mime'),
 	),
 	'columns' => array(
 		'sys_language_uid' => array(
@@ -144,30 +144,6 @@ $TCA['tx_podcast_domain_model_episode'] = array(
 				'default' => time(),
 			)
 		),
-		'duration' => array(
-			'exclude' => 0,
-			'label'	  => 'LLL:EXT:podcast/Resources/Private/Language/locallang_db.xml:tx_podcast_domain_model_episode.duration',
-			'config' => array (
-				'type'	   => 'input',
-				'size'	   => '12',
-				'max'	   => '20',
-				'eval'	   => 'timesec',
-				'checkbox' => '0',
-				'default'  => '0'
-			)
-		),
-		'mime' => array(
-			'exclude' => 0,
-			'label'	  => 'LLL:EXT:podcast/Resources/Private/Language/locallang_db.xml:tx_podcast_domain_model_episode.mime',
-			'config' => array (
-				'type'	   => 'input',
-				'size'	   => '12',
-				'max'	   => '20',
-				'eval'	   => 'trim',
-				'checkbox' => '0',
-				'default'  => '0'
-			)
-		),
 		'website' => array(
 			'exclude' => 0,
 			'label'	  => 'LLL:EXT:podcast/Resources/Private/Language/locallang_db.xml:tx_podcast_domain_model_episode.website',
@@ -280,6 +256,36 @@ $TCA['tx_podcast_domain_model_episode'] = array(
 					),
 				),
 			),
+		),
+		'duration' => array(
+			'exclude' => 0,
+			'label'	  => 'LLL:EXT:podcast/Resources/Private/Language/locallang_db.xml:tx_podcast_domain_model_episode.duration',
+			'config' => array (
+				'type' => 'none',
+				'cols' => 15,
+				'rows' => 4,
+				//'userFunc' => 'EXT:podcast/Classes/Domain/Model/Episode.php:tx_podcast_domain_model_episode->getDuration',
+			)
+		),
+		'mime' => array(
+			'exclude' => 0,
+			'label'	  => 'LLL:EXT:podcast/Resources/Private/Language/locallang_db.xml:tx_podcast_domain_model_episode.mime',
+			'config' => array (
+				'type' => 'none',
+				'cols' => 20,
+				'rows' => 4,
+				//'userFunc' => 'EXT:podcast/Classes/Domain/Model/Episode.php:tx_podcast_domain_model_episode->getMime',
+			)
+		),
+		'altfiles' => array(
+			'exclude' => 0,
+			'label'	  => 'LLL:EXT:podcast/Resources/Private/Language/locallang_db.xml:tx_podcast_domain_model_episode.altfiles',
+			'config' => array (
+				'type' => 'none',
+				'cols' => 20,
+				'rows' => 4,
+				//'userFunc' => 'EXT:podcast/Classes/Domain/Model/Episode.php:tx_podcast_domain_model_episode->getAltfiles',
+			)
 		),
 		'podcast' => array(
 			'config' => array(

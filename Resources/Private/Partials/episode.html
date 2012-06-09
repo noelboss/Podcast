@@ -1,6 +1,7 @@
 {namespace pc=Tx_Podcast_ViewHelpers}
 <div class="episode {zebraClass}">     
 	<!-- geht mit geht mit fluid nicht -->
+	{episode.altfile}
 	<pc:if condition="'{episode.mime}'=='video/mp4'">
 		<f:then>        
 			<div class="description">    
@@ -8,8 +9,11 @@
 				{episode.description}
 			</div>
 			<div class="video">                      
-				<video src="{episode.file}" controls="controls">
-				Your browser does not support the video element.
+				<video controls="controls">
+					<f:for each="{episode.altfiles}" as="altfile">
+					<source src="{altfile.name}" />
+					</f:for>
+					Your browser does not support the video element.
 				</video>   
 				<p>
 					<strong>Duration:</strong>
@@ -19,9 +23,12 @@
 		</f:then>
 		<f:else>      
 			<div class="audio">                      
-				<audio src="{episode.file}" controls="controls">
-				Your browser does not support the audio element.
-				</audio> 
+				<audio controls="controls" autobuffer="controls">
+					<f:for each="{episode.altfiles}" as="altfile">
+					<source src="{altfile.name}" />
+					</f:for>
+					Your browser does not support the audio element.
+				</audio>
 				<p>
 					<strong>Duration:</strong>
 					<pc:duration timestamp="{episode.duration}" />

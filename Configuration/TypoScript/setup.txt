@@ -1,7 +1,7 @@
 plugin.tx_podcast {
-	settings {
-
-	}
+	#settings {
+	#	formats = {$plugin.tx_podcast.settings.formats}
+	#}
 	view {
 		templateRootPath = {$plugin.tx_podcast.view.templateRootPath}
 		partialRootPath = {$plugin.tx_podcast.view.partialRootPath}

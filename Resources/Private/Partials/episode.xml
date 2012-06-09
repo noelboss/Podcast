@@ -1,4 +1,5 @@
-{namespace pc=Tx_Podcast_ViewHelpers}  
+{namespace pc=Tx_Podcast_ViewHelpers}
+{episode.altfile}
 <f:if condition="{episode.file}">
 			<item>
 				<title>{episode.title}</title>

@@ -88,6 +88,13 @@ class Tx_Podcast_Domain_Model_Episode extends Tx_Extbase_DomainObject_AbstractEn
 	 * @var string
 	 */
 	protected $mime;
+	
+	/**
+	 * altfiles
+	 *
+	 * @var string
+	 */
+	protected $altfiles;
 
 	/**
 	 * website
@@ -256,12 +263,10 @@ class Tx_Podcast_Domain_Model_Episode extends Tx_Extbase_DomainObject_AbstractEn
 	public function getDuration() {
 		return $this->duration;
 	}
-
 	/**
-	 * Sets the duration
+	 * set duration
 	 *
 	 * @param integer $duration
-	 * @return void
 	 */
 	public function setDuration($duration) {
 		$this->duration = $duration;
@@ -275,15 +280,123 @@ class Tx_Podcast_Domain_Model_Episode extends Tx_Extbase_DomainObject_AbstractEn
 	public function getMime() {
 		return $this->mime;
 	}
+	
+	/**
+	 * Set the mime
+	 *
+	 * @param string $mime
+	 */
+	public function setMime($mime) {
+		$this->mime = $mime;
+	}
+
+
 
 	/**
 	 * Sets the mime
 	 *
-	 * @param string $mime
 	 * @return void
 	 */
-	public function setMime($mime) {
-		$this->mime = $mime;
+	private function getFileMime($file) {
+		$mime = '';
+		$file = t3lib_div::getFileAbsFileName($file);
+		if ($fp = fopen($file, 'rb')) {
+			//This will set the Content-Type to the appropriate setting for the file 
+			$fileinfo = pathinfo($file);
+			$file_extension = strtolower($fileinfo['extension']);
+			switch($file_extension) {	   
+				case 'm4a': $mime='audio/x-m4a'; break;
+				case 'mp4': $mime='video/mp4'; break;
+				case 'm4v': $mime='video/x-m4v'; break;
+				case 'mov': $mime='video/quicktime'; break;
+				case 'pdf': $mime='application/pdf'; break;
+				case 'epub':$mime='document/x-epub'; break;
+				case 'mp3': $mime='audio/mpeg'; break;
+				case 'mpg': $mime='video/mpeg'; break;
+				case 'avi': $mime='video/x-msvideo'; break;
+			}  
+		}
+		return $mime;
+	}
+	
+	
+	/**
+	 * Sets the duration
+	 *
+	 * @param integer $duration
+	 * @return void
+	 */
+	private function getFileDuration($file) {
+		$duration = 0;
+		$file = t3lib_div::getFileAbsFileName($file);
+		if ($fp = fopen($file, 'rb')) {
+			require_once('typo3conf/ext/podcast/Classes//Utilities/getid3/getid3.php');       
+
+			// Initialize getID3 engine
+			$getID3 = new getID3;
+			$getID3->option_md5_data        = true;
+			$getID3->option_md5_data_source = true;
+			$getID3->encoding               = 'UTF-8';
+		    print_r($getID3->info);
+			$getID3->analyze($file);
+			if (empty($getID3->info['error'])) {
+				// Init wrapper object
+				$result = array();
+				$result['playing_time']    = (isset($getID3->info['playtime_seconds'])         ? $getID3->info['playtime_seconds']         : '');
+				$duration= round($result['playing_time']);
+				
+			}
+		}
+		return $duration;
+	}
+	
+	/**
+	 * Returns the alternative files
+	 *
+	 * @return string $altfiles
+	 */
+	public function getAltfiles() {
+		if(!$this->altfiles){
+			$this->setAltfiles();
+		}
+
+
+		$all = explode('|',$this->altfiles);
+		$altfiles = array();
+		for ($i=0; $i < count($all); $i++) { 
+			$file = explode(',',$all[$i]);
+			$altfiles[$i]['name'] = $file[0];
+			$altfiles[$i]['mime'] = $file[1];
+			$altfiles[$i]['duration'] = $file[2];
+		}
+
+		return $altfiles; 
+	}
+
+	/**
+	 * Sets the alternative files
+	 *
+	 * @return void
+	 */
+	public function setAltfiles() {
+		$fileInfo = t3lib_div::split_fileref($this->file);
+
+		/* get mime and duration from provided file */
+		$this->setMime($this->getFileMime($this->file));
+		$this->setDuration($this->getFileMime($this->file));
+
+		$altfiles = array();
+		$altfiles[0] = $this->file.','.$this->mime.','.$this->duration;
+		
+		$basepath = $fileInfo['path'].$fileInfo['filebody'].'.*';
+		$files = glob($basepath);
+		/* search for other files */
+		for ($i=0; $i < count($files); $i++) {
+			if($files[$i] != $this->file){
+				$altfiles[$i+1] =$files[$i].','.$mime.','.$duration;	
+			}
+		}
+		$this->altfiles = implode('|',$altfiles);
 	}
 
 	/**
