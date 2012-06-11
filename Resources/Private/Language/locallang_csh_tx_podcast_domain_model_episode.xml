@@ -6,16 +6,41 @@
 		<csh_table>tx_podcast_domain_model_episode</csh_table>
 	</meta>
 	<data type="array">
-	<languageKey index="default" type="array">
+		<languageKey index="default" type="array">
 			<label index="title.description">Title</label>
 			<label index="subtitle.description">Subtitle</label>
 			<label index="description.description">Summary</label>
-			<label index="file.description">File</label>
-			<label index="publication_date.description">Publication Date</label>
-			<label index="duration.description">Duration will be automatically determined upon saving the episode</label>
-			<label index="mime.description">MIME Type will be automatically determined upon saving the episode</label>
-			<label index="website.description">Website</label>
-			<label index="author.description">Author</label>
+			<label index="file.description">Video or audio files. Files with the same basename but other formats will be added as
+				alternative source to the HTML5 tags automatically. This happenes for each episode the first time the 
+				frontend is loaded. After each change of the episode, these values are recalculated.</label>
+			<label index="image.description">This image will be shown as poster image.</label>
+			<label index="publication_date.description">Publication Date (sort order)</label>
+			<label index="duration.description">Duration will be automatically determined upon saving the episode. This happenes 
+				for each episode the first time the frontend is loaded. After each change of the episode, 
+				these values are recalculated.</label>
+			<label index="mime.description">MIME Type will be automatically determined upon saving the episode. This happenes for 
+				each episode the first time the frontend is loaded. After each change of the episode, 
+				these values are recalculated.</label>
+			<label index="website.description">Website will only be inserted in the XML feed</label>
+			<label index="author.description">Author will only be inserted in the XML feed</label>
+			<label index="keywords.description">Keywords will only be inserted in the XML feed</label>
+		</languageKey>
+		<languageKey index="de" type="array">
+			<label index="title.description">Titel</label>
+			<label index="subtitle.description">Untertitel</label>
+			<label index="description.description">Zusammenfassung</label>
+			<label index="file.description">Video oder Audio-Dateien. Gleichnamige Dateien in unterschiedlichem Format werden automatisch
+				erkannt und als Alternatives Format im HTML5 Tag ausgegeben. Diese geschieht beim ersten Aufruf des Podcast 
+				im Frontend und wird nach jeder Änderung an der Episode erneut berechnet.</label>
+			<label index="image.description">Dieses Bild wird als Stellvertreter Bild für Videos angezeigt.</label>
+			<label index="publication_date.description">Veröffentlichungs Datum (Sortierreihenfolge)</label>
+			<label index="duration.description">Die Dauer der Episode wird automatisch aus der Datei berechnet. Diese geschieht 
+				beim ersten Aufruf des Podcast im Frontend und wird	nach jeder Änderung an der Episode erneut berechnet.</label>
+			<label index="mime.description">Die Art der Datei wird automatisch berechnet. Diese geschieht beim ersten Aufruf des 
+				Podcast im Frontend und wird nach jeder Änderung an der Episode erneut berechnet.</label>
+			<label index="website.description">Webseite wird nur im XML Feed ausgegeben</label>
+			<label index="author.description">Author wird nur im XML Feed ausgegeben</label>
+			<label index="keywords.description">Schlüsselworte werden nur im XML Feed ausgegeben</label>
 		</languageKey>
 	</data>
 </T3locallang>

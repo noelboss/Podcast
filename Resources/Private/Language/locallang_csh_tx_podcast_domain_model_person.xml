@@ -6,7 +6,11 @@
 		<csh_table>tx_podcast_domain_model_person</csh_table>
 	</meta>
 	<data type="array">
-	<languageKey index="default" type="array">
+		<languageKey index="default" type="array">
+			<label index="name.description">Name</label>
+			<label index="email.description">E-Mail</label>
+		</languageKey>
+		<languageKey index="de" type="array">
 			<label index="name.description">Name</label>
 			<label index="email.description">E-Mail</label>
 		</languageKey>

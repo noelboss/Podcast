@@ -6,8 +6,11 @@
 		<csh_table>tx_podcast_domain_model_keyword</csh_table>
 	</meta>
 	<data type="array">
-	<languageKey index="default" type="array">
+		<languageKey index="default" type="array">
 			<label index="title.description">Keyword</label>
+		</languageKey>
+		<languageKey index="de" type="array">
+			<label index="title.description">Schlüsselwort</label>
 		</languageKey>
 	</data>
 </T3locallang>

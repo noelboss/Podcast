@@ -54,6 +54,14 @@
 	<div class="episodes">                                                                                   
 		<f:if condition="{podcast.episodes}">
 			<f:then>
+				<!--f:widget.paginate objects="{episodes}" as="paginatedEpisodes">
+					<f:for each="{paginatedEpisodes}" as="episode" reverse="false">
+						<f:cycle values="{1: 'odd' 2: 'even'}" as="zebraClass">
+							<f:render partial="episode" arguments="{episode: episode, zebraClass: zebraClass}" />
+						</f:cycle>
+					</f:for>
+				</f:widget.paginate-->
+				
 				<f:for each="{podcast.episodes}" as="episode" reverse="false">
 					<f:cycle values="{1: 'odd' 2: 'even'}" as="zebraClass">
 						<f:render partial="episode" arguments="{episode: episode, zebraClass: zebraClass}" />
