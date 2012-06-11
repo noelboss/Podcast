@@ -383,7 +383,7 @@ class Tx_Podcast_Domain_Model_Episode extends Tx_Extbase_DomainObject_AbstractEn
 
 		/* get mime and duration from provided file */
 		$this->setMime($this->getFileMime($this->file));
-		$this->setDuration($this->getFileMime($this->file));
+		$this->setDuration($this->getFileDuration($this->file));
 
 		$altfiles = array();
 		$altfiles[0] = $this->file.','.$this->mime.','.$this->duration;

@@ -30,26 +30,8 @@
 					</p>
 				</f:then>
 			</f:if>
-		</div>   
-		<f:if condition="{podcast.categories}">  
-		 	<div class="categories">
-				<h3><f:translate key="tx_podcast_domain_model_podcast.categories" />:</h3>
-				<ul>
-				<f:for each="{podcast.categories}" as="category" reverse="false">    
-					<li>{category.title}</li> 
-						<f:if condition="{category.subcategory}">   
-							<ul>
-							<f:for each="{category.subcategory}" as="subcategory" reverse="false">
-								<li>{subcategory.title}</li>
-							</f:for>                                                              
-							</ul>
-						</f:if>     
-					</li>
-				</f:for>   
-				</ul>
-		 	</div>
-		</f:if>
-	</div>                  
+		</div>
+	</div>
 
 	<div class="episodes">                                                                                   
 		<f:if condition="{podcast.episodes}">

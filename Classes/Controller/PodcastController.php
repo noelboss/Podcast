@@ -69,7 +69,7 @@ class Tx_Podcast_Controller_PodcastController extends Tx_Extbase_MVC_Controller_
 		if(!$podcast && $this->settings['podcast']){
 			$podcast = $this->podcastRepository->findOneByUid($this->settings['podcast']);
 		}
-		
+
 		$this->view->assign('version', $EM_CONF['podcast']['version']);
 		$this->view->assign('podcast', $podcast);
 	}
