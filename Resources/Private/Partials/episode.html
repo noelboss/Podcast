@@ -10,10 +10,7 @@
 			</div>
 			<div class="video">
 				<video data-setup="{}" width="800" height="330" id="podcastvideo_{episode.uid}" class="video-js vjs-default-skin" 
-					preload="auto" controls="controls" 
-					<f:if condition="{episode.image}">
-					poster="{f:uri.image(src:'uploads/tx_podcast/{episode.image}', width:'800' height:'330')}"</f:if>
-					>
+					preload="auto" controls="controls" <f:if condition="{episode.image}">poster="{f:uri.image(src:'uploads/tx_podcast/{episode.image}', width:'800' height:'330')}"</f:if>>
 					<f:for each="{episode.altfiles}" as="altfile">
 					<source src="{altfile.name}" type='{altfile.mime}' />
 					</f:for>
@@ -22,6 +19,8 @@
 				<p>
 					<strong>Duration:</strong>
 					<pc:duration timestamp="{episode.duration}" />
+					{episode.duration}
+					
 				</p>
 			</div>
 		</f:then>
@@ -29,7 +28,7 @@
 			<div class="audio">                      
 				<audio controls="controls" autobuffer="controls">
 					<f:for each="{episode.altfiles}" as="altfile">
-					<source src="{altfile.name}" />
+					<source src="{altfile.name}" type='{altfile.mime}'/>
 					</f:for>
 					Your browser does not support the audio element.
 				</audio>

@@ -43,8 +43,9 @@
 			<label index="tx_podcast_domain_model_episode.website">Website</label>
 			<label index="tx_podcast_domain_model_episode.author">Author</label>
 			<label index="tx_podcast_domain_model_episode.keywords">Keywords</label>
+			<label index="tx_podcast_domain_model_episode.image">Image</label>
 			
-			<label index="tx_podcast_domain_model_category">Category</label>			
+			<label index="tx_podcast_domain_model_category">Category</label>
 			<label index="tx_podcast_domain_model_category.title">Title</label>
 			<label index="tx_podcast_domain_model_category.subcategory">Subcategory</label>
 			<label index="tx_podcast_domain_model_category.parentcategory">Parentcategory</label>
@@ -98,6 +99,7 @@
 			<label index="tx_podcast_domain_model_episode.duration">Dauer</label>
 			<label index="tx_podcast_domain_model_episode.website">Webseite</label>
 			<label index="tx_podcast_domain_model_episode.author">Author</label>
+			<label index="tx_podcast_domain_model_episode.image">Bild</label>
 			
 			<label index="tx_podcast_domain_model_category">Kategorie</label>
 			<label index="tx_podcast_domain_model_category.title">Titel</label>

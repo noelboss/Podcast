@@ -24,22 +24,7 @@
 			<f:then><itunes:image href="<f:uri.resource path="{f:uri.image(src:'uploads/tx_podcast/{podcast.image}', width:'600' height:'600')}" absolute="true" />" /></f:then>
 			<f:else><itunes:image href="<f:uri.resource path="{f:uri.image(src:'typo3conf/ext/podcast/Resources/Public/Icons/podcast.jpg', width:'600' height:'600')}" absolute="true" />" /></f:else>
 		</f:if>       
-			<f:if condition="{podcast.categories}">
-				<f:for each="{podcast.categories}" as="category" reverse="false">
-					<f:if condition="{category.subcategory}">   
-						<f:then>                              
-							<itunes:category text="{category.title}">     
-							<f:for each="{category.subcategory}" as="subcategory" reverse="false">
-								<itunes:category text="{subcategory.title}"/>  
-							</f:for>             
-							</itunes:category>
-						</f:then>
-						<f:else>
-							<itunes:category text="{category.title}"/>  
-						</f:else>
-					</f:if>
-				</f:for>   
-			</f:if>  
+  
 			</f:then>    
 			<f:else>   
 				<subtitle>{podcast.subtitle}</subtitle>

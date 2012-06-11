@@ -22,11 +22,11 @@ plugin.tx_podcast {
 
 
 page {
-	#includeJSlibs {
-	#	videosj.external = 1
-	#	videosj = http://vjs.zencdn.net/c/video.js
-	#	audiojs = EXT:podcast/Resources/Public/js/audio.min.js
-	#}
+	includeJSlibs {
+		videosj.external = 1
+		videosj = http://vjs.zencdn.net/c/video.js
+		#audiojs = EXT:podcast/Resources/Public/js/audio.min.js
+	}
 	#jsFooterInline{
 	#	153245874680 = TEXT
 	#	153245874680.value (
@@ -36,7 +36,7 @@ page {
 	#	)
 	#}
 	includeCSS {
-		#videojs = EXT:podcast/Resources/Public/css/video-js.min.css
+		videojs = EXT:podcast/Resources/Public/css/video-js.min.css
 		tx_podcast_file_1 = EXT:podcast/Resources/Public/css/default.css
 	}
 }
