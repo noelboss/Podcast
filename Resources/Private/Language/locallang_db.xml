@@ -20,8 +20,8 @@
 			<label index="tx_podcast_domain_model_podcast.itunesblock">Temporarily block this Podcast on iTunes</label>
 			<label index="tx_podcast_domain_model_podcast.explicit">Channel contains explicit content</label> 
 			<label index="tx_podcast_domain_model_podcast.explicit.no">No</label>
-	        <label index="tx_podcast_domain_model_podcast.explicit.clean">Clean (for Children)</label>
-	        <label index="tx_podcast_domain_model_podcast.explicit.yes">Yes</label>
+			<label index="tx_podcast_domain_model_podcast.explicit.clean">Clean (for Children)</label>
+			<label index="tx_podcast_domain_model_podcast.explicit.yes">Yes</label>
 			<label index="tx_podcast_domain_model_podcast.categories">Categories</label>
 			<label index="tx_podcast_domain_model_podcast.keywords">Keywords</label>
 			<label index="tx_podcast_domain_model_podcast.episodes">Episodes</label>
@@ -43,14 +43,16 @@
 			<label index="tx_podcast_domain_model_episode.website">Website</label>
 			<label index="tx_podcast_domain_model_episode.author">Author</label>
 			<label index="tx_podcast_domain_model_episode.keywords">Keywords</label>
-
+			
 			<label index="tx_podcast_domain_model_category">Category</label>			
 			<label index="tx_podcast_domain_model_category.title">Title</label>
 			<label index="tx_podcast_domain_model_category.subcategory">Subcategory</label>
 			<label index="tx_podcast_domain_model_category.parentcategory">Parentcategory</label>
+			
 			<label index="tx_podcast_domain_model_person">Person</label>
 			<label index="tx_podcast_domain_model_person.name">Name</label>
 			<label index="tx_podcast_domain_model_person.email">E Mail</label>
+			
 			<label index="tx_podcast_domain_model_website">Website</label>
 			<label index="tx_podcast_domain_model_website.title">Title</label>
 			<label index="tx_podcast_domain_model_website.link">Link</label> 
@@ -59,19 +61,64 @@
 			<label index="tx_podcast_domain_model_keyword.title">Title</label>
 			
 			<label index="ff.actionList">Listview</label>
-	        <label index="ff.actionShow">Singleview</label>
-	        <label index="ff.behaviour">Behaviour</label>
-	        <label index="ff.config">Default action of the plugin</label>
+			<label index="ff.actionShow">Singleview</label>
+			<label index="ff.behaviour">Behaviour</label>
+			<label index="ff.config">Default action of the plugin</label>
 		</languageKey> 
-		<languageKey index="de" type="array">                                               
- 		   	<label index="tx_podcast_domain_model_podcast.explicit">Podcast ist Jugendfrei</label>
+		<languageKey index="de" type="array">                       
+			<label index="tx_podcast_domain_model_podcast">Podcast</label>   
+			<label index="tx_podcast_domain_model_podcast.tab.episodes">Episoden</label>
+			<label index="tx_podcast_domain_model_podcast.tab.itunes">iTunes Einstellungen</label>
+			<label index="tx_podcast_domain_model_podcast.tab.contact">Publisher</label>
+			<label index="tx_podcast_domain_model_podcast.title">Titel</label>
+			<label index="tx_podcast_domain_model_podcast.subtitle">Untertitel</label>
+			<label index="tx_podcast_domain_model_podcast.description">Beschreibung</label>
+			<label index="tx_podcast_domain_model_podcast.copyright">Copyright</label>
+			<label index="tx_podcast_domain_model_podcast.image">Bild</label>
+			<label index="tx_podcast_domain_model_podcast.itunes">iTunes optimiert</label>
+			<label index="tx_podcast_domain_model_podcast.itunesblock">Diesen Podcast temporär auf iTunes blocken</label>
+			<label index="tx_podcast_domain_model_podcast.explicit">Podcast ist Jugendfrei</label>
 			<label index="tx_podcast_domain_model_podcast.explicit.no">Ja</label>
-	        <label index="tx_podcast_domain_model_podcast.explicit.clean">Clean (Für Kinder geeignet)</label>
-	        <label index="tx_podcast_domain_model_podcast.explicit.yes">Nein</label>
-	        <label index="ff.actionList">Listenansicht</label>
-	        <label index="ff.actionShow">Einzelansicht</label>
-	        <label index="ff.behaviour">Verhalten</label>
-	        <label index="ff.config">Standardaktion des Plugins</label>
+			<label index="tx_podcast_domain_model_podcast.explicit.clean">Clean (Für Kinder geeignet)</label>
+			<label index="tx_podcast_domain_model_podcast.explicit.yes">Nein</label>
+			<label index="tx_podcast_domain_model_podcast.categories">Kategorien</label>
+			<label index="tx_podcast_domain_model_podcast.episodes">Episoden</label>
+			<label index="tx_podcast_domain_model_podcast.author">Author</label>
+			<label index="tx_podcast_domain_model_podcast.technical_contact">Technischer Kontakt</label>
+			<label index="tx_podcast_domain_model_podcast.website">Weibseite</label>
+			
+			<label index="tx_podcast_domain_model_episode">Episode</label>
+			<label index="tx_podcast_domain_model_episode.tab.meta">Metadaten</label>
+			<label index="tx_podcast_domain_model_episode.title">Titel</label>   
+			<label index="tx_podcast_domain_model_episode.itunesblock">Temporarily block this episode on iTunes</label>
+			<label index="tx_podcast_domain_model_episode.subtitle">Untertitel</label>
+			<label index="tx_podcast_domain_model_episode.description">Beschreibung</label>
+			<label index="tx_podcast_domain_model_episode.file">Datei – über das Dateimodul hochladen</label>
+			<label index="tx_podcast_domain_model_episode.publication_date">Veröffentlichungsdatum</label>
+			<label index="tx_podcast_domain_model_episode.duration">Dauer</label>
+			<label index="tx_podcast_domain_model_episode.website">Webseite</label>
+			<label index="tx_podcast_domain_model_episode.author">Author</label>
+			
+			<label index="tx_podcast_domain_model_category">Kategorie</label>
+			<label index="tx_podcast_domain_model_category.title">Titel</label>
+			<label index="tx_podcast_domain_model_category.subcategory">Unterkategorie</label>
+			<label index="tx_podcast_domain_model_category.parentcategory">Übergeordnete Kategorie</label>
+			
+			<label index="tx_podcast_domain_model_person">Person</label>
+			<label index="tx_podcast_domain_model_person.name">Name</label>
+			<label index="tx_podcast_domain_model_person.email">E Mail</label>
+			
+			<label index="tx_podcast_domain_model_website">Webseite</label>
+			<label index="tx_podcast_domain_model_website.title">Titel</label> 
+			<label index="tx_podcast_domain_model_website.link">Link</label>
+			
+			<label index="tx_podcast_domain_model_keyword">Schlüsselwort</label>
+			<label index="tx_podcast_domain_model_keyword.title">Titel</label>
+			
+			<label index="ff.actionList">Listenansicht</label>
+			<label index="ff.actionShow">Einzelansicht</label>
+			<label index="ff.behaviour">Verhalten</label>
+			<label index="ff.config">Standardaktion des Plugins</label>
 		</languageKey>
 	</data>
 </T3locallang>

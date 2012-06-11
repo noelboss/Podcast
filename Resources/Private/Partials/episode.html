@@ -8,10 +8,14 @@
 				<h3>{episode.title}<span><f:format.date date="{episode.publicationDate}" format="d.m.Y" /></span></h3>	           
 				{episode.description}
 			</div>
-			<div class="video">                      
-				<video controls="controls">
+			<div class="video">
+				<video data-setup="{}" width="800" height="330" id="podcastvideo_{episode.uid}" class="video-js vjs-default-skin" 
+					preload="auto" controls="controls" 
+					<f:if condition="{episode.image}">
+					poster="{f:uri.image(src:'uploads/tx_podcast/{episode.image}', width:'800' height:'330')}"</f:if>
+					>
 					<f:for each="{episode.altfiles}" as="altfile">
-					<source src="{altfile.name}" />
+					<source src="{altfile.name}" type='{altfile.mime}' />
 					</f:for>
 					Your browser does not support the video element.
 				</video>   

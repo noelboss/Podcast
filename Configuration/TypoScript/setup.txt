@@ -20,8 +20,25 @@ plugin.tx_podcast {
     }
 }
 
-page.includeCSS {
-	tx_podcast_file_1 = EXT:podcast/Resources/Public/Styles/default.css
+
+page {
+	includeJSlibs {
+		videosj.external = 1
+		videosj = http://vjs.zencdn.net/c/video.js
+		audiojs = EXT:podcast/Resources/Public/js/audio.min.js
+	}
+	jsFooterInline{
+		153245874680 = TEXT
+		153245874680.value (
+			audiojs.events.ready(function() {
+				var as = audiojs.createAll();
+			});
+		)
+	}
+	includeCSS {
+		videojs = EXT:podcast/Resources/Public/css/video-js.min.css
+		tx_podcast_file_1 = EXT:podcast/Resources/Public/css/default.css
+	}
 }
 
 xmlPage = PAGE
@@ -40,11 +57,7 @@ xmlPage {
 	plugin.tx_podcast.settings.feed = 1
 	xmlPage.20 =< tt_content.list.20.podcast_display
 	xmlPage.20 {
-		#persistence {
-		#	storagePid.stdWrap.data = GP:tx_podcast_display|storagePid
-		#}
 		action = show
-		#view.format = xml
 	}
 [global]
 

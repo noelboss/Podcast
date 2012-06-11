@@ -6,9 +6,13 @@
 		<csh_table>tx_podcast_domain_model_category</csh_table>
 	</meta>
 	<data type="array">
-	<languageKey index="default" type="array">
+		<languageKey index="default" type="array">
 			<label index="title.description">Title</label>
 			<label index="subcategory.description">Sucategory</label>
+		</languageKey>
+		<languageKey index="default" type="array">
+			<label index="title.description">Titel</label>
+			<label index="subcategory.description">Unterkategorie</label>
 		</languageKey>
 	</data>
 </T3locallang>

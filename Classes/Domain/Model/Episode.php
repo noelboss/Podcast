@@ -67,6 +67,13 @@ class Tx_Podcast_Domain_Model_Episode extends Tx_Extbase_DomainObject_AbstractEn
 	 * @validate NotEmpty
 	 */
 	protected $file;
+	
+	/**
+	 * Image
+	 *
+	 * @var string
+	 */
+	protected $image;
 
 	/**
 	 * Publication Date
@@ -235,6 +242,25 @@ class Tx_Podcast_Domain_Model_Episode extends Tx_Extbase_DomainObject_AbstractEn
 	public function setFile($file) {
 		$this->file = $file;
 	}
+	
+	/**
+	 * Returns the image
+	 *
+	 * @return string $image
+	 */
+	public function getImage() {
+		return $this->image;
+	}
+
+	/**
+	 * Sets the image
+	 *
+	 * @param string $image
+	 * @return void
+	 */
+	public function setImage($image) {
+		$this->image = $image;
+	}
 
 	/**
 	 * Returns the publicationDate
@@ -308,10 +334,11 @@ class Tx_Podcast_Domain_Model_Episode extends Tx_Extbase_DomainObject_AbstractEn
 				case 'm4a': $mime='audio/x-m4a'; break;
 				case 'mp4': $mime='video/mp4'; break;
 				case 'm4v': $mime='video/x-m4v'; break;
+				case 'webm': $mime='video/webm'; break;
+				case 'mp3': $mime='audio/mpeg'; break;
 				case 'mov': $mime='video/quicktime'; break;
 				case 'pdf': $mime='application/pdf'; break;
 				case 'epub':$mime='document/x-epub'; break;
-				case 'mp3': $mime='audio/mpeg'; break;
 				case 'mpg': $mime='video/mpeg'; break;
 				case 'avi': $mime='video/x-msvideo'; break;
 			}  
