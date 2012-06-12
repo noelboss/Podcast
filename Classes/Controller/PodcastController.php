@@ -69,6 +69,17 @@ class Tx_Podcast_Controller_PodcastController extends Tx_Extbase_MVC_Controller_
 		if(!$podcast && $this->settings['podcast']){
 			$podcast = $this->podcastRepository->findOneByUid($this->settings['podcast']);
 		}
+		$change = false;
+		foreach ($podcast->getEpisodes() as $episode) {
+			if($episode->getDuration() < 1){
+				$change = true;
+				$episode->getAltfiles();
+			}
+		}
+		if($change){
+			$persistenceManager = t3lib_div::makeInstance('Tx_Extbase_Persistence_Manager');
+			$persistenceManager->persistAll();
+		}
 
 		$this->view->assign('version', $EM_CONF['podcast']['version']);
 		$this->view->assign('podcast', $podcast);

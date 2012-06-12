@@ -387,14 +387,13 @@ class Tx_Podcast_Domain_Model_Episode extends Tx_Extbase_DomainObject_AbstractEn
 			$this->setAltfiles();
 		}
 
-
 		$all = explode('|',$this->altfiles);
 		$altfiles = array();
 		for ($i=0; $i < count($all); $i++) { 
 			$file = explode(',',$all[$i]);
 			$altfiles[$i]['name'] = $file[0];
 			$altfiles[$i]['mime'] = $file[1];
-			$altfiles[$i]['duration'] = $file[2];
+			/*$altfiles[$i]['duration'] = $file[2];*/
 		}
 
 		return $altfiles; 
@@ -413,14 +412,14 @@ class Tx_Podcast_Domain_Model_Episode extends Tx_Extbase_DomainObject_AbstractEn
 		$this->setDuration($this->getFileDuration($this->file));
 
 		$altfiles = array();
-		$altfiles[0] = $this->file.','.$this->mime.','.$this->duration;
+		$altfiles[0] = $this->file.','.$this->mime/*.','.$this->duration*/;
 		
 		$basepath = $fileInfo['path'].$fileInfo['filebody'].'.*';
 		$files = glob($basepath);
 		/* search for other files */
 		for ($i=0; $i < count($files); $i++) {
 			if($files[$i] != $this->file){
-				$altfiles[$i+1] =$files[$i].','.$mime.','.$duration;	
+				$altfiles[$i+1] =$files[$i].','.$this->getFileMime($files[$i])/*.','.$this->getFileDuration($files[$i])*/;
 			}
 		}
 		$this->altfiles = implode('|',$altfiles);
