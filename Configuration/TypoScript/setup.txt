@@ -1,23 +1,23 @@
 plugin.tx_podcast {
-	#settings {
-	#	formats = {$plugin.tx_podcast.settings.formats}
-	#}
+	settings {
+		ll.language = {$plugin.tx_podcast.settings.ll.language}
+	}
 	view {
 		templateRootPath = {$plugin.tx_podcast.view.templateRootPath}
 		partialRootPath = {$plugin.tx_podcast.view.partialRootPath}
 		layoutRootPath = {$plugin.tx_podcast.view.layoutRootPath}
 	}
 	persistence {
-        storagePid = {$plugin.tx_podcast.persistence.storagePid}
-        classes {
-            Tx_podcast_Domain_Model_Podcast {
-                newRecordStoragePid = {$plugin.tx_podcast.persistence.storagePid}
-                mapping {
-                    tableName = tx_podcast_domain_model_podcast
-                }
-            }
-        }
-    }
+		storagePid = {$plugin.tx_podcast.persistence.storagePid}
+		classes {
+			Tx_podcast_Domain_Model_Podcast {
+				newRecordStoragePid = {$plugin.tx_podcast.persistence.storagePid}
+				mapping {
+					tableName = tx_podcast_domain_model_podcast
+				}
+			}
+		}
+	}
 }
 
 
@@ -43,11 +43,10 @@ page {
 
 xmlPage = PAGE
 xmlPage {
-    typeNum = 1289377328
+	typeNum = 1289377328
 	config {
 		disableAllHeaderCode = 1
 		additionalHeaders = Content-type:application/xml
-		//no_cache = 0
 		xhtml_cleaning = 0
 		adminPanel=0
 	}
@@ -60,5 +59,3 @@ xmlPage {
 		action = show
 	}
 [global]
-
-

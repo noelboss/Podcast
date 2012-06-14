@@ -5,7 +5,7 @@
 			{podcast.title}
 		</title>           
 		<f:if condition="{podcast.website.link}"><link>{podcast.website.link}</link></f:if>
-		<language><f:translate key="language" /></language>
+		<language>{language}</language>
 		<f:if condition="{podcast.copyright}"><copyright>{podcast.copyright}</copyright></f:if>
 		<lastBuildDate>Thu, 26 Jan 2012 21:46:04 +0100</lastBuildDate>
 		<pubDate>Thu, 26 Jan 2012 21:46:04 +0100</pubDate>

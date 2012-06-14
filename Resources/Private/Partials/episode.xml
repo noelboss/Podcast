@@ -14,7 +14,10 @@
 				<itunes:subtitle>{episode.subtitle}</itunes:subtitle>
 				<itunes:summary>
 					{episode.description} 
-				</itunes:summary>       
+				</itunes:summary>
+				<description>
+					{episode.description} 
+				</description>       
 				<itunes:keywords> </itunes:keywords>                                                
 				<itunes:duration><pc:duration timestamp="{episode.duration}" /></itunes:duration>
 				<f:if condition="{episode.keywords}"><itunes:keywords><f:for each="{episode.keywords}" as="keyword" reverse="false">{keyword.title},</f:for></itunes:keywords></f:if>

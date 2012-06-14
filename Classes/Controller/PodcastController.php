@@ -65,6 +65,8 @@ class Tx_Podcast_Controller_PodcastController extends Tx_Extbase_MVC_Controller_
 	public function showAction(Tx_Podcast_Domain_Model_Podcast $podcast = NULL) {
 		if($this->settings['feed']){  
 			$this->request->setFormat('xml');
+			$lang = $this->settings['ll']['language'];
+			$this->view->assign('language', $lang ? $lang : $GLOBALS['TSFE']->config['config']['htmlTag_langKey']);
 		}
 		if(!$podcast && $this->settings['podcast']){
 			$podcast = $this->podcastRepository->findOneByUid($this->settings['podcast']);
