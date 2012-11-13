@@ -7,8 +7,8 @@
 		<f:if condition="{podcast.website.link}"><link>{podcast.website.link}</link></f:if>
 		<language>{language}</language>
 		<f:if condition="{podcast.copyright}"><copyright>{podcast.copyright}</copyright></f:if>
-		<lastBuildDate>Thu, 26 Jan 2012 21:46:04 +0100</lastBuildDate>
-		<pubDate>Thu, 26 Jan 2012 21:46:04 +0100</pubDate>
+		<lastBuildDate><f:format.date date="{podcast.tstamp}" format="r" /></lastBuildDate>
+		<pubDate><f:format.date date="{podcast.publicationDate}" format="r" /></pubDate>
 		<generator>Podcast for TYPO3 (podcast) Version {version}</generator>
 		<f:if condition="{podcast.itunesblock}"><itunes:block>yes</itunes:block></f:if>	
 		<f:if condition="{podcast.itunes}">
@@ -23,8 +23,7 @@
 		<f:if condition="{podcast.image}">  
 			<f:then><itunes:image href="<f:uri.resource path="{f:uri.image(src:'uploads/tx_podcast/{podcast.image}', width:'600' height:'600')}" absolute="true" />" /></f:then>
 			<f:else><itunes:image href="<f:uri.resource path="{f:uri.image(src:'typo3conf/ext/podcast/Resources/Public/Icons/podcast.jpg', width:'600' height:'600')}" absolute="true" />" /></f:else>
-		</f:if>       
-  
+		</f:if>
 			</f:then>    
 			<f:else>   
 				<subtitle>{podcast.subtitle}</subtitle>

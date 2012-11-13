@@ -129,6 +129,20 @@ class Tx_Podcast_Domain_Model_Podcast extends Tx_Extbase_DomainObject_AbstractEn
 	 * @var Tx_Podcast_Domain_Model_Website
 	 */
 	protected $website;
+	
+	/**
+	 * Publication Date
+	 *
+	 * @var DateTime
+	 */
+	protected $publicationDate;
+
+	/**
+	 * Change Time Stamp
+	 *
+	 * @var DateTime
+	 */
+	protected $tstamp;
 
 	/**
 	 * __construct
@@ -480,6 +494,44 @@ class Tx_Podcast_Domain_Model_Podcast extends Tx_Extbase_DomainObject_AbstractEn
 	 */
 	public function setKeywords(Tx_Extbase_Persistence_ObjectStorage $keywords) {
 		$this->keywords = $keywords;
+	}
+	
+	/**
+	 * Returns the publicationDate
+	 *
+	 * @return DateTime $publicationDate
+	 */
+	public function getPublicationDate() {
+		return $this->publicationDate;
+	}
+
+	/**
+	 * Sets the publicationDate
+	 *
+	 * @param DateTime $publicationDate
+	 * @return void
+	 */
+	public function setPublicationDate($publicationDate) {
+		$this->publicationDate = $publicationDate;
+	}
+
+	/**
+	 * Returns the tstamp
+	 *
+	 * @return DateTime $tstamp
+	 */
+	public function getTstamp() {
+		return $this->tstamp;
+	}
+	
+	/**
+	 * Sets the tstamp
+	 *
+	 * @param DateTime $tstamp
+	 * @return void
+	 */
+	public function setTstamp($tstamp) {
+		$this->tstamp = $tstamp;
 	}
 
 }

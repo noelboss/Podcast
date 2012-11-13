@@ -4,11 +4,11 @@ if (!defined ('TYPO3_MODE'))	die ('Access denied.');
 $TCA['tx_podcast_domain_model_podcast'] = array(
 	'ctrl' => $TCA['tx_podcast_domain_model_podcast']['ctrl'],
 	'interface' => array(
-		'showRecordFieldList' => 'title,subtitle,description,copyright,image,episodes,categories,author,technical_contact,website,itunes,itunesblock,keywords'
+		'showRecordFieldList' => 'title,subtitle,description,copyright,image,episodes,categories,author,technical_contact,website,itunes,itunesblock,keywords,publication_date'
 	),
 	'types' => array(
 		'1' => array('showitem' => '--div--;LLL:EXT:podcast/Resources/Private/Language/locallang_db.xml:tx_podcast_domain_model_podcast.episodes,episodes,
-									--div--;LLL:EXT:podcast/Resources/Private/Language/locallang_db.xml:tx_podcast_domain_model_podcast.tab.description,title,subtitle,description,image,
+									--div--;LLL:EXT:podcast/Resources/Private/Language/locallang_db.xml:tx_podcast_domain_model_podcast.tab.description,title,subtitle,description,publication_date,image,
 									--div--;LLL:EXT:podcast/Resources/Private/Language/locallang_db.xml:tx_podcast_domain_model_podcast.tab.itunes,categories,keywords,itunes;;2;;,
 									--div--;LLL:EXT:podcast/Resources/Private/Language/locallang_db.xml:tx_podcast_domain_model_podcast.tab.contact,author;;3;;,copyright')
 	), 
@@ -90,6 +90,18 @@ $TCA['tx_podcast_domain_model_podcast'] = array(
 				'rows' => '5',
 				'eval' => 'required,trim',
 				'max' => '1000',
+			)
+		),
+		'publication_date' => array(
+			'exclude' => 0,
+			'label'	  => 'LLL:EXT:podcast/Resources/Private/Language/locallang_db.xml:tx_podcast_domain_model_podcast.publication_date',
+			'config'  => array(
+				'type' => 'input',
+				'size' => 12,
+				'max' => 10,
+				'eval' => 'datetime,required',
+				'checkbox' => '0',
+				'default' => time(),
 			)
 		),
 		'copyright' => array(

@@ -157,7 +157,7 @@ $TCA['tx_podcast_domain_model_episode'] = array(
 				'type' => 'input',
 				'size' => 12,
 				'max' => 10,
-				'eval' => 'date,required',
+				'eval' => 'datetime,required',
 				'checkbox' => '0',
 				'default' => time(),
 			)
