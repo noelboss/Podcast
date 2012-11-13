@@ -1,4 +1,5 @@
 <?php
+
 $TYPO3_CONF_VARS['EXTCONF']['realurl']['_DEFAULT']['postVarSets']['_DEFAULT']['display'] = array(
 	array(
 		'GETvar' => 'tx_podcast_display[controller]',
@@ -23,16 +24,18 @@ $TYPO3_CONF_VARS['EXTCONF']['realurl']['_DEFAULT']['postVarSets']['_DEFAULT']['d
 			 ),
 		)
 	)
-);		 
-
-array_push($TYPO3_CONF_VARS['EXTCONF']['realurl']['_DEFAULT']['preVars'],	
-	array(
-		'GETvar' => 'type',
-		'valueMap' => array(
-			'xml' => '1289377328'
-		),
-		'noMatch' => 'bypass',
-	) 
 );
 
+$realurlPreVars = array(
+	'GETvar' => 'type',
+	'valueMap' => array(
+		'xml' => '1289377328'
+	),
+	'noMatch' => 'bypass',
+);
+if(is_array($TYPO3_CONF_VARS['EXTCONF']['realurl']['_DEFAULT']['preVars'])){
+	array_push($TYPO3_CONF_VARS['EXTCONF']['realurl']['_DEFAULT']['preVars'], $realurlPreVars);
+} else {
+	$TYPO3_CONF_VARS['EXTCONF']['realurl']['_DEFAULT']['preVars'] = $realurlPreVars;
+}
 ?>

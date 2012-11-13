@@ -20,6 +20,7 @@ CREATE TABLE tx_podcast_domain_model_podcast (
 	technical_contact int(11) unsigned DEFAULT '0',
 	website int(11) unsigned DEFAULT '0',
 	keywords int(11) unsigned DEFAULT '0' NOT NULL,
+	publication_date int(11) DEFAULT '0' NOT NULL,
 
 	tstamp int(11) unsigned DEFAULT '0' NOT NULL,
 	crdate int(11) unsigned DEFAULT '0' NOT NULL,
@@ -60,7 +61,6 @@ CREATE TABLE tx_podcast_domain_model_episode (
 	podcast int(11) unsigned DEFAULT '0' NOT NULL,
 
 	title varchar(255) DEFAULT '' NOT NULL,
-	subtitle varchar(255) DEFAULT '' NOT NULL,
 	description text NOT NULL,
 	file varchar(255) DEFAULT '' NOT NULL,
 	image varchar(255) DEFAULT '' NOT NULL,
@@ -148,7 +148,6 @@ CREATE TABLE tx_podcast_domain_model_category (
 CREATE TABLE tx_podcast_domain_model_person (
 	uid int(11) NOT NULL auto_increment,
 	pid int(11) DEFAULT '0' NOT NULL,
-
 
 	name varchar(255) DEFAULT '' NOT NULL,
 	email varchar(255) DEFAULT '' NOT NULL,

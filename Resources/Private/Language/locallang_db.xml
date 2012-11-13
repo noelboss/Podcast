@@ -14,6 +14,7 @@
 			<label index="tx_podcast_domain_model_podcast.title">Title</label>
 			<label index="tx_podcast_domain_model_podcast.subtitle">Subtitle</label>
 			<label index="tx_podcast_domain_model_podcast.description">Description</label>
+			<label index="tx_podcast_domain_model_podcast.publication_date">Publication Date</label>
 			<label index="tx_podcast_domain_model_podcast.copyright">Copyright</label>
 			<label index="tx_podcast_domain_model_podcast.image">Image</label>
 			<label index="tx_podcast_domain_model_podcast.itunes">iTunes optimized</label>
@@ -74,6 +75,7 @@
 			<label index="tx_podcast_domain_model_podcast.title">Titel</label>
 			<label index="tx_podcast_domain_model_podcast.subtitle">Untertitel</label>
 			<label index="tx_podcast_domain_model_podcast.description">Beschreibung</label>
+			<label index="tx_podcast_domain_model_podcast.publication_date">Veröffentlichungsdatum</label>
 			<label index="tx_podcast_domain_model_podcast.copyright">Copyright</label>
 			<label index="tx_podcast_domain_model_podcast.image">Bild</label>
 			<label index="tx_podcast_domain_model_podcast.itunes">iTunes optimiert</label>

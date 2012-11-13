@@ -82,9 +82,11 @@ $TCA['tx_podcast_domain_model_episode'] = array(
 			'exclude' => 0,
 			'label' => 'LLL:EXT:podcast/Resources/Private/Language/locallang_db.xml:tx_podcast_domain_model_episode.subtitle',
 			'config' => array(
-				'type' => 'input',
-				'size' => 30,
-				'eval' => 'trim'
+				'type' => 'text',
+				'cols' => '45', 
+				'rows' => '5',
+				'eval' => 'required,trim',
+				'max' => '1000',
 			),
 		),
 		'description' => array(
@@ -155,7 +157,7 @@ $TCA['tx_podcast_domain_model_episode'] = array(
 				'type' => 'input',
 				'size' => 12,
 				'max' => 10,
-				'eval' => 'date,required',
+				'eval' => 'datetime,required',
 				'checkbox' => '0',
 				'default' => time(),
 			)

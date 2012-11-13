@@ -1,8 +1,8 @@
 plugin.tx_podcast {
-	#settings{
-	#	# cat=plugin.tx_podcast//b; type=string; label=Default Formats, Define what formats are allowed and searched for as alternatives...
-	#	formats = m4a,mp4,m4v,mov,pdf,epub,mpg,avi
-	#}
+	settings.ll{
+		# cat=plugin.tx_podcast//b; type=string; label=Feed language: The language is by default fetched from "config.htmlTag_langKey". You can set it here manually, f.e. de-ch
+		language = 
+	}
 
 	view {
 		# cat=plugin.tx_podcast/file; type=string; label=Path to template root (FE)

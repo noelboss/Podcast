@@ -6,7 +6,6 @@
 	</meta>
 	<data type="array">
 		<languageKey index="default" type="array">
-			<label index="language">en-us</label>
 			<label index="tx_podcast_domain_model_podcast.categories">Categories</label>
 			<label index="tx_podcast_domain_model_podcast.links.feed">Podcast Feed</label>
 			<label index="tx_podcast_domain_model_podcast.links.back">« back</label>
@@ -16,7 +15,6 @@
 			]]></label>
 		</languageKey> 
 		<languageKey index="de" type="array">
-			<label index="language">de-de</label> 
 			<label index="tx_podcast_domain_model_podcast.categories">Kategorien</label>
 			<label index="tx_podcast_domain_model_podcast.links.feed">Podcast Feed</label>
 			<label index="tx_podcast_domain_model_podcast.links.back">« zurück</label>
