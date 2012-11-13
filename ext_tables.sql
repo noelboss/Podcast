@@ -61,6 +61,7 @@ CREATE TABLE tx_podcast_domain_model_episode (
 	podcast int(11) unsigned DEFAULT '0' NOT NULL,
 
 	title varchar(255) DEFAULT '' NOT NULL,
+	subtitle varchar(255) DEFAULT '' NOT NULL,
 	description text NOT NULL,
 	file varchar(255) DEFAULT '' NOT NULL,
 	image varchar(255) DEFAULT '' NOT NULL,
@@ -111,7 +112,6 @@ CREATE TABLE tx_podcast_domain_model_category (
 
 
 	title varchar(255) DEFAULT '' NOT NULL,
-	subtitle varchar(255) DEFAULT '' NOT NULL,
 	
 	subcategory int(11) unsigned DEFAULT '0',
 
