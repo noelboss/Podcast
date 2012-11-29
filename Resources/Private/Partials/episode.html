@@ -1,10 +1,9 @@
 {namespace pc=Tx_Podcast_ViewHelpers}
-<div class="episode {zebraClass}">     
-	<!-- geht mit geht mit fluid nicht -->
+<div class="episode {zebraClass}">
 	<pc:if condition="'{episode.mime}'=='video/mp4'">
 		<f:then>        
-			<div class="description">    
-				<h3>{episode.title}<span><f:format.date date="{episode.publicationDate}" format="d.m.Y" /></span></h3>	           
+			<div class="description">
+				<h3>{episode.title}<span><f:format.date date="{episode.publicationDate}" format="{settings.episode.fe.publicationDate}" /></span></h3>
 				{episode.description}
 			</div>
 			<div class="video">
@@ -14,7 +13,7 @@
 					<source src="{altfile.name}" type='{altfile.mime}' />
 					</f:for>
 					Your browser does not support the video element.
-				</video>   
+				</video>
 				<p>
 					<strong>Duration:</strong>
 					<pc:duration timestamp="{episode.duration}" />
@@ -24,7 +23,7 @@
 			</div>
 		</f:then>
 		<f:else>      
-			<div class="audio">                      
+			<div class="audio">
 				<audio controls="controls" autobuffer="controls">
 					<f:for each="{episode.altfiles}" as="altfile">
 					<source src="{altfile.name}" type='{altfile.mime}'/>
@@ -36,8 +35,8 @@
 					<pc:duration timestamp="{episode.duration}" />
 				</p>
 			</div>  
-			<div class="description">    
-				<h3>{episode.title}<span><f:format.date date="{episode.publicationDate}" format="d.m.Y" /></span></h3>	           
+			<div class="description">
+				<h3>{episode.title}<span><f:format.date date="{episode.publicationDate}" format="{settings.episode.fe.publicationDate}" /></span></h3>
 				{episode.description}
 			</div>
 		</f:else>

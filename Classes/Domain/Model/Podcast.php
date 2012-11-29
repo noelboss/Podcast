@@ -523,16 +523,5 @@ class Tx_Podcast_Domain_Model_Podcast extends Tx_Extbase_DomainObject_AbstractEn
 	public function getTstamp() {
 		return $this->tstamp;
 	}
-	
-	/**
-	 * Sets the tstamp
-	 *
-	 * @param DateTime $tstamp
-	 * @return void
-	 */
-	public function setTstamp($tstamp) {
-		$this->tstamp = $tstamp;
-	}
-
 }
 ?>

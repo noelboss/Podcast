@@ -13,5 +13,14 @@ Podcast for TYPO3 not only creates your feeds, it also displays your Podcasts fo
 ##It just works
 Podcast generates your XML on the fly – no need to manually generate the XML after every change you make. It supports iTunes specific tags and works with RealURL out of the box, creating nice URLs for your feeds and pages.
 
-##Featurerich
+##Feature rich
 Create more than one Podcast, use episodes, authors and other settings for multiple Podcasts. Podcast analyses your media and automatically detects video and audio formats and duration of your content.
+
+## Installation & Usage
+1. Install the extension from TER
+2. Add the static TypoScript template to your template
+3. Create a record of the type Podcast on a page or a sysfolder
+4. Add an episode to the record (Make sure it's checked in the Podcast selectlist)
+5. Add the Podcast plugin on any page or the page you created the podcast
+6. Important; Switch to the tab "Behavior" of the plugin and add the page or sysfolder where you stored the podcast record as "Record Storage Page"
+7. Enjoy your Podcast.

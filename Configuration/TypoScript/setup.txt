@@ -1,6 +1,10 @@
 plugin.tx_podcast {
 	settings {
 		ll.language = {$plugin.tx_podcast.settings.ll.language}
+		podcast.publicationDate =    {$plugin.tx_podcast.settings.podcast.publicationDate}
+		podcast.fe.publicationDate = {$plugin.tx_podcast.settings.podcast.fe.publicationDate}
+		episode.publicationDate =    {$plugin.tx_podcast.settings.episode.publicationDate}
+		episode.fe.publicationDate = {$plugin.tx_podcast.settings.episode.fe.publicationDate}
 	}
 	view {
 		templateRootPath = {$plugin.tx_podcast.view.templateRootPath}
@@ -18,14 +22,19 @@ plugin.tx_podcast {
 			}
 		}
 	}
+	feedparser < lib.parseFunc
+	feedparser {
+		allowTags >
+		makelinks = 0
+	}
 }
 
 
 page {
 	includeJSlibs {
-		videosj.external = 1
-		videosj = http://vjs.zencdn.net/c/video.js
-		#audiojs = EXT:podcast/Resources/Public/js/audio.min.js
+		tx_podcast_videosj.external = 1
+		tx_podcast_videosj = http://vjs.zencdn.net/c/video.js
+		#tx_podcast_audiojs = EXT:podcast/Resources/Public/js/audio.min.js
 	}
 	#jsFooterInline{
 	#	153245874680 = TEXT
@@ -36,7 +45,7 @@ page {
 	#	)
 	#}
 	includeCSS {
-		videojs = EXT:podcast/Resources/Public/css/video-js.min.css
+		tx_podcast_videojs = EXT:podcast/Resources/Public/css/video-js.min.css
 		tx_podcast_file_1 = EXT:podcast/Resources/Public/css/default.css
 	}
 }
