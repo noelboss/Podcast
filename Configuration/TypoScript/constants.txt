@@ -1,7 +1,20 @@
 plugin.tx_podcast {
-	settings.ll{
+	settings{
 		# cat=plugin.tx_podcast//b; type=string; label=Feed language: The language is by default fetched from "config.htmlTag_langKey". You can set it here manually, f.e. de-ch
-		language = 
+		ll.language = 
+		
+		# cat=plugin.tx_podcast//b; type=string; label=Episode date format feed: Define how the date / time of an episode is formated in the feed
+		episode.publicationDate = r
+		
+		# cat=plugin.tx_podcast//b; type=string; label=Episode date format frontend: Define how the date / time of an episode is formated in the frontend
+		episode.fe.publicationDate = d.m.Y
+		
+		# cat=plugin.tx_podcast//b; type=string; label=Podcast date format feed: Define how the date / time of the podcasts is formated in the feed
+		podcast.publicationDate = r
+		
+		# cat=plugin.tx_podcast//b; type=string; label=Podcast date format frontend: Define how the date / time of the podcasts is formated in the frontend
+		podcast.fe.publicationDate = d.m.Y
+
 	}
 
 	view {

@@ -82,7 +82,7 @@ class Tx_Podcast_Controller_PodcastController extends Tx_Extbase_MVC_Controller_
 			$persistenceManager = t3lib_div::makeInstance('Tx_Extbase_Persistence_Manager');
 			$persistenceManager->persistAll();
 		}
-		//$this->view->assign('version', '0.3.9');
+		$this->view->assign('settings', $this->settings);
 		$this->view->assign('podcast', $podcast);
 	}
 }

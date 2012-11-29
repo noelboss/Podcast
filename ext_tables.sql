@@ -13,7 +13,7 @@ CREATE TABLE tx_podcast_domain_model_podcast (
 	image varchar(255) DEFAULT '' NOT NULL,
 	itunes tinyint(1) unsigned DEFAULT '0' NOT NULL,
 	itunesblock tinyint(1) unsigned DEFAULT '0' NOT NULL,
-	explicit varchar(16) DEFAULT '' NOT NULL,           
+	explicit varchar(16) DEFAULT '' NOT NULL,
 	categories int(11) unsigned DEFAULT '0' NOT NULL,
 	episodes int(11) unsigned DEFAULT '0' NOT NULL,
 	author int(11) unsigned DEFAULT '0',

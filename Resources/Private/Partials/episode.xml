@@ -1,44 +1,38 @@
 {namespace pc=Tx_Podcast_ViewHelpers}
 <f:if condition="{episode.file}">
 			<item>
-				<title>{episode.title}</title>
+				<title><f:format.html parseFuncTSPath="plugin.tx_podcast.feedparser">{episode.title}</f:format.html></title>
 				<f:if condition="{itunes}">
 					<f:then>       
 				<f:if condition="{podcast.itunesblock}"> 
 					<f:then><itunes:block>yes</itunes:block></f:then>
-					<f:else>               
+					<f:else>
 						<f:if condition="{episode.itunesblock}"><itunes:block>yes</itunes:block></f:if>
 					</f:else>
 				</f:if>  
-				<itunes:author>{episode.author.name}</itunes:author>
-				<itunes:subtitle>{episode.subtitle}</itunes:subtitle>
-				<itunes:summary>
-					{episode.description} 
-				</itunes:summary>
-				<description>
-					{episode.description} 
-				</description>       
-				<itunes:keywords> </itunes:keywords>                                                
+				<itunes:author><f:format.html parseFuncTSPath="plugin.tx_podcast.feedparser">{episode.author.name}</f:format.html></itunes:author>
+				<itunes:subtitle><f:format.html parseFuncTSPath="plugin.tx_podcast.feedparser">{episode.subtitle}</f:format.html></itunes:subtitle>
+				<itunes:summary><f:format.html parseFuncTSPath="plugin.tx_podcast.feedparser">{episode.description}</f:format.html></itunes:summary>
+				<description><f:format.html parseFuncTSPath="plugin.tx_podcast.feedparser">{episode.description}</f:format.html></description>
+				<itunes:keywords> </itunes:keywords>
 				<itunes:duration><pc:duration timestamp="{episode.duration}" /></itunes:duration>
-				<f:if condition="{episode.keywords}"><itunes:keywords><f:for each="{episode.keywords}" as="keyword" reverse="false">{keyword.title},</f:for></itunes:keywords></f:if>
-					</f:then>    
-					<f:else>   
-				<author>{episode.author.name}</author>
-				<subtitle>{episode.author.description}</subtitle>
-				<summary>
-					{episode.description} 
-				</summary>                                                       
+				<f:if condition="{episode.keywords}"><itunes:keywords><f:for each="{episode.keywords}" as="keyword" reverse="false"><f:format.html parseFuncTSPath="plugin.tx_podcast.feedparser">{keyword.title},</f:format.html></f:for></itunes:keywords></f:if>
+					</f:then>
+					<f:else>
+				<author><f:format.html parseFuncTSPath="plugin.tx_podcast.feedparser">{episode.author.name}</f:format.html></author>
+				<subtitle><f:format.html parseFuncTSPath="plugin.tx_podcast.feedparser">{episode.author.description}</f:format.html></subtitle>
+				<summary><f:format.html parseFuncTSPath="plugin.tx_podcast.feedparser">{episode.description}</f:format.html></summary>                                                       
 				<duration><pc:duration timestamp="{episode.duration}" /></duration>
-				<keywords>{episode.keywords}</keywords> 
+				<keywords><f:format.html parseFuncTSPath="plugin.tx_podcast.feedparser">{episode.keywords}</f:format.html></keywords> 
 					</f:else>
-				</f:if>                        
+				</f:if>
 				<enclosure url="{f:uri.resource(path: episode.file, absolute: 'true')}" length="{pc:duration(timestamp: episode.duration)}" type="{episode.mime}" />
 				<guid>{f:uri.resource(path: episode.file, absolute: 'true')}</guid>  
-				<pubDate><f:format.date date="{episode.publicationDate}" format="r" /></pubDate>
+				<pubDate><f:format.date date="{episode.publicationDate}" format="{settings.episode.publicationDate}" /></pubDate>
 				<f:if condition="{episode.website.link}"> 
-					<f:then><link>{episode.website.link}</link></f:then>
+					<f:then><link><f:format.html parseFuncTSPath="plugin.tx_podcast.feedparser">{episode.website.link}</f:format.html></link></f:then>
 					<f:else>               
-						<f:if condition="{podcast.website.link}"><link>{podcast.website.link}</link></f:if>
+						<f:if condition="{podcast.website.link}"><link><f:format.html parseFuncTSPath="plugin.tx_podcast.feedparser">{podcast.website.link}</f:format.html></link></f:if>
 					</f:else>
 				</f:if>
 			</item>
