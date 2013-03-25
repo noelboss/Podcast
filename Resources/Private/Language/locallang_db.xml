@@ -61,11 +61,13 @@
 			
 			<label index="tx_podcast_domain_model_keyword">Keyword</label>
 			<label index="tx_podcast_domain_model_keyword.title">Title</label>
-			
-			<label index="ff.actionList">Listview</label>
-			<label index="ff.actionShow">Singleview</label>
+
 			<label index="ff.behaviour">Behaviour</label>
 			<label index="ff.config">Default action of the plugin</label>
+			<label index="ff.actionDynamic">Dynamic</label>
+			<label index="ff.actionList">List podcasts</label>
+			<label index="ff.actionShow">Show a single podcast</label>
+			<label index="ff.actionFeed">Feed</label>
 		</languageKey> 
 		<languageKey index="de" type="array">                       
 			<label index="tx_podcast_domain_model_podcast">Podcast</label>   
@@ -119,10 +121,12 @@
 			<label index="tx_podcast_domain_model_keyword">Schlüsselwort</label>
 			<label index="tx_podcast_domain_model_keyword.title">Titel</label>
 			
-			<label index="ff.actionList">Listenansicht</label>
-			<label index="ff.actionShow">Einzelansicht</label>
 			<label index="ff.behaviour">Verhalten</label>
-			<label index="ff.config">Standardaktion des Plugins</label>
+			<label index="ff.config">Standard verhalten des Plugins</label>
+			<label index="ff.actionDynamic">Dynamisch</label>
+			<label index="ff.actionList">Liste der Podcasts</label>
+			<label index="ff.actionShow">Detailansicht eines Podcasts</label>
+			<label index="ff.actionFeed">Feed</label>
 		</languageKey>
 	</data>
 </T3locallang>

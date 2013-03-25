@@ -63,14 +63,46 @@ class Tx_Podcast_Controller_PodcastController extends Tx_Extbase_MVC_Controller_
 	 * @return void
 	 */
 	public function showAction(Tx_Podcast_Domain_Model_Podcast $podcast = NULL) {
-		if($this->settings['feed']){  
-			$this->request->setFormat('xml');
-			$lang = $this->settings['ll']['language'];
-			$this->view->assign('language', $lang ? $lang : $GLOBALS['TSFE']->config['config']['htmlTag_langKey']);
+		if(!$podcast){
+			$this->flashMessages->add('Sorry, something went terribly wrong, there was no Podcast found');
+			$this->redirect('list');
 		}
-		if(!$podcast && $this->settings['podcast']){
-			$podcast = $this->podcastRepository->findOneByUid($this->settings['podcast']);
+
+		$this->updatePodcast($podcast);
+		
+		$this->view->assign('settings', $this->settings);
+		$this->view->assign('podcast', $podcast);
+	}
+	
+	/**
+	 * action feed
+	 *
+	 * @param $podcast
+	 * @return void
+	 */
+	public function feedAction(Tx_Podcast_Domain_Model_Podcast $podcast = NULL) {
+		if(!$podcast){
+			$this->flashMessages->add('Sorry, something went terribly wrong, there was no Podcast found');
+			$this->redirect('list');
 		}
+		$this->request->setFormat('xml');
+		
+		$lang = $this->settings['ll']['language'];
+		$this->view->assign('language', $lang ? $lang : $GLOBALS['TSFE']->config['config']['htmlTag_langKey']);
+
+		$this->updatePodcast($podcast);
+
+		$this->view->assign('settings', $this->settings);
+		$this->view->assign('podcast', $podcast);
+	}
+	
+	/**
+	 * Updates podcast duration
+	 *
+	 * @param $podcast Tx_Podcast_Domain_Model_Podcast
+	 * @return void
+	 */
+	private function updatePodcast(Tx_Podcast_Domain_Model_Podcast $podcast){
 		$change = false;
 		foreach ($podcast->getEpisodes() as $episode) {
 			if($episode->getDuration() < 1){
@@ -82,8 +114,6 @@ class Tx_Podcast_Controller_PodcastController extends Tx_Extbase_MVC_Controller_
 			$persistenceManager = t3lib_div::makeInstance('Tx_Extbase_Persistence_Manager');
 			$persistenceManager->persistAll();
 		}
-		$this->view->assign('settings', $this->settings);
-		$this->view->assign('podcast', $podcast);
 	}
 }
 ?>

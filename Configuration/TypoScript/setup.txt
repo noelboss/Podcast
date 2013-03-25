@@ -1,18 +1,24 @@
 plugin.tx_podcast {
+	
+	features {
+		skipDefaultArguments = 1
+	}
 	settings {
-		ll.language = {$plugin.tx_podcast.settings.ll.language}
+		ll.language =                {$plugin.tx_podcast.settings.ll.language}
 		podcast.publicationDate =    {$plugin.tx_podcast.settings.podcast.publicationDate}
 		podcast.fe.publicationDate = {$plugin.tx_podcast.settings.podcast.fe.publicationDate}
 		episode.publicationDate =    {$plugin.tx_podcast.settings.episode.publicationDate}
 		episode.fe.publicationDate = {$plugin.tx_podcast.settings.episode.fe.publicationDate}
 	}
 	view {
-		templateRootPath = {$plugin.tx_podcast.view.templateRootPath}
-		partialRootPath = {$plugin.tx_podcast.view.partialRootPath}
-		layoutRootPath = {$plugin.tx_podcast.view.layoutRootPath}
+		templateRootPath =           {$plugin.tx_podcast.view.templateRootPath}
+		partialRootPath =            {$plugin.tx_podcast.view.partialRootPath}
+		layoutRootPath =             {$plugin.tx_podcast.view.layoutRootPath}
 	}
 	persistence {
-		storagePid = {$plugin.tx_podcast.persistence.storagePid}
+		enableAutomaticCacheClearing = 1
+		updateReferenceIndex =       0
+		storagePid =                 {$plugin.tx_podcast.persistence.storagePid}
 		classes {
 			Tx_podcast_Domain_Model_Podcast {
 				newRecordStoragePid = {$plugin.tx_podcast.persistence.storagePid}
@@ -34,37 +40,29 @@ page {
 	includeJSlibs {
 		tx_podcast_videosj.external = 1
 		tx_podcast_videosj = http://vjs.zencdn.net/c/video.js
-		#tx_podcast_audiojs = EXT:podcast/Resources/Public/js/audio.min.js
 	}
-	#jsFooterInline{
-	#	153245874680 = TEXT
-	#	153245874680.value (
-	#		audiojs.events.ready(function() {
-	#			var as = audiojs.createAll();
-	#		});
-	#	)
-	#}
 	includeCSS {
 		tx_podcast_videojs = EXT:podcast/Resources/Public/css/video-js.min.css
-		tx_podcast_file_1 = EXT:podcast/Resources/Public/css/default.css
+		tx_podcast_css =     EXT:podcast/Resources/Public/css/default.css
 	}
 }
 
-xmlPage = PAGE
-xmlPage {
-	typeNum = 1289377328
+podcast = PAGE
+podcast {
+	typeNum = 1289377
+}
+
+[globalVar = GP:type=1289377] && [globalVar = GP:tx_podcast_display|podcast > 0]
+podcast {
 	config {
 		disableAllHeaderCode = 1
 		additionalHeaders = Content-type:application/xml
 		xhtml_cleaning = 0
 		adminPanel=0
 	}
-}
-
-[globalVar = GP:type=1289377328] && [globalVar = GP:tx_podcast_display|podcast > 0]
-	plugin.tx_podcast.settings.feed = 1
-	xmlPage.20 =< tt_content.list.20.podcast_display
-	xmlPage.20 {
-		action = show
+	20 =< tt_content.list.20.podcast_display
+	20 {
+		action = feed
 	}
+}
 [global]
