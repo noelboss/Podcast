@@ -37,13 +37,13 @@ plugin.tx_podcast {
 
 
 page {
-	includeJSlibs {
-		tx_podcast_videosj.external = 1
-		tx_podcast_videosj = http://vjs.zencdn.net/c/video.js
+	includeJSFooter {
+		tx_podcast_videocss = EXT:podcast/Resources/Public/mediaelementplayer/mediaelement-and-player.min.js
+		tx_podcast_js =  EXT:podcast/Resources/Public/js/Application.js
 	}
 	includeCSS {
-		tx_podcast_videojs = EXT:podcast/Resources/Public/css/video-js.min.css
-		tx_podcast_css =     EXT:podcast/Resources/Public/css/default.css
+		tx_podcast_videocss = EXT:podcast/Resources/Public/mediaelementplayer/mediaelementplayer.min.css
+		tx_podcast_css =     EXT:podcast/Resources/Public/css/Application.css
 	}
 }
 

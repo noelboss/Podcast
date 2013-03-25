@@ -22,10 +22,7 @@
 .modPodcast .episode { padding: 1em 0 0; overflow: hidden; zoom: 1;}  
 .modPodcast .episode h3 { overflow: hidden; zoom: 1; }    
 .modPodcast .episode h3 span { float: right; font-weight: normal; }
-.modPodcast .episode .audio { float: left; width: 100px; margin-right: 1em; }      
-.modPodcast .episode .audio audio{ width: 100px; }           
-.modPodcast .episode .video video { width: 100%; }      
-.modPodcast .episode .description { margin-bottom: 1em; }      
+.modPodcast .episode .description { margin-bottom: 1em; }
                                                      
 
 .modPodcast .episode h3 { font-size: 1.2em; font-weight: bold; margin: 0; }

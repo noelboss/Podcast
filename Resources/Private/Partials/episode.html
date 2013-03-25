@@ -1,11 +1,16 @@
 {namespace pc=Tx_Podcast_ViewHelpers}
 <div class="episode {zebraClass}">
+	<div class="description">
+		<h3>{episode.title}<span><f:format.date date="{episode.publicationDate}" format="{settings.episode.fe.publicationDate}" /></span></h3>
+		{episode.description}
+	</div>
+	<p>
+		<strong>Duration:</strong>
+		<pc:duration timestamp="{episode.duration}" />
+		{episode.duration}
+	</p>
 	<pc:if condition="'{episode.mime}'=='video/mp4'">
 		<f:then>        
-			<div class="description">
-				<h3>{episode.title}<span><f:format.date date="{episode.publicationDate}" format="{settings.episode.fe.publicationDate}" /></span></h3>
-				{episode.description}
-			</div>
 			<div class="video">
 				<video data-setup="{}" width="800" height="330" id="podcastvideo_{episode.uid}" class="video-js vjs-default-skin" 
 					preload="auto" controls="controls" <f:if condition="{episode.image}">poster="{f:uri.image(src:'uploads/tx_podcast/{episode.image}', width:'800' height:'330')}"</f:if>>
@@ -14,30 +19,16 @@
 					</f:for>
 					Your browser does not support the video element.
 				</video>
-				<p>
-					<strong>Duration:</strong>
-					<pc:duration timestamp="{episode.duration}" />
-					{episode.duration}
-					
-				</p>
 			</div>
 		</f:then>
 		<f:else>      
 			<div class="audio">
-				<audio controls="1" preload="auto">
+				<audio controls="1" preload="none">
 					<f:for each="{episode.altfiles}" as="altfile">
 					<source src="{altfile.name}" type='{altfile.mime}'/>
 					</f:for>
 					Your browser does not support the audio element.
 				</audio>
-				<p>
-					<strong>Duration:</strong>
-					<pc:duration timestamp="{episode.duration}" />
-				</p>
-			</div>  
-			<div class="description">
-				<h3>{episode.title}<span><f:format.date date="{episode.publicationDate}" format="{settings.episode.fe.publicationDate}" /></span></h3>
-				{episode.description}
 			</div>
 		</f:else>
 	</pc:if>
