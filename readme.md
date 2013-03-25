@@ -33,7 +33,7 @@ The update to 0.4 introduces new URL's and a new plugin configuration. In order 
 
 #Changelog
 
-* 0.4.0 – Update requires user action!
+* 0.4.0 – Update requires user intervention!
 ** Updated realurl and plugin configuration to greatly improve url's
 ** Updated plugin configurtion
 ** Added new action "feed"
