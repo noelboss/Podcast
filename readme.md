@@ -20,7 +20,65 @@ Create more than one Podcast, use episodes, authors and other settings for multi
 1. Install the extension from TER
 2. Add the static TypoScript template to your template
 3. Create a record of the type Podcast on a page or a sysfolder
-4. Add an episode to the record (Make sure it's checked in the Podcast selectlist)
+4. Add an episode to the record (Make sure it's checked in the Podcast select list)
 5. Add the Podcast plugin on any page or the page you created the podcast
 6. Important; Switch to the tab "Behavior" of the plugin and add the page or sysfolder where you stored the podcast record as "Record Storage Page"
 7. Enjoy your Podcast.
+
+#Attention: Update to 0.4
+The update to 0.4 introduces new URL's and a new plugin configuration. In order to update to 0.4 you need to do the following
+
+* Open the podcast plugin in the backend and set the "Default action of the plugin" to a correct value (recommended: dynamic)
+* Update the information in your iTunes Account to refflect the new URL of the feed
+
+#Changelog
+
+* 0.4.0 – Update requires user action!
+** Updated realurl and plugin configuration to greatly improve url's
+** Updated plugin configurtion
+** Added new action "feed"
+
+* 0.3.11 – 0.3.9
+** Added build and publication build date. 
+** Added a bit of documentation in readme.md.
+** Fixed Issue 14
+
+* 0.3.8
+** Improved mime and duration handling
+
+* 0.3.7
+** Fixed error in locallang that caused backend to crash
+
+* 0.3.6
+** Fixed duration bug
+** Removed categories due to crash
+** Added poster-image for videos
+** Added webm support, 
+** Added initial videojs integration
+** Added german translation 
+
+* 0.3.5
+** Fixed keyword issues
+** Added podcast single view, multiple file support and auto mime/duration detection
+
+* 0.3.4
+** Fixed Backend-Plugin registration
+** Added minimal documentation
+** Removed unused files
+** General Improvements
+
+* 0.3.2
+** Fixes
+** Added Plugin wizard
+** Podcasts are now also displayed in page-view
+
+* 0.3.1
+** Fixed missing upload folder
+** Fixed wrong database definition
+
+* 0.3.0
+** Fixed relative image URL in Feed Updated default CSS
+** Updated Description
+
+* 0.3.0
+** Initial Release

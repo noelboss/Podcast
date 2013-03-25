@@ -1,14 +1,8 @@
 <?php
 
-$TYPO3_CONF_VARS['EXTCONF']['realurl']['_DEFAULT']['postVarSets']['_DEFAULT']['display'] = array(
+$TYPO3_CONF_VARS['EXTCONF']['realurl']['_DEFAULT']['postVarSets']['_DEFAULT']['podcast'] = array(
 	array(
-		'GETvar' => 'tx_podcast_display[controller]',
-		'valueMap' => array(
-			'podcast' => 'Podcast',
-		),
-	),
-	array(
-		'GETvar' => 'tx_podcast_display[action]'
+		'GETvar' => 'tx_podcast_display[action]',
 	),
 	array(
 		'GETvar' => 'tx_podcast_display[podcast]',
@@ -22,20 +16,16 @@ $TYPO3_CONF_VARS['EXTCONF']['realurl']['_DEFAULT']['postVarSets']['_DEFAULT']['d
 				 'strtolower' => 1,
 				 'spaceCharacter' => '-',
 			 ),
+			 'enable404forInvalidAlias' => 1,
+			 'autoUpdate' => 1, 
+			 'expireDays' => 60,
 		)
-	)
-);
-
-$realurlPreVars = array(
-	'GETvar' => 'type',
-	'valueMap' => array(
-		'xml' => '1289377328'
 	),
-	'noMatch' => 'bypass',
 );
-if(is_array($TYPO3_CONF_VARS['EXTCONF']['realurl']['_DEFAULT']['preVars'])){
-	array_push($TYPO3_CONF_VARS['EXTCONF']['realurl']['_DEFAULT']['preVars'], $realurlPreVars);
-} else {
-	$TYPO3_CONF_VARS['EXTCONF']['realurl']['_DEFAULT']['preVars'] = $realurlPreVars;
-}
+$TYPO3_CONF_VARS['EXTCONF']['realurl']['_DEFAULT']['fileName']['defaultToHTMLsuffixOnPrev'] = 1;
+$TYPO3_CONF_VARS['EXTCONF']['realurl']['_DEFAULT']['fileName']['index']['.xml'] = array(
+	'keyValues' => array(
+		'type' => 1289377,
+	),
+);
 ?>
