@@ -5,13 +5,20 @@ plugin.tx_podcast {
 	}
 	settings {
 		video {
-			width = {$plugin.tx_podcast.settings.video.width}
+			width =  {$plugin.tx_podcast.settings.video.width}
 			height = {$plugin.tx_podcast.settings.video.height}
 		} 
 		audio {
-			width = {$plugin.tx_podcast.settings.audio.width}
+			width =  {$plugin.tx_podcast.settings.audio.width}
 			height = {$plugin.tx_podcast.settings.audio.height}
 		}
+		
+		uids {
+			list =   {$plugin.tx_podcast.settings.uids.list}
+			detail = {$plugin.tx_podcast.settings.uids.detail}
+			feed =   {$plugin.tx_podcast.settings.uids.feed}
+		}
+		
 		ll.language =                {$plugin.tx_podcast.settings.ll.language}
 		podcast.publicationDate =    {$plugin.tx_podcast.settings.podcast.publicationDate}
 		podcast.fe.publicationDate = {$plugin.tx_podcast.settings.podcast.fe.publicationDate}

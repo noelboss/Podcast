@@ -53,6 +53,7 @@ class Tx_Podcast_Controller_PodcastController extends Tx_Extbase_MVC_Controller_
 	 */
 	public function listAction() {
 		$podcasts = $this->podcastRepository->findAll();
+		$this->view->assign('settings', $this->settings);
 		$this->view->assign('podcasts', $podcasts);
 	}
 

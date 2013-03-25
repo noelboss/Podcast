@@ -67,7 +67,6 @@
 			<label index="ff.actionDynamic">Dynamic</label>
 			<label index="ff.actionList">List podcasts</label>
 			<label index="ff.actionShow">Show a single podcast</label>
-			<label index="ff.actionFeed">Feed</label>
 		</languageKey> 
 		<languageKey index="de" type="array">                       
 			<label index="tx_podcast_domain_model_podcast">Podcast</label>   
@@ -126,7 +125,6 @@
 			<label index="ff.actionDynamic">Dynamisch</label>
 			<label index="ff.actionList">Liste der Podcasts</label>
 			<label index="ff.actionShow">Detailansicht eines Podcasts</label>
-			<label index="ff.actionFeed">Feed</label>
 		</languageKey>
 	</data>
 </T3locallang>

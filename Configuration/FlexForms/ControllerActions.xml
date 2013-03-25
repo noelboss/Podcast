@@ -28,10 +28,6 @@
 									<numIndex index="0">LLL:EXT:podcast/Resources/Private/Language/locallang_db.xml:ff.actionShow</numIndex>
 									<numIndex index="1"><![CDATA[Podcast->show;Podcast->feed]]></numIndex>
 								</numIndex>
-								<numIndex index="4">
-									<numIndex index="0">LLL:EXT:podcast/Resources/Private/Language/locallang_db.xml:ff.actionFeed</numIndex>
-									<numIndex index="1"><![CDATA[Podcast->feed]]></numIndex>
-								</numIndex>
 							</items>
 						</config>
 						<onChange>reload</onChange>
