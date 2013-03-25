@@ -24,7 +24,7 @@
 		</f:then>
 		<f:else>      
 			<div class="audio">
-				<audio controls="controls" autobuffer="controls">
+				<audio controls="1" preload="auto">
 					<f:for each="{episode.altfiles}" as="altfile">
 					<source src="{altfile.name}" type='{altfile.mime}'/>
 					</f:for>
