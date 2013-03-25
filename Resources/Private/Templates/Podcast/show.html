@@ -18,8 +18,8 @@
 			</f:if>
 		</div>
 		<div class="description">
-			<strong>{podcast.subtitle}</strong> – 
-			<f:format.nl2br>{podcast.description}</f:format.nl2br>  
+			<strong>{podcast.subtitle}</strong>
+			<f:format.html><f:format.nl2br>{podcast.description}</f:format.nl2br></f:format.html>
 			<f:if condition="{podcast.episodes}">
 				<f:then> 
 					<p class="feed">   

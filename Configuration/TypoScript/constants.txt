@@ -3,6 +3,18 @@ plugin.tx_podcast {
 		# cat=plugin.tx_podcast//b; type=string; label=Feed language: The language is by default fetched from "config.htmlTag_langKey". You can set it here manually, f.e. de-ch
 		ll.language = 
 		
+		# cat=plugin.tx_podcast//b; type=integer; label=Video with: With of the video element in pixel
+		video.width = 450
+		
+		# cat=plugin.tx_podcast//b; type=integer; label=Video height: Height of the video element in pixel
+		video.height = 254
+		
+		# cat=plugin.tx_podcast//b; type=integer; label=Audio with: With of the audio element in pixel
+		audio.width = 450
+		
+		# cat=plugin.tx_podcast//b; type=integer; label=Audio height: Height of the audio element in pixel
+		audio.height = 30
+		
 		# cat=plugin.tx_podcast//b; type=string; label=Episode date format feed: Define how the date / time of an episode is formated in the feed
 		episode.publicationDate = r
 		

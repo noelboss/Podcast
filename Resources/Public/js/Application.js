@@ -1,7 +1,5 @@
 ;(function($){
 	$(document).ready(function(){
-		$('video,audio').mediaelementplayer({
-			enableAutosize: true
-		});
+		$('video,audio').mediaelementplayer();
 	});
 })(jQuery);
