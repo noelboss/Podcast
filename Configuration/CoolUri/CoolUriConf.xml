@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cooluri>
+	
+	<!-- Use your own settings here or use this example: -->
+	<cooluris>1</cooluris>
+	<cache>
+		<usecache>1</usecache>
+		<params2cool>
+			<checkforchangeevery>1</checkforchangeevery>
+		</params2cool>
+		<cacheparams>1</cacheparams>
+		<cool2params>
+			<oldlinksvalidfor>1</oldlinksvalidfor>
+		</cool2params>
+		<pagenotfound>
+			<status>HTTP/1.0 404 Not Found</status>
+			<behavior type="userfunc">tx_cooluri-&gt;pageNotFound</behavior>
+		</pagenotfound>
+	</cache>
+	<pagepath>
+		<title>alias,tx_realurl_pathsegment,nav_title,title</title>
+		<saveto>id</saveto>
+		<default>0</default>
+		<userfunc>tx_cooluri-&gt;getPageTitle</userfunc>
+		<t3conv>1</t3conv>
+	</pagepath>
+	
+	<!-- Add the following configuration to your CoolUri Configuration File: -->
+	<removetrailingslash include="(feed.xml)$">1</removetrailingslash>
+	<uriparts>
+		<part>
+			<parameter>tx_podcast_display[action]</parameter>
+		</part>
+		<part>
+			<parameter>tx_podcast_display[podcast]</parameter>
+			<lookindb>
+				<to>SELECT title FROM tx_podcast_domain_model_podcast WHERE uid=$1 AND deleted=0 AND hidden=0</to>
+				<t3conv>1</t3conv>
+			</lookindb>
+		</part>
+	</uriparts>
+	<predefinedparts>
+		<part>
+			<parameter>tx_podcast_display[controller]</parameter>
+		</part>
+		<part>
+			<parameter>cHash</parameter>
+		</part>
+	</predefinedparts>
+	<valuemaps>
+		<valuemap>
+			<parameter>type</parameter>
+			<value key="feed.xml">1289377</value>
+		</valuemap>
+		<valuemap>
+			<parameter>tx_podcast_display[action]</parameter>
+			<value key="">feed</value>
+		</valuemap>
+	</valuemaps>
+</cooluri>

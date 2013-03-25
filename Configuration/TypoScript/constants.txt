@@ -1,18 +1,39 @@
 plugin.tx_podcast {
 	settings{
-		# cat=plugin.tx_podcast//b; type=string; label=Feed language: The language is by default fetched from "config.htmlTag_langKey". You can set it here manually, f.e. de-ch
+		# cat=plugin.tx_podcast//010; type=text; label=Feed language: The language is by default fetched from "config.htmlTag_langKey". You can set it here manually, f.e. de-ch
 		ll.language = 
 		
-		# cat=plugin.tx_podcast//b; type=string; label=Episode date format feed: Define how the date / time of an episode is formated in the feed
+		# cat=plugin.tx_podcast//022; type=int+; label=Video with: With of the video element in pixel
+		video.width = 450
+		
+		# cat=plugin.tx_podcast//031; type=int+; label=Video height: Height of the video element in pixel
+		video.height = 254
+		
+		# cat=plugin.tx_podcast//033; type=int+; label=Audio with: With of the audio element in pixel
+		audio.width = 450
+		
+		# cat=plugin.tx_podcast//034; type=int+; label=Audio height: Height of the audio element in pixel
+		audio.height = 30
+		
+		# cat=plugin.tx_podcast//040; type=int+; label=Page ID with list view plugin: Leave empty if only one page with dynamic plugin
+		uids.list =
+		
+		# cat=plugin.tx_podcast//041; type=int+; label=Page ID with detail view plugin: Leave empty if only one page with dynamic plugin
+		uids.detail =
+		
+		# cat=plugin.tx_podcast//042; type=int+; label=Page ID for feed: The page for the feed, does not need a plugin, leave empty if only one page with dynamic plugin
+		uids.feed =
+		
+		# cat=plugin.tx_podcast//050; type=string; label=Episode date format feed: Define how the date / time of an episode is formated in the feed
 		episode.publicationDate = r
 		
-		# cat=plugin.tx_podcast//b; type=string; label=Episode date format frontend: Define how the date / time of an episode is formated in the frontend
+		# cat=plugin.tx_podcast//051; type=string; label=Episode date format frontend: Define how the date / time of an episode is formated in the frontend
 		episode.fe.publicationDate = d.m.Y
 		
-		# cat=plugin.tx_podcast//b; type=string; label=Podcast date format feed: Define how the date / time of the podcasts is formated in the feed
+		# cat=plugin.tx_podcast//052; type=string; label=Podcast date format feed: Define how the date / time of the podcasts is formated in the feed
 		podcast.publicationDate = r
 		
-		# cat=plugin.tx_podcast//b; type=string; label=Podcast date format frontend: Define how the date / time of the podcasts is formated in the frontend
+		# cat=plugin.tx_podcast//053; type=string; label=Podcast date format frontend: Define how the date / time of the podcasts is formated in the frontend
 		podcast.fe.publicationDate = d.m.Y
 
 	}

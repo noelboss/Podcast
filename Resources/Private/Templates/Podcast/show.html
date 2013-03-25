@@ -2,8 +2,15 @@
 <f:section name="main">
 	<f:flashMessages />
 	<h1>{podcast.title}
-		<span> 
-			<f:link.action action="list"><f:translate key="tx_podcast_domain_model_podcast.links.back" /></f:link.action>  
+		<span>
+			<f:if condition="{settings.uids.list} > 0">
+			<f:then>
+				<f:link.action  pageUid="{settings.uids.list}" action="list"><f:translate key="tx_podcast_domain_model_podcast.links.back" /></f:link.action>
+			</f:then>
+			<f:else>
+				<f:link.action action="list"><f:translate key="tx_podcast_domain_model_podcast.links.back" /></f:link.action>
+			</f:else>
+			</f:if>
 		</span>
 	</h1>              
 	<div class="info">
@@ -18,15 +25,25 @@
 			</f:if>
 		</div>
 		<div class="description">
-			<strong>{podcast.subtitle}</strong> – 
-			<f:format.nl2br>{podcast.description}</f:format.nl2br>  
+			<strong>{podcast.subtitle}</strong>
+			<f:format.html><f:format.nl2br>{podcast.description}</f:format.nl2br></f:format.html>
 			<f:if condition="{podcast.episodes}">
 				<f:then> 
-					<p class="feed">   
-					<f:link.action action="feed" arguments="{podcast : podcast}" pageType="1289377">
-						<f:image src="typo3conf/ext/podcast/Resources/Public/Icons/tx_podcast_domain_model_podcast.gif" alt="<f:translate key='tx_podcast_domain_model_podcast.feed' />" />
-						<f:translate key="tx_podcast_domain_model_podcast.links.feed" />
-					</f:link.action>
+					<p class="feed">
+					<f:if condition="{settings.uids.feed} > 0">
+					<f:then>
+						<f:link.action pageUid="{settings.uids.feed}" action="feed" arguments="{podcast : podcast}" pageType="1289377">
+							<f:image src="typo3conf/ext/podcast/Resources/Public/Icons/tx_podcast_domain_model_podcast.gif" alt="<f:translate key='tx_podcast_domain_model_podcast.feed' />" />
+							<f:translate key="tx_podcast_domain_model_podcast.links.feed" />
+						</f:link.action>
+					</f:then>
+					<f:else>
+						<f:link.action action="feed" arguments="{podcast : podcast}" pageType="1289377">
+							<f:image src="typo3conf/ext/podcast/Resources/Public/Icons/tx_podcast_domain_model_podcast.gif" alt="<f:translate key='tx_podcast_domain_model_podcast.feed' />" />
+							<f:translate key="tx_podcast_domain_model_podcast.links.feed" />
+						</f:link.action>
+					</f:else>
+					</f:if>
 					</p>
 				</f:then>
 			</f:if>
