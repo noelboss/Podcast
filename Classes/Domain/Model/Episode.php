@@ -230,8 +230,28 @@ class Tx_Podcast_Domain_Model_Episode extends Tx_Extbase_DomainObject_AbstractEn
 	 * @return string $file
 	 */
 	public function getFile() {
+		if(t3lib_div::isFirstPartOfStr($this->file, 'file:')){
+			// this helped; https://github.com/TYPO3/TYPO3v4-Core/blob/master/typo3/sysext/frontend/Classes/ContentObject/FilesContentObject.php
+			// Get the UID from the current image object. 
+			$fileUid = substr($this->file, 5);
+			$fileObjects = array();
+			$fileRepository = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\\CMS\\Core\\Resource\\FileRepository');
+			$fileObjects = $fileRepository->findByUid($fileUid); 
+			$fileObjectData = $fileObjects->toArray();
+			return $fileObjectData['url'];
+		}
 		return $this->file;
 	}
+	
+	/**
+	 * Returns the file url
+	 *
+	 * @return string $file
+	 */
+	public function getFileurl() {
+		return t3lib_div::getIndpEnv('TYPO3_SITE_URL').$this->getFile();
+	}
+
 
 	/**
 	 * Sets the file
@@ -357,19 +377,18 @@ class Tx_Podcast_Domain_Model_Episode extends Tx_Extbase_DomainObject_AbstractEn
 		$duration = 0;
 		$file = t3lib_div::getFileAbsFileName($file);
 		if ($fp = fopen($file, 'rb')) {
-			require_once('typo3conf/ext/podcast/Classes//Utilities/getid3/getid3.php');       
+			require_once('typo3conf/ext/podcast/Classes/Utilities/getid3/getid3.php');
 
 			// Initialize getID3 engine
 			$getID3 = new getID3;
 			$getID3->option_md5_data        = true;
 			$getID3->option_md5_data_source = true;
 			$getID3->encoding               = 'UTF-8';
-		    print_r($getID3->info);
 			$getID3->analyze($file);
 			if (empty($getID3->info['error'])) {
 				// Init wrapper object
 				$result = array();
-				$result['playing_time']    = (isset($getID3->info['playtime_seconds'])         ? $getID3->info['playtime_seconds']         : '');
+				$result['playing_time']    = (isset($getID3->info['playtime_seconds']) ? $getID3->info['playtime_seconds'] : '');
 				$duration= round($result['playing_time']);
 				
 			}
@@ -393,7 +412,6 @@ class Tx_Podcast_Domain_Model_Episode extends Tx_Extbase_DomainObject_AbstractEn
 			$file = explode(',',$all[$i]);
 			$altfiles[$i]['name'] = $file[0];
 			$altfiles[$i]['mime'] = $file[1];
-			/*$altfiles[$i]['duration'] = $file[2];*/
 		}
 
 		return $altfiles; 
@@ -405,21 +423,21 @@ class Tx_Podcast_Domain_Model_Episode extends Tx_Extbase_DomainObject_AbstractEn
 	 * @return void
 	 */
 	public function setAltfiles() {
-		$fileInfo = t3lib_div::split_fileref($this->file);
+		$fileInfo = t3lib_div::split_fileref($this->getFile());
 
 		/* get mime and duration from provided file */
-		$this->setMime($this->getFileMime($this->file));
-		$this->setDuration($this->getFileDuration($this->file));
+		$this->setMime($this->getFileMime($this->getFile()));
+		$this->setDuration($this->getFileDuration($this->getFile()));
 
 		$altfiles = array();
-		$altfiles[0] = $this->file.','.$this->mime/*.','.$this->duration*/;
+		$altfiles[0] = $this->getFile().','.$this->getMime();
 		
 		$basepath = $fileInfo['path'].$fileInfo['filebody'].'.*';
 		$files = glob($basepath);
 		/* search for other files */
 		for ($i=0; $i < count($files); $i++) {
-			if($files[$i] != $this->file){
-				$altfiles[$i+1] =$files[$i].','.$this->getFileMime($files[$i])/*.','.$this->getFileDuration($files[$i])*/;
+			if($files[$i] != $this->getFile()){
+				$altfiles[$i+1] =$files[$i].','.$this->getFileMime($files[$i]);
 			}
 		}
 		$this->altfiles = implode('|',$altfiles);
