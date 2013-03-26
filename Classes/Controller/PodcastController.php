@@ -65,7 +65,6 @@ class Tx_Podcast_Controller_PodcastController extends Tx_Extbase_MVC_Controller_
 	 */
 	public function showAction(Tx_Podcast_Domain_Model_Podcast $podcast = NULL) {
 		if(!$podcast){
-			$this->flashMessages->add('Sorry, something went terribly wrong, there was no Podcast found');
 			$this->redirect('list');
 		}
 
@@ -83,7 +82,6 @@ class Tx_Podcast_Controller_PodcastController extends Tx_Extbase_MVC_Controller_
 	 */
 	public function feedAction(Tx_Podcast_Domain_Model_Podcast $podcast = NULL) {
 		if(!$podcast){
-			$this->flashMessages->add('Sorry, something went terribly wrong, there was no Podcast found');
 			$this->redirect('list');
 		}
 		$this->request->setFormat('xml');

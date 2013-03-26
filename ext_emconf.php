@@ -35,7 +35,7 @@ $EM_CONF[$_EXTKEY] = array(
 			'fluid' => '1.3',
 		),
 		'conflicts' => array(
-			'cbrealurl' => '1.4.1',
+			'cbrealurl' => '',
 		),
 		'suggests' => array(
 		),
