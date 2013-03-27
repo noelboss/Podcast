@@ -18,15 +18,15 @@
 							<items>
 								<numIndex index="0">
 									<numIndex index="0">LLL:EXT:podcast/Resources/Private/Language/locallang_db.xml:ff.actionDynamic</numIndex>
-									<numIndex index="1"><![CDATA[Podcast->list;Podcast->show;Podcast->feed]]></numIndex>
+									<numIndex index="1"><![CDATA[Podcast->list;Podcast->show]]></numIndex>
 								</numIndex>
 								<numIndex index="2">
 									<numIndex index="0">LLL:EXT:podcast/Resources/Private/Language/locallang_db.xml:ff.actionList</numIndex>
-									<numIndex index="1"><![CDATA[Podcast->list;Podcast->feed]]></numIndex>
+									<numIndex index="1"><![CDATA[Podcast->list;Podcast->show]]></numIndex>
 								</numIndex>
 								<numIndex index="3">
 									<numIndex index="0">LLL:EXT:podcast/Resources/Private/Language/locallang_db.xml:ff.actionShow</numIndex>
-									<numIndex index="1"><![CDATA[Podcast->show;Podcast->feed]]></numIndex>
+									<numIndex index="1"><![CDATA[Podcast->show;Podcast->list;]]></numIndex>
 								</numIndex>
 							</items>
 						</config>

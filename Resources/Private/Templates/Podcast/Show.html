@@ -4,7 +4,7 @@
 		<span>
 			<f:if condition="{settings.uids.list} > 0">
 			<f:then>
-				<f:link.action  pageUid="{settings.uids.list}" action="list"><f:translate key="tx_podcast_domain_model_podcast.links.back" /></f:link.action>
+				<f:link.action pageUid="{settings.uids.list}" action="list"><f:translate key="tx_podcast_domain_model_podcast.links.back" /></f:link.action>
 			</f:then>
 			<f:else>
 				<f:link.action action="list"><f:translate key="tx_podcast_domain_model_podcast.links.back" /></f:link.action>
@@ -31,13 +31,13 @@
 					<p class="feed">
 					<f:if condition="{settings.uids.feed} > 0">
 					<f:then>
-						<f:link.action pageUid="{settings.uids.feed}" action="feed" arguments="{podcast : podcast}" pageType="1289377">
+						<f:link.action action="show" pageUid="{settings.uids.feed}" arguments="{podcast : podcast}" pageType="1289377">
 							<f:image src="typo3conf/ext/podcast/Resources/Public/Icons/tx_podcast_domain_model_podcast.gif" alt="<f:translate key='tx_podcast_domain_model_podcast.feed' />" />
 							<f:translate key="tx_podcast_domain_model_podcast.links.feed" />
 						</f:link.action>
 					</f:then>
 					<f:else>
-						<f:link.action action="feed" arguments="{podcast : podcast}" pageType="1289377">
+						<f:link.action action="show" arguments="{podcast : podcast}" pageType="1289377">
 							<f:image src="typo3conf/ext/podcast/Resources/Public/Icons/tx_podcast_domain_model_podcast.gif" alt="<f:translate key='tx_podcast_domain_model_podcast.feed' />" />
 							<f:translate key="tx_podcast_domain_model_podcast.links.feed" />
 						</f:link.action>
@@ -54,7 +54,7 @@
 			<f:then>
 				<f:for each="{podcast.episodes}" as="episode" reverse="false">
 					<f:cycle values="{1: 'odd' 2: 'even'}" as="zebraClass">
-						<f:render partial="episode" arguments="{episode: episode, zebraClass: zebraClass}" />
+						<f:render partial="Episode" arguments="{episode: episode, zebraClass: zebraClass}" />
 					</f:cycle>
 				</f:for>
 			</f:then>

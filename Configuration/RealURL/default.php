@@ -28,4 +28,5 @@ $TYPO3_CONF_VARS['EXTCONF']['realurl']['_DEFAULT']['fileName']['index']['.xml'] 
 		'type' => 1289377,
 	),
 );
+
 ?>

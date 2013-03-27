@@ -58,7 +58,7 @@ class Tx_Podcast_Controller_PodcastController extends Tx_Extbase_MVC_Controller_
 	}
 
 	/**
-	 * action show
+	 * Index action, show a single podcast
 	 *
 	 * @param $podcast
 	 * @return void
@@ -68,26 +68,11 @@ class Tx_Podcast_Controller_PodcastController extends Tx_Extbase_MVC_Controller_
 			$this->redirect('list');
 		}
 
-		$this->updatePodcast($podcast);
-		
-		$this->view->assign('settings', $this->settings);
-		$this->view->assign('podcast', $podcast);
-	}
-	
-	/**
-	 * action feed
-	 *
-	 * @param $podcast
-	 * @return void
-	 */
-	public function feedAction(Tx_Podcast_Domain_Model_Podcast $podcast = NULL) {
-		if(!$podcast){
-			$this->redirect('list');
+		if($this->settings['feed']){ 
+			$this->request->setFormat('xml');
+			$lang = $this->settings['ll']['language'];
+			$this->view->assign('language', $lang ? $lang : $GLOBALS['TSFE']->config['config']['htmlTag_langKey']);
 		}
-		$this->request->setFormat('xml');
-		
-		$lang = $this->settings['ll']['language'];
-		$this->view->assign('language', $lang ? $lang : $GLOBALS['TSFE']->config['config']['htmlTag_langKey']);
 
 		$this->updatePodcast($podcast);
 
