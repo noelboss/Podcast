@@ -64,6 +64,9 @@ class Tx_Podcast_Controller_PodcastController extends Tx_Extbase_MVC_Controller_
 	 * @return void
 	 */
 	public function showAction(Tx_Podcast_Domain_Model_Podcast $podcast = NULL) {
+		if(!$podcast && $this->settings['singlePodcast']){
+			$podcast = $this->podcastRepository->findOneByUid($this->settings['singlePodcast']);
+		}
 		if(!$podcast){
 			$this->redirect('list');
 		}

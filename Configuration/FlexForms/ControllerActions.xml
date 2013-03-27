@@ -17,14 +17,10 @@
 						<type>select</type>
 							<items>
 								<numIndex index="0">
-									<numIndex index="0">LLL:EXT:podcast/Resources/Private/Language/locallang_db.xml:ff.actionDynamic</numIndex>
-									<numIndex index="1"><![CDATA[Podcast->list;Podcast->show]]></numIndex>
-								</numIndex>
-								<numIndex index="2">
 									<numIndex index="0">LLL:EXT:podcast/Resources/Private/Language/locallang_db.xml:ff.actionList</numIndex>
 									<numIndex index="1"><![CDATA[Podcast->list;Podcast->show]]></numIndex>
 								</numIndex>
-								<numIndex index="3">
+								<numIndex index="1">
 									<numIndex index="0">LLL:EXT:podcast/Resources/Private/Language/locallang_db.xml:ff.actionShow</numIndex>
 									<numIndex index="1"><![CDATA[Podcast->show;Podcast->list;]]></numIndex>
 								</numIndex>
@@ -33,14 +29,14 @@
 						<onChange>reload</onChange>
 					</TCEforms>
 					</switchableControllerActions>
-					<settings.podcast>
+					<settings.singlePodcast>
 						<TCEforms>
 							<label>Podcast to display</label>
-							<!--displayCond><![CDATA[FIELD:switchableControllerActions:=:Podcast->show]]></displayCond-->
+							<displayCond><![CDATA[FIELD:switchableControllerActions:=:Podcast->show;Podcast->list;]]></displayCond>
 							<config type="array">
 								<type>select</type>
 								<size>1</size>
-								<minitems>1</minitems>
+								<minitems>0</minitems>
 								<maxitems>1</maxitems>
 								<autoSizeMax>1</autoSizeMax>
 								<foreign_table>tx_podcast_domain_model_podcast</foreign_table>
@@ -48,7 +44,7 @@
 								<show_thumbs>1</show_thumbs>
 							</config>
 						</TCEforms>
-					</settings.podcast>
+					</settings.singlePodcast>
 				</el>
 			</ROOT>
 		</sDEF>
