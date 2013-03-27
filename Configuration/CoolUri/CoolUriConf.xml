@@ -54,7 +54,7 @@
 		</valuemap>
 		<valuemap>
 			<parameter>tx_podcast_display[action]</parameter>
-			<value key="">feed</value>
+			<value key="">show</value>
 		</valuemap>
 	</valuemaps>
 </cooluri>
