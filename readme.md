@@ -33,9 +33,11 @@ The update to 0.4 introduces new URL's and a new plugin configuration. In order 
 #Changelog
 
 * 0.4.0 – Update requires user intervention!
- * Fixed an issue with single-podcast view not working
- * Updated realurl and plugin configuration to greatly improve url's
- * Updated plugin configuration
+ * Fixed Issues 15, single-podcast view not working
+ * Updated realurl and plugin configuration to greatly improve urls
+ * Updated plugin configuration, plugin needs to be saved anew!
+ * Added Requirement for record storage page is removed
+ * Added Back button in single-podcast view is removed
  * Added CoolUri example configuration (needs to be added manually)
  
 * 0.3.11 – 0.3.9
