@@ -2,6 +2,8 @@
 <f:section name="main">
 	<h1>{podcast.title}
 		<span>
+			<f:if condition="{settings.noBackButton} < 1">
+			
 			<f:if condition="{settings.uids.list} > 0">
 			<f:then>
 				<f:link.action pageUid="{settings.uids.list}" action="list"><f:translate key="tx_podcast_domain_model_podcast.links.back" /></f:link.action>
@@ -9,6 +11,7 @@
 			<f:else>
 				<f:link.action action="list"><f:translate key="tx_podcast_domain_model_podcast.links.back" /></f:link.action>
 			</f:else>
+			</f:if>
 			</f:if>
 		</span>
 	</h1>              
