@@ -52,7 +52,14 @@ class Tx_Podcast_Controller_PodcastController extends Tx_Extbase_MVC_Controller_
 	 * @return void
 	 */
 	public function listAction() {
-		$podcasts = $this->podcastRepository->findAll();
+		if($this->podcastRepository->countAll() < 1){
+			$podcasts = $this->podcastRepository->findAllWithoutPidRestriction();
+		} else {
+			$podcasts = $this->podcastRepository->findAll();
+		}
+		if($podcasts->count() < 1){
+			$this->flashMessageContainer->add('No Podcasts found.');
+		}
 		$this->view->assign('settings', $this->settings);
 		$this->view->assign('podcasts', $podcasts);
 	}
@@ -64,12 +71,15 @@ class Tx_Podcast_Controller_PodcastController extends Tx_Extbase_MVC_Controller_
 	 * @return void
 	 */
 	public function showAction(Tx_Podcast_Domain_Model_Podcast $podcast = NULL) {
-		if(!$podcast && $this->settings['singlePodcast']){
-			$podcast = $this->podcastRepository->findOneByUid($this->settings['singlePodcast']);
-		}
-		if(!$podcast){
+		if(!$podcast && intval($this->settings['singlePodcast']) > 0){
+			$this->settings['noBackButton'] = 1;
+			$podcast = $this->podcastRepository->findOneByUid(intval($this->settings['singlePodcast']));
+			$podcast = $podcast->getFirst();
+		} else if(!$podcast) {
 			$this->redirect('list');
 		}
+		
+		$this->updatePodcast($podcast);
 
 		if($this->settings['feed']){ 
 			$this->request->setFormat('xml');
@@ -77,7 +87,6 @@ class Tx_Podcast_Controller_PodcastController extends Tx_Extbase_MVC_Controller_
 			$this->view->assign('language', $lang ? $lang : $GLOBALS['TSFE']->config['config']['htmlTag_langKey']);
 		}
 
-		$this->updatePodcast($podcast);
 
 		$this->view->assign('settings', $this->settings);
 		$this->view->assign('podcast', $podcast);
