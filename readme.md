@@ -8,7 +8,7 @@ It makes creating and managing Podcasts a breeze.
 Podcast works out of the box. No configuration needed. After just 4 simple steps your TYPO3 is ready to create Podcast Feeds and display them to your users.
 
 ##HTML5 video and audio
-Podcast for TYPO3 not only creates your feeds, it also displays your Podcasts for users of your Website – using the fancy new HTML5 video and audio tags so your users can listen to your podcast and view your videos directly on your site.
+Podcast for TYPO3 not only creates your feeds, it also displays your Podcasts for users of your Website – using the fancy new HTML5 video and audio tags so your users can listen to your podcast and view your videos directly on your site. For older browsers, a player with flash and silverlight is included.
 
 ##It just works – in aplha mode ;)
 Podcast generates your XML on the fly – no need to manually generate the XML after every change you make. It supports iTunes specific tags and works with RealURL out of the box (cooluri example configuration included), creating nice URLs for your feeds and pages.
@@ -27,18 +27,21 @@ Create more than one Podcast, use episodes, authors and other settings for multi
 #Update to 0.4
 The update to 0.4 introduces new URL's and a new plugin configuration. In order to update to 0.4 you need to do the following
 
+* Make sure the Database is up to date (deactivating and activating the extension will do the job)
 * Open the podcast plugin in the backend and set the "Default action of the plugin" to a correct value (recommended: dynamic)
-* Update the information in your iTunes Account to refflect the new URL of the feed
+* Update the information in your iTunes Account to refflect the new feed URL
 
 #Changelog
 
 * 0.4.0 – Update requires user intervention!
  * Fixed Issues 15, single-podcast view not working
  * Updated realurl and plugin configuration to greatly improve urls
- * Updated plugin configuration, plugin needs to be saved anew!
+ * Updated plugin configuration, plugin needs to be saved again!
  * Added Requirement for record storage page is removed
  * Added Back button in single-podcast view is removed
  * Added CoolUri example configuration (needs to be added manually)
+ * Added new media player with flash and silverlight fallback
+ * Experimental support for Typo3 6.0
  
 * 0.3.11 – 0.3.9
  * Added build and publication build date. 
