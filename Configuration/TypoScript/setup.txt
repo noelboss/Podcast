@@ -53,6 +53,7 @@ plugin.tx_podcast {
 
 page {
 	includeJSFooter {
+		tx_podcast_jquery = EXT:podcast/Resources/Public/js/DynamicJQuery.js
 		tx_podcast_videocss = EXT:podcast/Resources/Public/mediaelementplayer/mediaelement-and-player.min.js
 		tx_podcast_js =  EXT:podcast/Resources/Public/js/Application.js
 	}
@@ -68,6 +69,7 @@ podcast {
 }
 
 [globalVar = GP:type=1289377] && [globalVar = GP:tx_podcast_display|podcast > 0]
+plugin.tx_podcast.settings.feed = 1
 podcast {
 	config {
 		disableAllHeaderCode = 1
@@ -77,7 +79,7 @@ podcast {
 	}
 	20 =< tt_content.list.20.podcast_display
 	20 {
-		action = feed
+		action = show
 	}
 }
 [global]

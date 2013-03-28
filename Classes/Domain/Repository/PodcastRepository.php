@@ -28,6 +28,22 @@
  *
  */
 class Tx_Podcast_Domain_Repository_PodcastRepository extends Tx_Extbase_Persistence_Repository {
-
+	protected $defaultOrderings = array(
+		'sorting' => Tx_Extbase_Persistence_QueryInterface::ORDER_ASCENDING,
+		'title' => Tx_Extbase_Persistence_QueryInterface::ORDER_DESCENDING
+	);
+	public function findAllWithoutPidRestriction() {
+		$query = $this->createQuery();
+		$query->getQuerySettings()->setRespectStoragePage(FALSE);
+		return $query->execute();
+	}
+	public function findOneByUid($id) {
+		$query = $this->createQuery();
+		$query->getQuerySettings()->setRespectStoragePage(FALSE);
+		$query->matching($query->equals('uid', $id));
+		$query->setLimit(1);
+		return $query->execute();
+	}
 }
+
 ?>
