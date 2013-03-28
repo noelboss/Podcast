@@ -24,8 +24,8 @@ Create more than one Podcast, use episodes, authors and other settings for multi
 5. Add the Podcast plugin on any page or the page you created the podcast
 6. Enjoy your Podcast.
 
-#Update to 0.4
-The update to 0.4 introduces new URL's and a new plugin configuration. In order to update to 0.4 you need to do the following
+#Update to 0.5
+The update to 0.5 introduces new URL's and a new plugin configuration. In order to update to 0.5 you need to do the following
 
 * Make sure the Database is up to date (deactivating and activating the extension will do the job)
 * Open the podcast plugin in the backend and set the "Default action of the plugin" to a correct value (recommended: dynamic)
@@ -33,7 +33,7 @@ The update to 0.4 introduces new URL's and a new plugin configuration. In order 
 
 #Changelog
 
-* 0.4.0 – Update requires user intervention!
+* 0.5.0 – Update requires user intervention!
  * Fixed Issues 15, single-podcast view not working
  * Updated realurl and plugin configuration to greatly improve urls
  * Updated plugin configuration, plugin needs to be saved again!
