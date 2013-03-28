@@ -53,6 +53,7 @@ plugin.tx_podcast {
 
 page {
 	includeJSFooter {
+		tx_podcast_jquery = EXT:podcast/Resources/Public/js/DynamicJQuery.js
 		tx_podcast_videocss = EXT:podcast/Resources/Public/mediaelementplayer/mediaelement-and-player.min.js
 		tx_podcast_js =  EXT:podcast/Resources/Public/js/Application.js
 	}
