@@ -32,7 +32,9 @@ The update to 0.5 introduces new URL's and a new plugin configuration. In order 
 * Update the information in your iTunes Account to refflect the new feed URL
 
 #Changelog
-
+* 0.5.1 – Update requires user intervention!
+ * Fixed issue #17
+ 
 * 0.5.0 – Update requires user intervention!
  * Fixed Issues 15, single-podcast view not working
  * Updated realurl and plugin configuration to greatly improve urls
