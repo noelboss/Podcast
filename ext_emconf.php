@@ -12,7 +12,7 @@
 
 $EM_CONF[$_EXTKEY] = array (
 	'title' => 'Podcast for TYPO3',
-	'description' => 'A new Podcast extension for Typo3 from the creator of nbo_podcast. Makes publishing and managing Podcasts a breeze. Out of the box support for HTML5 video and audio, RealURL, automatic feed publishing and much more. See http://noelboss.github.com/Podcast',
+	'description' => 'The new Podcast extension for Typo3 makes publishing and managing Podcasts a breeze. Out of the box support for HTML5 video and audio, RealURL support, automatic feed publishing and much more. For more infos, see http://noelboss.github.com/Podcast Bug reports https://github.com/noelboss/Podcast/issues',
 	'category' => 'plugin',
 	'author' => 'Noel Bossart',
 	'author_email' => 'n dot company at me dot com',
