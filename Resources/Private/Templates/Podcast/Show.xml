@@ -1,5 +1,5 @@
 {namespace pc=Tx_Podcast_ViewHelpers}
-<f:layout name="default" />
+<f:layout name="Default" />
 <f:section name="main">
 		<title><f:format.html parseFuncTSPath="plugin.tx_podcast.feedparser">{podcast.title}</f:format.html></title>
 		<f:if condition="{podcast.website.link}"><link><f:format.html parseFuncTSPath="plugin.tx_podcast.feedparser">{podcast.website.link}</f:format.html></link></f:if>
