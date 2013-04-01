@@ -7,22 +7,32 @@
 	<pc:if condition="'{episode.mime}'=='video/mp4'">
 		<f:then>        
 			<div class="video">
-				<video data-setup="{}" width="{settings.video.width}" height="{settings.video.height}" id="podcastvideo_{episode.uid}" 
-					preload="auto" controls="controls" <f:if condition="{episode.image}">poster="{f:uri.image(src:'uploads/tx_podcast/{episode.image}', width:'800' height:'330')}"</f:if>>
+				<video width="{settings.video.width}" height="{settings.video.height}" id="podcastvideo_{episode.uid}" 
+					preload="{settings.video.preload}" controls="controls" <f:if condition="{episode.image}">poster="{f:uri.image(src:'uploads/tx_podcast/{episode.image}', width:'{settings.video.width}' height:'{settings.video.height}c')}"</f:if>>
 					<f:for each="{episode.altfiles}" as="altfile">
 					<source src="{altfile.name}" type='{altfile.mime}' />
 					</f:for>
-					Your browser does not support the video element.
+					<!-- Flash fallback for non-HTML5 browsers without JavaScript -->
+					<object width="{settings.video.width}" height="{settings.video.height}" type="application/x-shockwave-flash" data="flashmediaelement.swf">
+						<param name="flashvars" value="controls=true&file={episode.altfiles.0.name}" />
+						<param name="movie" value="/typo3conf/ext/podcast/Resources/Public/mediaelementplayer/flashmediaelement.swf" />
+						<f:if condition="{episode.image}">poster="{f:uri.image(src:'uploads/tx_podcast/{episode.image}', width:'{settings.video.width}' height:'{settings.video.height}c')}"</f:if>
+					</object>
 				</video>
 			</div>
 		</f:then>
 		<f:else>      
 			<div class="audio">
-				<audio controls="1" preload="auto"  width="{settings.audio.width}" height="{settings.audio.height}">
+				<audio controls="controls" preload="{settings.audio.preload}" data-width="{settings.audio.width}" data-height="{settings.audio.height}">
 					<f:for each="{episode.altfiles}" as="altfile">
 					<source src="{altfile.name}" type='{altfile.mime}'/>
 					</f:for>
-					Your browser does not support the audio element.
+					<!-- Flash fallback for non-HTML5 browsers without JavaScript -->
+					<object width="{settings.audio.width}" height="{settings.audio.height}" type="application/x-shockwave-flash" data="flashmediaelement.swf">
+						<param name="flashvars" value="controls=true&file={episode.altfiles.0.name}" />
+						<param name="movie" value="/typo3conf/ext/podcast/Resources/Public/mediaelementplayer/flashmediaelement.swf" />
+						<f:if condition="{episode.image}">poster="{f:uri.image(src:'uploads/tx_podcast/{episode.image}', width:'{settings.audio.width}' height:'{settings.audio.height}c')}"</f:if>
+					</object>
 				</audio>
 			</div>
 		</f:else>

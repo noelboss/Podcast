@@ -3,7 +3,7 @@
 /***************************************************************
  * Extension Manager/Repository config file for ext "podcast".
  *
- * Auto generated 28-03-2013 01:14
+ * Auto generated 01-04-2013 14:16
  *
  * Manual updates:
  * Only the data in the array - everything else is removed by next
@@ -27,7 +27,7 @@ $EM_CONF[$_EXTKEY] = array (
 	'modify_tables' => '',
 	'clearCacheOnLoad' => 0,
 	'lockType' => '',
-	'version' => '0.5.0',
+	'version' => '0.5.2',
 	'constraints' => 
 	array (
 		'depends' => 
