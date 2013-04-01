@@ -3,17 +3,23 @@ plugin.tx_podcast {
 		# cat=plugin.tx_podcast//010; type=text; label=Feed language: The language is by default fetched from "config.htmlTag_langKey". You can set it here manually, f.e. de-ch
 		ll.language = 
 		
-		# cat=plugin.tx_podcast//022; type=int+; label=Video with: With of the video element in pixel
+		# cat=plugin.tx_podcast//020; type=int+; label=Video with: With of the video element in pixel
 		video.width = 450
 		
-		# cat=plugin.tx_podcast//031; type=int+; label=Video height: Height of the video element in pixel
+		# cat=plugin.tx_podcast//021; type=int+; label=Video height: Height of the video element in pixel
 		video.height = 254
 		
-		# cat=plugin.tx_podcast//033; type=int+; label=Audio with: With of the audio element in pixel
+		# cat=plugin.tx_podcast//022; type=options[none,metadata,auto]; label=Video preload: For more info, see http://www.w3.org/TR/html5/embedded-content-0.html#attr-media-preload
+		video.preload = none
+		
+		# cat=plugin.tx_podcast//030; type=int+; label=Audio with: With of the audio element in pixel
 		audio.width = 450
 		
-		# cat=plugin.tx_podcast//034; type=int+; label=Audio height: Height of the audio element in pixel
+		# cat=plugin.tx_podcast//031; type=int+; label=Audio height: Height of the audio element in pixel
 		audio.height = 30
+		
+		# cat=plugin.tx_podcast//032; type=options[none,metadata,auto]; label=Audio preload: For more info, see http://www.w3.org/TR/html5/embedded-content-0.html#attr-media-preload
+		audio.preload = none
 		
 		# cat=plugin.tx_podcast//040; type=int+; label=Page ID with list view plugin: Leave empty if only one page with dynamic plugin
 		uids.list =

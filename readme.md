@@ -24,6 +24,9 @@ Create more than one Podcast, use episodes, authors and other settings for multi
 5. Add the Podcast plugin on any page or the page you created the podcast
 6. Enjoy your Podcast.
 
+##Adjusting the HTML and XML templates
+If the extension does not look or behave as you want it to, you can always change the templates copying the default templates under "Resources/Private" and adjusting the values for the tempalte paths in the typoscript constants.
+
 #Update to 0.5
 The update to 0.5 introduces new URL's and a new plugin configuration. In order to update to 0.5 you need to do the following
 
@@ -32,8 +35,15 @@ The update to 0.5 introduces new URL's and a new plugin configuration. In order 
 * Update the information in your iTunes Account to refflect the new feed URL
 
 #Changelog
+* 0.5.2
+ * Fixed Issue #18 – HTML errors and removed automatic preload of video and audio files
+ * Fixed dimensions of poster-image
+ * Added prefix for JavaScript video and audio player so it's only used for podcasts and not site wide
+ * Added TypoScript option to turn on preload of podcasts, default off
+ * Added Flash fallback
+ 
 * 0.5.1 – Update requires user intervention!
- * Fixed issue #17
+ * Fixed Issue #17
  
 * 0.5.0 – Update requires user intervention!
  * Fixed Issues 15, single-podcast view not working
@@ -65,7 +75,7 @@ The update to 0.5 introduces new URL's and a new plugin configuration. In order 
  * Added german translation 
  
 * 0.3.5
- * Fixed keyword issues
+ * Fixed keyword Issues
  * Added podcast single view, multiple file support and auto mime/duration detection
  
 * 0.3.4

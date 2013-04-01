@@ -7,10 +7,12 @@ plugin.tx_podcast {
 		video {
 			width =  {$plugin.tx_podcast.settings.video.width}
 			height = {$plugin.tx_podcast.settings.video.height}
+			preload ={$plugin.tx_podcast.settings.video.preload}
 		} 
 		audio {
 			width =  {$plugin.tx_podcast.settings.audio.width}
 			height = {$plugin.tx_podcast.settings.audio.height}
+			preload ={$plugin.tx_podcast.settings.audio.preload}
 		}
 		
 		uids {
