@@ -402,7 +402,7 @@ class Tx_Podcast_Domain_Model_Episode extends Tx_Extbase_DomainObject_AbstractEn
 	 * @return string $altfiles
 	 */
 	public function getAltfiles() {
-		if(!$this->altfiles){
+		if(!$this->altfiles || count(explode('|',$this->altfiles)) < 3){
 			$this->setAltfiles();
 		}
 
@@ -412,6 +412,7 @@ class Tx_Podcast_Domain_Model_Episode extends Tx_Extbase_DomainObject_AbstractEn
 			$file = explode(',',$all[$i]);
 			$altfiles[$i]['name'] = $file[0];
 			$altfiles[$i]['mime'] = $file[1];
+			$altfiles[$i]['size'] = $file[2];
 		}
 
 		return $altfiles; 
@@ -423,21 +424,22 @@ class Tx_Podcast_Domain_Model_Episode extends Tx_Extbase_DomainObject_AbstractEn
 	 * @return void
 	 */
 	public function setAltfiles() {
-		$fileInfo = t3lib_div::split_fileref($this->getFile());
+		$file = $this->getFile();
+		$fileInfo = t3lib_div::split_fileref($file);
 
 		/* get mime and duration from provided file */
-		$this->setMime($this->getFileMime($this->getFile()));
-		$this->setDuration($this->getFileDuration($this->getFile()));
+		$this->setMime($this->getFileMime($file));
+		$this->setDuration($this->getFileDuration($file));
 
 		$altfiles = array();
-		$altfiles[0] = $this->getFile().','.$this->getMime();
+		$altfiles[0] = $this->getFile().','.$this->getMime().','.filesize($file);
 		
 		$basepath = $fileInfo['path'].$fileInfo['filebody'].'.*';
 		$files = glob($basepath);
 		/* search for other files */
 		for ($i=0; $i < count($files); $i++) {
 			if($files[$i] != $this->getFile()){
-				$altfiles[$i+1] =$files[$i].','.$this->getFileMime($files[$i]);
+				$altfiles[$i+1] =$files[$i].','.$this->getFileMime($files[$i]).','.filesize($file[$i]);
 			}
 		}
 		$this->altfiles = implode('|',$altfiles);

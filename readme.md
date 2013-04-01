@@ -35,6 +35,9 @@ The update to 0.5 introduces new URL's and a new plugin configuration. In order 
 * Update the information in your iTunes Account to refflect the new feed URL
 
 #Changelog
+* 0.5.3
+ * Fixed Issue #6 – duration in xml is filesize
+ 
 * 0.5.2
  * Fixed Issue #18 – HTML errors and removed automatic preload of video and audio files
  * Fixed dimensions of poster-image

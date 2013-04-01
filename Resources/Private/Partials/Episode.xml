@@ -1,4 +1,4 @@
-	{namespace pc=Tx_Podcast_ViewHelpers}
+{namespace pc=Tx_Podcast_ViewHelpers}
 <f:if condition="{episode.file}">
 			<item>
 				<title><f:format.html parseFuncTSPath="plugin.tx_podcast.feedparser">{episode.title}</f:format.html></title>
@@ -26,7 +26,7 @@
 				<keywords><f:format.html parseFuncTSPath="plugin.tx_podcast.feedparser">{episode.keywords}</f:format.html></keywords> 
 					</f:else>
 				</f:if>
-				<enclosure url="{episode.fileurl}" length="{pc:duration(timestamp: episode.duration)}" type="{episode.mime}" />
+				<enclosure url="{episode.fileurl}" length="{episode.altfiles.0.size}" type="{episode.mime}" />
 				<guid>{episode.fileurl}</guid>
 				<pubDate><f:format.date date="{episode.publicationDate}" format="{settings.episode.publicationDate}" /></pubDate>
 				<f:if condition="{episode.website.link}"> 
